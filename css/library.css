@@ -194,6 +194,7 @@ td {
   outline: none;
   height: 2.5em;
   margin: .3em 0;
+}
 
 .horizontal-list > li{
   display: inline;
@@ -207,6 +208,7 @@ td {
 
 .author-quote {
   font-weight: bold;
+}
 
 .img {
   width: 9em;
