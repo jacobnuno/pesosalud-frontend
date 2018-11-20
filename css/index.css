@@ -1,0 +1,88 @@
+header{
+  background-color: var(--green-color);
+  height: 5em;
+  width: 100%;
+  padding: 0px, 10px;
+  display: inline-block;
+}
+
+footer {
+  background-color: #ddd;
+  height: 3em;
+  width: 100%;
+  padding: 0px, 10px;
+  display: inline-block;
+}
+
+.logo{
+  height: 4.2em;
+  margin-left: 1em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+header div .is-multiline{
+  height: 100%
+}
+
+.menu li{
+  margin: 0px 30px 10px 0px;
+}
+
+.menu a {
+  color: white;
+}
+
+p {
+  margin: 10px 0px 10px 20px;
+}
+
+.nutricion img {
+  width: 60%;
+}
+
+.servicios img {
+  width: 80%;
+}
+
+.servicios {
+  padding: 0px 20px;
+}
+
+.servicios > div {
+  background-color: #E6F2FF;
+  border-radius: 50px;
+  border: 1px solid;
+}
+
+.pierde-peso img{
+  width: 75%;
+}
+
+.mision-back {
+  background-image: url("../img/BackgroudMission.jpg");
+  padding: 10px 0px;
+}
+
+.mision {
+  background-color: #FFFFFF;
+  opacity: 0.7;
+  border: 1px solid black;
+  filter: alpha(opacity=60);
+}
+
+.mision h3 {
+  font-weight: bold;
+  color: #000;
+}
+
+form {
+  border: 1px solid var(--light-gray-color);
+  padding: .4em 0 .4em .5em;
+  border-radius: 4px;
+}

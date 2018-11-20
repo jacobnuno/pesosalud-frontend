@@ -1,16 +1,17 @@
 :root {
-  --green-color: #34a853;
+  --green-color: #71B627;
   --blue-color: #4285f4;
   --orange-color: #fbbc05;
   --red-color: #ea4335;
   --light-blue-color: #5bc0de;
   --gray-color: #333333;
   --light-gray-color: #ced4da;
-  --link-blue: #337ab7;;
+  --link-blue: #337ab7;
 }
 
 body {
   color: var(--gray-color);
+  background-color: #F2F2F2;
 }
 
 input {
@@ -76,7 +77,7 @@ input:focus {
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
-  margin: .4em 0;
+  margin: .4em 0px;
 }
 
 .is-multiline {
@@ -85,6 +86,20 @@ input:focus {
 
 .is-center {
   text-align: center;
+}
+
+.horizontal-list > li{
+  display: inline;
+}
+
+.quote p {
+  text-align: right;
+  font-style: italic;
+  margin: 0px;
+}
+
+.author-quote {
+  font-weight: bold;
 }
 
 /* mobile */
