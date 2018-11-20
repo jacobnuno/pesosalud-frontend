@@ -148,6 +148,11 @@ td {
   text-align: center;
 }
 
+.img {
+  width: 9em;
+  height: 9em;
+}
+
 /* mobile */
 @media screen and (max-width: 768px) {
   .column.is-1-mobile {
