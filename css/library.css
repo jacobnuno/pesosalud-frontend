@@ -22,7 +22,18 @@ input {
   border-radius: 4px;
 }
 
+input[type="radio"] {
+  outline: none;
+}
+
 input:focus {
+  border: 1px solid var(--green-color);
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
+  box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
+}
+
+textarea:focus {
   border: 1px solid var(--green-color);
   -webkit-box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
   -moz-box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
@@ -56,6 +67,11 @@ td {
 
 .is-flex {
   display: flex;
+}
+
+.form-group {
+  display: block;
+  width: 100%;
 }
 
 .btn {
