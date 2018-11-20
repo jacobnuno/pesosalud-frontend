@@ -3,7 +3,7 @@
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Mi Perfil</title>
+      <title>Editar Usuario</title>
       <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
       <link rel="stylesheet" type="text/css" media="screen" href="../../css/login.css"/>
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -12,52 +12,56 @@
       <!-- TODO: HEADER -->
 
       <div class="main">
-        <h1 class="column is-6-desktop is-offset-3-desktop is-12-mobile title is-center">Mi Perfil</h1>
+        <h1 class="column is-6-desktop is-offset-3-desktop is-12-mobile title is-center">Editar Usuario</h1>
 
         <form class="column is-6-desktop is-offset-3-desktop is-10-mobile is-offset-1-mobile login" action="index.html" method="post">
           <div class="column is-6-desktop is-multiline">
             <label for="name" class="column is-10-desktop">Nombre</label>
-            <input type="text" class="column is-8-desktop" name="name" value="" disabled>
+            <input type="text" class="column is-8-desktop" name="name" value="" required>
           </div>
           <div class="column is-6-desktop is-multiline">
-            <label for="email" class="column is-10-desktop">E-mail</label>
-            <input class="column is-8-desktop" type="text" name="email" value="" placeholder="ejemplo@ejemplo.com" disabled>
+            <label for="email" class="column is-10-desktop">E-mail</label required>
+            <input class="column is-8-desktop" type="text" name="email" value="" placeholder="ejemplo@ejemplo.com">
+          </div>
+          <div class="column is-6-desktop is-multiline">
+            <label for="password"  class="column is-10-desktop">Contraseña</label required>
+            <input class="column is-8-desktop" type="password" name="password" value="" placeholder="Contraseña">
           </div>
           <div class="column is-12-desktop">
             <div class="column is-6-desktop is-multiline">
               <label for="female" class="column is-10-desktop">Femenino</label>
-              <input type="radio" class="column is-8-desktop" id="female" name="genre" value="f"  disabled>
+              <input type="radio" class="column is-8-desktop" id="female" name="genre" value="f" >
             </div>
             <div class="column is-6-desktop is-multiline">
               <label for="male" class="column is-10-desktop">Masculino</label>
-              <input type="radio" class="column is-8-desktop" id="male" name="genre" value="m" checked disabled>
+              <input type="radio" class="column is-8-desktop" id="male" name="genre" value="m" >
             </div>
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="phone" class="column is-10-desktop">Teléfono</label>
-            <input type="text" class="column is-8-desktop" name="phone" value="" disabled>
+            <input type="text" class="column is-8-desktop" name="phone" value="">
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="height" class="column is-10-desktop">Peso</label>
-            <input type="text" class="column is-8-desktop" name="height" value="" disabled>
+            <input type="text" class="column is-8-desktop" name="height" value="">
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="birthDate" class="column is-10-desktop">Fecha de Nacimiento</label>
-            <input type="date" class="column is-8-desktop" name="birthDate" value="" disabled>
+            <input type="date" class="column is-8-desktop" name="birthDate" value="">
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="registeredDate" class="column is-10-desktop">Fecha de Alta</label>
-            <input type="date" class="column is-8-desktop" name="registeredDate" value="" disabled>
+            <input type="date" class="column is-8-desktop" name="registeredDate" value="">
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="coments" class="column is-10-desktop">Comentarios</label>
-            <textarea name="coments" rows="2" cols="40" placeholder="Escribe algo..." disabled></textarea>
+            <textarea name="coments" rows="2" cols="40" placeholder="Escribe algo..."></textarea>
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="photo" class="column is-8-desktop" class="column is-10-desktop">Imagen de perfil</label>
-            <img src="../../img/profile-icon.png" class="img" alt="Photo">
+            <input type="file" class="column is-8-desktop" name="photo">
           </div>
-          <button type="button" name="button" class="btn btn-red">Cerrar</button>
+          <button type="button" name="button" class="btn btn-blue">Guardar</button>
         </form>
       </div>
 
