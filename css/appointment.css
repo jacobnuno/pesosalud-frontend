@@ -1,13 +1,5 @@
-.general {
-  display: flex;
-}
-.general div {
-  flex: 1;
-}
-
 .main {
   margin-top: 5em;
-  width: 50%;
 }
 
 .title {
@@ -18,8 +10,4 @@
   border: 1px solid var(--light-gray-color);
   padding: .4em 0 .4em .5em;
   border-radius: 4px;
-}
-#general {
-  width: 900px;
-  height: 800px;
 }

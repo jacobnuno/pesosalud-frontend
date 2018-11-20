@@ -4,21 +4,26 @@
     <meta charset="utf-8">
     <title>Appointment</title>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/library.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/addAppointment.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/appointment.css"/>
   </head>
     <body>
       <div class="general">
         <div class="main">
-          <h1 class="column is-6-desktop is-offset-5-desktop is-12-mobile title is-center">Agenda una cita</h1>
-          <form class="column is-6-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile appointment is-center" action="index.html" method="post">
+          <h1 class="column is-3-desktop is-offset-5-desktop is-12-mobile title is-center">Agenda una cita</h1>
+          <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile appointment is-center" action="index.html" method="post">
             <label for=""class="column is-10-desktop">Tipo de servicio</label>
             <select class="" name="service">
               <option value="">Elige una opcion</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
+              <option value="Electroacupuntura">Electroacupuntura</option>
+              <option value="Electrocelulipolisis">Electrocelulipolisis</option>
+              <option value="Enfermedad">Consulta por enfermedad</option>
+              <option value="Peso">Control de peso</option>
+              <option value="Homeopatia">Homeopatía</option>
+              <option value="Mesoterapia">Mesoterapia</option>
+              <option value="peso-acupuntura">Control de peso con acupuntura</option>
+              <option value="Rejuvenecimiento">Rejuvenecimiento facial con acupuntura</option>
+              <option value="Gluteos">Lifting de glúteos</option>
+              <option value="Senos">Lifting de senos</option>
               </select>
             <label for=""class="column is-10-desktop">Fecha</label>
             <input type="date" name="fecha">
@@ -27,21 +32,11 @@
             <br>
             <button type="button" name="add_appointment" class="btn btn-blue">Hacer cita</button>
             </form>
+            <div class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile login new-register is-center">
+              <span>No recuerdas tus citas?</span>
+              <a href="#" class="btn-link">Búscalas aqui</a>
+            </div>
+          </div>
         </div>
-        <div class="main" >
-          <h2 class="column is-6-desktop is-offset-5-desktop is-12-mobile title is-center">Busca tus citas</h2>
-          <form class="column is-6-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile appointment is-center" action="index.html" method="post">
-            <label for=""class="column is-10-desktop">Busca por fecha</label>
-            <input type="date" name="fecha">
-            <button type="button" name="b_fecha" class="btn btn-blue">Buscar</button>
-            <label for=""class="column is-10-desktop">Busca por ID</label>
-            <input type="text" name="user_id" placeholder="0000">
-            <button type="button" name="b_fecha" class="btn btn-blue">Buscar</button>
-            <label for=""class="column is-10-desktop">Busca por cabina</label>
-            <input type="text" name="cabina">
-            <button type="button" name="b_fecha"class="btn btn-blue">Buscar</button>
-          </form>
-        </div>
-    </div>
   </body>
 </html>
