@@ -1,5 +1,5 @@
 :root {
-  --green-color: #34a853;
+  --green-color: #71B627;
   --blue-color: #4285f4;
   --orange-color: #fbbc05;
   --red-color: #ea4335;
@@ -12,6 +12,7 @@
 
 body {
   color: var(--gray-color);
+  background-color: #F2F2F2;
 }
 
 input {
@@ -137,7 +138,7 @@ td {
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
-  margin: .4em 0;
+  margin: .4em 0px;
 }
 
 .is-multiline {
@@ -147,6 +148,19 @@ td {
 .is-center {
   text-align: center;
 }
+
+.horizontal-list > li{
+  display: inline;
+}
+
+.quote p {
+  text-align: right;
+  font-style: italic;
+  margin: 0px;
+}
+
+.author-quote {
+  font-weight: bold;
 
 .img {
   width: 9em;
