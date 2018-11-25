@@ -1,0 +1,25 @@
+{
+  "name": "pesosalud-frontend",
+  "version": "1.0.0",
+  "description": "Front-end for PesoSalud project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobnuno/pesosalud-frontend.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jacobnuno/pesosalud-frontend/issues"
+  },
+  "homepage": "https://github.com/jacobnuno/pesosalud-frontend#readme",
+  "dependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "mustache": "^3.0.1"
+  }
+}
