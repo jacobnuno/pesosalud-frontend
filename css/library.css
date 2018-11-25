@@ -13,6 +13,7 @@
 body {
   color: var(--gray-color);
   background-color: #F2F2F2;
+  margin: 1em;
 }
 
 input {
@@ -198,16 +199,6 @@ td {
 
 .horizontal-list > li{
   display: inline;
-}
-
-.quote p {
-  text-align: right;
-  font-style: italic;
-  margin: 0px;
-}
-
-.author-quote {
-  font-weight: bold;
 }
 
 .img {

@@ -38,6 +38,16 @@ footer a:hover {
 
 }
 
+.quote p {
+  text-align: right;
+  font-style: italic;
+  margin: 0px;
+}
+
+.author-quote {
+  font-weight: bold;
+}
+
 header div .is-multiline{
   height: 100%
 }
@@ -98,4 +108,33 @@ form {
   border: 1px solid var(--light-gray-color);
   padding: .4em 0 .4em .5em;
   border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  header, footer {
+    border-radius: 4px;
+  }
+  .drop-list {
+    display: none;
+  }
+  .logo {
+    text-align: center;
+  }
+  .title1 {
+    text-align: justify;
+  }
+  .what-is-nutrition {
+    margin: 0;
+    text-align: justify;
+  }
+  .quote p, .pierde-peso h4, .pierde-peso p {
+    text-align: justify;
+  }
+  .nutricion img, .pierde-peso img {
+    border-radius: 4px;
+  }
+  .maps {
+    max-width: 100%;
+    border-radius: 4px;
+  }
 }
