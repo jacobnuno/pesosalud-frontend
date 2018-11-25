@@ -7,11 +7,22 @@ header{
 }
 
 footer {
-  background-color: #ddd;
+  background-color: var(--light-gray-color);
   height: 3em;
   width: 100%;
   padding: 0px, 10px;
   display: inline-block;
+  color: black;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+  padding-left: 1.5em;
+}
+
+footer a:hover {
+  background: var(--gray-color);
 }
 
 .logo{
@@ -56,7 +67,7 @@ p {
 
 .servicios > div {
   background-color: #E6F2FF;
-  border-radius: 50px;
+  border-radius: 1em;
   border: 1px solid;
 }
 
@@ -74,6 +85,7 @@ p {
   opacity: 0.7;
   border: 1px solid black;
   filter: alpha(opacity=60);
+  border-radius: .8em;
 }
 
 .mision h3 {
