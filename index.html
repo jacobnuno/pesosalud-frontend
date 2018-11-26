@@ -6,6 +6,8 @@
       <title>Peso y Salud</title>
       <link rel="stylesheet" type="text/css" media="screen" href="css/library.css"/>
       <link rel="stylesheet" type="text/css" media="screen" href="css/index.css"/>
+      <link rel="stylesheet" type="text/css" media="screen" href="css/slider.css"/>
+      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     </head>
     <body>
@@ -37,20 +39,24 @@
             <img src="img/Nutricion.jpg" alt="Nutrición">
           </div>
         </div>
-        <div class="column is-12-desktop servicios">
-          <h2 class="is-center">Nuestros Servicios</h2>
-          <div class="column is-12-desktop">
-            <div class="column is-4-desktop is-multiline is-center">
-              <img src="img/AcupunturaEstetica.jpg" alt="Acupuntura Estetica">
-            </div>
-            <div class="column is-4-desktop is-multiline is-center">
-              <img src="img/AcupunturaFacial.jpg" alt="Acupuntura Estetica">
-            </div>
-            <div class="column is-4-desktop is-multiline is-center">
-              <img src="img/Electro.jpg" alt="Acupuntura Estetica">
-            </div>
+        <!-- Slider -->
+          <div class="slider">
+            <h2 class="is-center">Nuestros Servicios</h2>
+            <button type="button" id="prev"><i class="fa fa-angle-left"></i></button>
+            <ul>
+              <li class="slide active">
+                <a target="_blank" href=""><img src="./img/AcupunturaEstetica.jpg" alt="Acupuntura Estetica"></a>
+              </li>
+              <li class="slide">
+                <a target="_blank" href=""><img src="./img/AcupunturaFacial.jpg" alt="Acupuntura Facial"></a>
+              </li>
+              <li class="slide">
+                <a target="_blank" href=""><img src="./img/Electro.jpg" alt="Electro"></a>
+              </li>
+            </ul>
+            <button type="button" id="next"><i class="fa fa-angle-right"></i></button>
           </div>
-        </div>
+        <!-- Slider -->
         <div class="column is-12-desktop pierde-peso">
           <div class="column is-offset-1-desktop is-4-desktop is-multiline is-center">
             <img src="img/Frutas.jpg" alt="Frutas">
@@ -71,7 +77,7 @@
           </div>
         </div>
         <div class="column is-12-desktop contacto">
-          <div class="column is-6-desktop is-offset-3-mobile is-multiline">
+          <div class="column is-6-desktop is-offset-3-mobile is-multiline contact-form">
             <h3 class="column is-10-desktop is-offset-1-desktop is-center">Contacto</h3>
             <form class="column is-10-desktop is-offset-1-desktop">
               <label class="column is-10-desktop is-offset-1-desktop" for="">Nombre</label>
@@ -96,5 +102,7 @@
           <a class="" href="./cookies.html">Cookies</a>
         </div>
       </footer>
+      <script src="js/slider.js"></script>
+      <script src="js/events.js"></script>
    </body>
 </html>

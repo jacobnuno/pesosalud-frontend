@@ -121,9 +121,25 @@ img {
   border-radius: 4px;
 }
 
+.slider {
+  margin-bottom: 3em !important;
+}
+
+.slider h2 {
+  margin: 2em 0 1.5em 0;
+  font-size: 2em;
+}
+
+.slider img {
+  height: 17em;
+}
+
 @media screen and (max-width: 768px) {
   header, footer {
     border-radius: 4px;
+  }
+  .contact-form {
+    margin-left: 18% !important;
   }
   .drop-list {
     display: none;
@@ -147,5 +163,16 @@ img {
   .maps {
     max-width: 100%;
     border-radius: 4px;
+  }
+  .slider {
+    max-width: 100%;
+  }
+  #prev {
+    left: 0em !important;
+    z-index: 10 !important;
+  }
+  #next {
+    right: 0em !important;
+    z-index: 10 !important;
   }
 }
