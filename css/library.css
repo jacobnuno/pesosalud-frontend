@@ -1,9 +1,78 @@
 :root {
-  --green-color: #34a853;
+  --green-color: #71B627;
   --blue-color: #4285f4;
   --orange-color: #fbbc05;
-  --blue-color: #4285f4;
+  --red-color: #ea4335;
   --light-blue-color: #5bc0de;
+  --gray-color: #333333;
+  --light-gray-color: #ced4da;
+  --link-blue: #337ab7;
+  --light: #E0E0E0;
+}
+
+body {
+  color: var(--gray-color);
+  background-color: #F2F2F2;
+}
+
+input {
+  height: 2.2em;
+  padding: .1em 0 0 1em;
+  border-radius: 4px;
+  border: 1px solid var(--light-gray-color);
+  border-radius: 4px;
+}
+
+input[type="radio"] {
+  outline: none;
+}
+
+input:focus {
+  border: 1px solid var(--green-color);
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
+  box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
+}
+
+textarea:focus {
+  border: 1px solid var(--green-color);
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
+  box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
+}
+
+table {
+  margin-top: 3em;
+}
+
+thead {
+  background: var(--light-gray-color);
+}
+
+tbody tr:hover {
+  background: var(--light);
+}
+
+td, th {
+  border: 1px solid var(--light-gray-color);
+}
+
+td {
+  padding: 0 .4em;
+}
+
+.table-responsive {
+  display: block;
+  overflow-x: auto;
+}
+
+.is-flex {
+  display: flex;
+}
+
+.form-group {
+  display: block;
+  width: 100%;
 }
 
 .btn {
@@ -12,7 +81,11 @@
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  outline: none;
+  height: 2.5em;
+  margin: .3em 0;
 }
 
 .btn-green {
@@ -36,11 +109,13 @@
 }
 
 .btn-link {
-  color: #337ab7;
+  color: var(--link-blue);
+  text-decoration: underline;
+  outline: none;
 }
 
 .btn-link:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .btn-action {

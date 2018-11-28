@@ -2,10 +2,9 @@ h2 {
   font-size: 2.5em;
   text-align: center;
   font-family:sans-serif;
+  margin:15px;
   /* background-color: #4285f4; */
-
 }
-
 .services div{
   display: flex;
   justify-content:space-around;
@@ -18,7 +17,8 @@ h2 {
   border: 5px solid #34a853; */
   height: 150px;
   width: 260px;
-  margin: 10px;
+  margin: 5px;
+
   justify-content: center;
 }
 .services p{
@@ -26,5 +26,10 @@ h2 {
   letter-spacing: normal;
   padding: 15px;
   justify-content: space-around;
+  font-size: 1.5em;
+}
+ul li a{
+  text-decoration: none;
+  font-size: 20px;
 
 }
