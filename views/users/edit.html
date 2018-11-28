@@ -17,7 +17,7 @@
         <form class="column is-6-desktop is-offset-3-desktop is-10-mobile is-offset-1-mobile login" action="index.html" method="post">
           <div class="column is-6-desktop is-multiline">
             <label for="name" class="column is-10-desktop">Nombre</label>
-            <input type="text" class="column is-8-desktop" name="name" value="" required>
+            <input type="text" class="column is-8-desktop" name="name" value="" data-rule="word" required>
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="email" class="column is-10-desktop">E-mail</label required>
@@ -59,12 +59,13 @@
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="photo" class="column is-8-desktop" class="column is-10-desktop">Imagen de perfil</label>
-            <input type="file" class="column is-8-desktop" name="photo">
+            <input type="file" class="column is-8-desktop" name="photo" data-rule="image" accept="image/jpeg, image/png">
           </div>
-          <button type="button" name="button" class="btn btn-blue">Guardar</button>
+          <button type="submit" name="button" class="btn btn-blue" data-type="submit">Guardar</button>
         </form>
       </div>
 
       <!-- TODO: FOOTER -->
+      <script src="../../js/validateForm.js"></script>
    </body>
 </html>
