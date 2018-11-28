@@ -3,15 +3,29 @@ header{
   height: 5em;
   width: 100%;
   padding: 0px, 10px;
-  display: inline-block;
+  display: flex;
+  line-height: 5em;
+  border-radius: 4px;
 }
 
 footer {
-  background-color: #ddd;
+  background-color: var(--light-gray-color);
   height: 3em;
   width: 100%;
   padding: 0px, 10px;
   display: inline-block;
+  color: black;
+  border-radius: 4px;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+  margin-left: 1.5em;
+}
+
+footer a:hover {
+  background: var(--gray-color);
 }
 
 .logo{
@@ -24,6 +38,16 @@ footer {
   padding: 0;
   box-sizing: border-box;
 
+}
+
+.quote p {
+  text-align: right;
+  font-style: italic;
+  margin: 0px;
+}
+
+.author-quote {
+  font-weight: bold;
 }
 
 header div .is-multiline{
@@ -55,9 +79,9 @@ p {
 }
 
 .servicios > div {
-  background-color: #E6F2FF;
-  border-radius: 50px;
-  border: 1px solid;
+  background-color: #e0ffd5;
+  border-radius: 1em;
+  border: 1px solid #488a00;
 }
 
 .pierde-peso img{
@@ -67,13 +91,15 @@ p {
 .mision-back {
   background-image: url("../img/BackgroudMission.jpg");
   padding: 10px 0px;
+  border-radius: 4px;
 }
 
 .mision {
   background-color: #FFFFFF;
   opacity: 0.7;
-  border: 1px solid black;
+  border: 1px solid #488a00;
   filter: alpha(opacity=60);
+  border-radius: .8em;
 }
 
 .mision h3 {
@@ -85,4 +111,73 @@ form {
   border: 1px solid var(--light-gray-color);
   padding: .4em 0 .4em .5em;
   border-radius: 4px;
+}
+
+.maps {
+  border-radius: 4px;
+}
+
+img {
+  border-radius: 4px;
+}
+
+.pys-slider {
+  background-color: #e0ffd5;
+  border-radius: 4px;
+}
+
+.slider {
+  padding-bottom: 3em !important;
+}
+
+.slider h2 {
+  margin: 2em 0 1.5em 0;
+  font-size: 2em;
+}
+
+.slider img {
+  height: 17em;
+}
+
+@media screen and (max-width: 768px) {
+  header, footer {
+    border-radius: 4px;
+  }
+  .contact-form {
+    margin-left: 18% !important;
+  }
+  .drop-list {
+    display: none;
+  }
+  .logo {
+    text-align: center;
+  }
+  .title1 {
+    text-align: justify;
+  }
+  .what-is-nutrition {
+    margin: 0;
+    text-align: justify;
+  }
+  .quote p, .pierde-peso h4, .pierde-peso p {
+    text-align: justify;
+  }
+  .nutricion img, .pierde-peso img {
+    border-radius: 4px;
+  }
+  .maps {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+  .slider {
+    max-width: 100%;
+  }
+  #prev {
+    left: 0em !important;
+    z-index: 10 !important;
+  }
+  #next {
+    right: 0em !important;
+    z-index: 10 !important;
+  }
 }
