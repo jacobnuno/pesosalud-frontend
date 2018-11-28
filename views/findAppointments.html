@@ -8,19 +8,20 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
   <body>
-    <div class="main">
-      <div class="main" >
-        <h2 class="column is-2-desktop is-offset-5-desktop is-12-mobile title is-center">Busca tus citas</h2>
-        <form class="column is-2-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile appointment is-center" action="index.html" method="post">
-          <label for=""class="column is-10-desktop">Busca por fecha</label>
+    <div class="main" >
+      <h2 class="column is-2-desktop is-offset-5-desktop is-12-mobile title is-center">Busca tus citas</h2>
+      <form class="column is-2-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile appointment is-center" action="index.html" method="post">
+        <div class="column is-12-desktop is-multiline">
+          <label for=""class="column is-12-desktop">Busca por fecha</label>
           <input type="date" name="fecha">
-          <button type="button" name="b_fecha" class="btn btn-blue">Buscar</button>
-          <label for=""class="column is-10-desktop">Busca por nombre</label>
-          <input type="text" name="user_id" placeholder="Juan">
-          <button type="button" name="b_fecha" class="btn btn-blue">Buscar</button>
-
-        </form>
-      </div>
-
+        </div>
+        <button type="button" name="b_fecha" class="btn btn-blue" data-type="submit">Buscar</button>
+        <div class="column is-12-desktop is-multiline">
+          <label for=""class="column is-12-desktop">Busca por nombre</label>
+          <input type="text" name="user_id" placeholder="Juan" data-rule="word" required>
+        </div>
+        <button type="button" name="b_fecha" class="btn btn-blue" data-type="submit">Buscar</button>
+      </form>
+    </div>
   </body>
 </html>

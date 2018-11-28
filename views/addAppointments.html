@@ -10,8 +10,9 @@
     <div class="main">
         <h1 class="column is-3-desktop is-offset-5-desktop is-12-mobile title is-center">Agenda una cita</h1>
         <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile appointment is-center" action="index.html" method="post">
-          <label for=""class="column is-10-desktop">Tipo de servicio</label>
-          <select class="" name="service">
+          <div class="is-multiline column is-10-desktop">
+            <label for=""class="column is-12-desktop">Tipo de servicio</label>
+            <select class="" name="service">
             <option value="">Elige una opcion</option>
             <option value="Electroacupuntura">Electroacupuntura</option>
             <option value="Electrocelulipolisis">Electrocelulipolisis</option>
@@ -24,17 +25,22 @@
             <option value="Gluteos">Lifting de glúteos</option>
             <option value="Senos">Lifting de senos</option>
             </select>
-          <label for=""class="column is-10-desktop">Fecha</label>
-          <input type="date" name="fecha">
-          <label for=""class="column is-10-desktop">Hora</label>
-          <input type="time" name="hour">
-          <br>
-          <button type="button" name="add_appointment" class="btn btn-blue">Hacer cita</button>
+          </div>
+          <div class="is-multiline column is-10-desktop">
+            <label for=""class="column is-12-desktop">Fecha</label>
+            <input type="date" name="fecha">
+          </div>
+          <div class="is-multiline column is-10-desktop">
+            <label for=""class="column is-12-desktop">Hora</label>
+            <input type="time" name="hour">
+            <br>
+          </div>
+          <button type="button" name="add_appointment" class="btn btn-blue" data-type="submit">Hacer cita</button>
           </form>
           <div class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile login new-register is-center">
             <span>No recuerdas tus citas?</span>
             <a href="#" class="btn-link">Búscalas aqui</a>
           </div>
-        </div>
+    </div>
     </body>
 </html>
