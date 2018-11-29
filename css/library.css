@@ -16,8 +16,11 @@ body {
   margin: 1em;
 }
 
-input {
+input, select {
   height: 2.2em;
+}
+
+input, select, textarea {
   padding: .1em 0 0 1em;
   border-radius: 4px;
   border: 1px solid var(--light-gray-color);
@@ -175,10 +178,6 @@ td {
   overflow-x: auto;
 }
 
-.is-flex {
-  display: flex;
-}
-
 .form-group {
   display: block;
   width: 100%;
@@ -210,7 +209,7 @@ td {
   color: var(--red-color);
 }
 
-.has-error input {
+.has-error input, .has-error select {
   border: 1px solid var(--red-color);
 }
 
@@ -398,5 +397,15 @@ td {
   }
   .column.is-offset-12-desktop {
     margin-left: 100%;
+  }
+
+  .is-vertical-center {
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+  }
+
+  .is-flex {
+    display: flex;
   }
 }
