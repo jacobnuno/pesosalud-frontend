@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Crear Promocion</title>
+      <link rel="icon" href="img/favicon.ico">
+      <link rel="stylesheet" type="text/css" media="screen" href="..css/library.css"/>
+      <link rel="stylesheet" type="text/css" media="screen" href="..css/login.css"/>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+          <div class="column is-1-desktop is-multiline">
+            <img src="img/logo.png" alt="Logo" class="logo">
+          </div>
+          <div class="column is-offset-5-desktop is-6-desktop is-multiline">
+            <ul class="horizontal-list menu">
+              <li><a href="#">USUARIOS</a></li>
+              <li><a href="#">PROMOCIONES</a></li>
+              <li><a href="#">SERVICIOS</a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          </div>
+        </header>
+      <div class="main">
+        <h1 class="column is-6-desktop is-offset-3-desktop is-12-mobile title is-center">Crear Promociones</h1>
+
+        <form class="column is-6-desktop is-offset-3-desktop is-10-mobile is-offset-1-mobile login" action="index.html" method="post">
+          <div class="column is-6-desktop is-multiline">
+            <label for="Idprom" class="column is-10-desktop">No. Promocion : </label>
+            <output class="column is-8-desktop" name="Idprom">1</output>
+          </div>
+          <div class="column is-6-desktop is-multiline">
+            <label for="Idser" class="column is-10-desktop">Aplicar Promocion a :</label required>
+              <select class="column is-8-desktop" name="Idser">
+                <option selected value=""> -- </option>
+                <option value="">Todos</option>
+                <option value="1">Homeopatia</option>
+                <option value="2">Electrocelulipulosis</option>
+                <option value="3">Control de Peso con Acupuntura</option>
+              </select>
+          </div>
+          <div class="column is-6-desktop is-multiline">
+            <label for="description"  class="column is-10-desktop">Descripcion :</label required>
+            <input class="column is-8-desktop" type="text" name="description" value="" data-rule="description" >
+          </div>
+          <div class="column is-12-desktop">
+            <div class="column is-6-desktop is-multiline">
+              <label for="dateStart" class="column is-10-desktop">Inicio</label>
+              <input type="date" class="column is-8-desktop" id="dateStart" name="dateStart" value="dateStart" data-rule="dateStart">
+            </div>
+            <div class="column is-6-desktop is-multiline">
+              <label for="dateEnd" class="column is-10-desktop">Fin</label>
+              <input type="date" class="column is-8-desktop" id="dateEnd" name="dateEnd" value="dateEnd" data-rule="dateEnd">
+            </div>
+          </div>
+          <div class="column is-6-desktop is-multiline">
+            <label for="phone" class="column is-10-desktop">Cantidad</label>
+            <input type="text" class="column is-8-desktop" name="phone" value="" data-rule="number">
+          </div>
+
+          <button type="button" name="button" class="btn btn-green" data-type="submit">Crear</button>
+        </form>
+      </div>
+      <footer>
+          <div class="column is-12-desktop is-center">
+            <span>Derechos Reservados</span>
+          </div>
+      </footer>
+      <script src="../../js/validator.js"></script>
+   </body>
+</html>
