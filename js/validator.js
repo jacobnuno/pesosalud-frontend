@@ -5,8 +5,7 @@ const inputs = form.getElementsByTagName('input');
 buttonSubmit.onclick = function () {
   for (const input of inputs) {
     let rule = input.getAttribute('data-rule');
-    console.log('rule: ', rule);
-    if(rule != 'radio' && rule != 'image') {
+    if(rule != 'radio' && rule != 'image' && rule != 'password') {
       hasError(input);
       window[rule](input);
     }
@@ -14,8 +13,7 @@ buttonSubmit.onclick = function () {
 };
 
 const regex = {
-    // word: /[a-zA-ZñÑ ]{3,}/,
-    word: /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/,
+    word: /^[a-zA-Z\s]+$/,
     email: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     number: /^\d+$/,
     decimal: /^(\d+\.?\d{0,4}|\.\d{1,4})$/,
@@ -57,22 +55,32 @@ function word(input) {
     }
 }
 
-function number(data) {
-    return (this.regex.number.test(data));
+function number(input) {
+    if (!regex.number.test(input.value)) {
+        addError(input);
+    }
 }
 
-function decimal(data) {
-    return (this.regex.decimal.test(data));
+function decimal(input) {
+    if (!regex.decimal.test(input.value)) {
+        addError(input);
+    }
 }
 
-function date(data) {
-    return (this.regex.date.test(data));
+function date(input) {
+    if (!regex.date.test(input.value.replace(/-/g, ''))) {
+        addError(input);
+    }
 }
 
-function hour(data) {
-    return (this.regex.hour.test(data));
+function hour(input) {
+    if (!regex.hour.test(input.value)) {
+        addError(input);
+    }
 }
 
-function email(data) {
-    return (this.regex.email.test(data));
+function email(input) {
+    if (!regex.email.test(input.value)) {
+        addError(input);
+    }
 }
