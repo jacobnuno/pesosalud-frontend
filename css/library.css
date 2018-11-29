@@ -174,10 +174,6 @@ td {
   overflow-x: auto;
 }
 
-.is-flex {
-  display: flex;
-}
-
 .form-group {
   display: block;
   width: 100%;
