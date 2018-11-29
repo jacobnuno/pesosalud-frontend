@@ -1,1 +1,0 @@
-exports.validator = require('./validator');
