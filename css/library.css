@@ -206,6 +206,25 @@ td {
   height: 9em;
 }
 
+.has-error {
+  color: var(--red-color);
+}
+
+.has-error input {
+  border: 1px solid var(--red-color);
+}
+
+.has-error input:focus {
+  border: 1px solid var(--red-color);
+  -webkit-box-shadow: 0px 0px 5px 1px var(--red-color);
+  -moz-box-shadow: 0px 0px 5px 1px var(--red-color);
+  box-shadow: 0px 0px 5px 1px var(--red-color);
+}
+
+.has-error span {
+  font-size: .7em;
+}
+
 /* mobile */
 @media screen and (max-width: 768px) {
   .column.is-1-mobile {

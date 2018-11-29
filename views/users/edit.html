@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="es" dir="ltr">
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,41 +17,41 @@
         <form class="column is-6-desktop is-offset-3-desktop is-10-mobile is-offset-1-mobile login" action="index.html" method="post">
           <div class="column is-6-desktop is-multiline">
             <label for="name" class="column is-10-desktop">Nombre</label>
-            <input type="text" class="column is-8-desktop" name="name" value="" required>
+            <input type="text" class="column is-8-desktop" name="name" value="" data-rule="word" required>
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="email" class="column is-10-desktop">E-mail</label required>
-            <input class="column is-8-desktop" type="text" name="email" value="" placeholder="ejemplo@ejemplo.com">
+            <input class="column is-8-desktop" type="text" name="email" value="" data-rule="email" placeholder="ejemplo@ejemplo.com">
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="password"  class="column is-10-desktop">Contraseña</label required>
-            <input class="column is-8-desktop" type="password" name="password" value="" placeholder="Contraseña">
+            <input class="column is-8-desktop" type="password" name="password" value="" data-rule="password" placeholder="Contraseña">
           </div>
           <div class="column is-12-desktop">
             <div class="column is-6-desktop is-multiline">
               <label for="female" class="column is-10-desktop">Femenino</label>
-              <input type="radio" class="column is-8-desktop" id="female" name="genre" value="f" >
+              <input type="radio" class="column is-8-desktop" id="female" name="genre" value="f" data-rule="radio">
             </div>
             <div class="column is-6-desktop is-multiline">
               <label for="male" class="column is-10-desktop">Masculino</label>
-              <input type="radio" class="column is-8-desktop" id="male" name="genre" value="m" >
+              <input type="radio" class="column is-8-desktop" id="male" name="genre" value="m" data-rule="radio">
             </div>
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="phone" class="column is-10-desktop">Teléfono</label>
-            <input type="text" class="column is-8-desktop" name="phone" value="">
+            <input type="text" class="column is-8-desktop" name="phone" value="" data-rule="number">
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="height" class="column is-10-desktop">Peso</label>
-            <input type="text" class="column is-8-desktop" name="height" value="">
+            <input type="text" class="column is-8-desktop" name="height" value="" data-rule="decimal">
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="birthDate" class="column is-10-desktop">Fecha de Nacimiento</label>
-            <input type="date" class="column is-8-desktop" name="birthDate" value="">
+            <input type="date" class="column is-8-desktop" name="birthDate" value="" data-rule="date">
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="registeredDate" class="column is-10-desktop">Fecha de Alta</label>
-            <input type="date" class="column is-8-desktop" name="registeredDate" value="">
+            <input type="date" class="column is-8-desktop" name="registeredDate" value="" data-rule="date">
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="coments" class="column is-10-desktop">Comentarios</label>
@@ -59,12 +59,13 @@
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="photo" class="column is-8-desktop" class="column is-10-desktop">Imagen de perfil</label>
-            <input type="file" class="column is-8-desktop" name="photo">
+            <input type="file" class="column is-8-desktop" name="photo" data-rule="image" accept="image/jpeg, image/png">
           </div>
-          <button type="button" name="button" class="btn btn-blue">Guardar</button>
+          <button type="button" name="button" class="btn btn-blue" data-type="submit">Guardar</button>
         </form>
       </div>
 
       <!-- TODO: FOOTER -->
+      <script src="../../js/validator.js"></script>
    </body>
 </html>
