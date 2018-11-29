@@ -70,10 +70,6 @@ td {
   overflow-x: auto;
 }
 
-.is-flex {
-  display: flex;
-}
-
 .form-group {
   display: block;
   width: 100%;
@@ -417,5 +413,8 @@ td {
   }
   .column.is-offset-12-desktop {
     margin-left: 100%;
+  }
+  .is-flex {
+    display: flex;
   }
 }
