@@ -6,14 +6,16 @@
       <title>Peso y Salud</title>
       <link rel="stylesheet" type="text/css" media="screen" href="css/library.css"/>
       <link rel="stylesheet" type="text/css" media="screen" href="css/index.css"/>
+      <link rel="stylesheet" type="text/css" media="screen" href="css/slider.css"/>
+      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     </head>
     <body>
       <header>
-        <div class="column is-1-desktop is-multiline">
+        <div class="column is-1-desktop is-multiline logo">
           <img src="img/logo.png" alt="Logo" class="logo">
         </div>
-        <div class="column is-offset-5-desktop is-6-desktop is-multiline">
+        <div class="column is-offset-5-desktop is-6-desktop is-multiline drop-list">
           <ul class="horizontal-list menu">
             <li><a href="#">Nosotros</a></li>
             <li><a href="#">Servicios</a></li>
@@ -23,13 +25,13 @@
         </div>
       </header>
       <main>
-        <h1 class="is-center column is-12-desktop">¡La mejor opción para que logures un balacne entre tu peso y tu salud!</h1>
+        <h1 class="is-center column is-12-desktop title1">¡La mejor opción para que logres un balance entre tu peso y tu salud!</h1>
         <div class="column is-12-desktop is-12-mobile nutricion">
           <div class="column is-multiline is-offset-1-desktop is-6-desktop is-12-mobile">
-            <p>Se conoce como nutrición al proceso biológico a partir del cual el organismo asimila los alimentos y los líquidos necesarios para el crecimiento, funcionamiento y mantenimiento de las funciones vitales, pero nutrición también es la parte de la medicina que se ocupa del estudio de la mejor relación entre los alimentos y la salud.</p>
+            <p class="what-is-nutrition">Se conoce como nutrición al proceso biológico a partir del cual el organismo asimila los alimentos y los líquidos necesarios para el crecimiento, funcionamiento y mantenimiento de las funciones vitales, pero nutrición también es la parte de la medicina que se ocupa del estudio de la mejor relación entre los alimentos y la salud.</p>
             <br/>
-            <div class="quote column is-6-desktop is-offset-6-desktop is-6-mobile is-offset-6-mobile">
-              <p>"El cuerpo grita… Lo que la boca calla, La enfermeda es un conflicto entre la personalidad y el alma"</p>
+            <div class="quote column is-6-desktop is-offset-6-desktop is-12-mobile">
+              <p>"El cuerpo grita… lo que la boca calla, la enfermedad es un conflicto entre la personalidad y el alma"</p>
               <p class="author-quote">-Edward Bach</p>
             </div>
           </div>
@@ -37,26 +39,32 @@
             <img src="img/Nutricion.jpg" alt="Nutrición">
           </div>
         </div>
-        <div class="column is-12-desktop servicios">
-          <h2 class="is-center">Nuestros Servicios</h2>
-          <div class="column is-12-desktop">
-            <div class="column is-4-desktop is-multiline is-center">
-              <img src="img/AcupunturaEstetica.jpg" alt="Acupuntura Estetica">
-            </div>
-            <div class="column is-4-desktop is-multiline is-center">
-              <img src="img/AcupunturaFacial.jpg" alt="Acupuntura Estetica">
-            </div>
-            <div class="column is-4-desktop is-multiline is-center">
-              <img src="img/Electro.jpg" alt="Acupuntura Estetica">
-            </div>
+        <!-- Slider -->
+        <div class="pys-slider">
+          <div class="slider">
+            <h2 class="is-center">Nuestros Servicios</h2>
+            <button type="button" id="prev"><i class="fa fa-angle-left"></i></button>
+            <ul>
+              <li class="slide active">
+                <a target="_blank" href=""><img src="./img/AcupunturaEstetica.jpg" alt="Acupuntura Estetica"></a>
+              </li>
+              <li class="slide">
+                <a target="_blank" href=""><img src="./img/AcupunturaFacial.jpg" alt="Acupuntura Facial"></a>
+              </li>
+              <li class="slide">
+                <a target="_blank" href=""><img src="./img/Electro.jpg" alt="Electro"></a>
+              </li>
+            </ul>
+            <button type="button" id="next"><i class="fa fa-angle-right"></i></button>
           </div>
         </div>
+        <!-- Slider -->
         <div class="column is-12-desktop pierde-peso">
           <div class="column is-offset-1-desktop is-4-desktop is-multiline is-center">
             <img src="img/Frutas.jpg" alt="Frutas">
           </div>
           <div class="column is-7-desktop is-multiline">
-            <h4>Baja de peso comiendo, los Resultados inmediatos, !Atrevete a Probarlos!</h4>
+            <h4>Baja de peso comiendo, los resultados inmediatos, !Atrevete a Probarlos!</h4>
             <div class="column is-offset-6-desktop is-6-desktop quote">
               <p>"La perdida de peso gradual trae multiples beneficios para la salud"</p>
             </div>
@@ -71,29 +79,32 @@
           </div>
         </div>
         <div class="column is-12-desktop contacto">
-          <div class="column is-6-desktop is-multiline">
+          <div class="column is-6-desktop is-offset-3-mobile is-multiline contact-form">
             <h3 class="column is-10-desktop is-offset-1-desktop is-center">Contacto</h3>
             <form class="column is-10-desktop is-offset-1-desktop">
               <label class="column is-10-desktop is-offset-1-desktop" for="">Nombre</label>
-              <input class="column is-10-desktop is-offset-1-desktop" type="text" name="Name" placeholder="Nombre">
+              <input class="column is-10-desktop is-offset-1-desktop" type="text" name="name" placeholder="Introduce tu nombre completo" required>
               <label class="column is-10-desktop is-offset-1-desktop" for="">Teléfono</label>
-              <input class="column is-10-desktop is-offset-1-desktop" type="text" name="Phone" placeholder="Nombre">
+              <input class="column is-10-desktop is-offset-1-desktop" type="text" name="phone" placeholder="Introduce tu teléfono" required>
               <label class="column is-10-desktop is-offset-1-desktop" for="">Correo</label>
-              <input class="column is-10-desktop is-offset-1-desktop" type="text" name="Email" placeholder="Nombre">
+              <input class="column is-10-desktop is-offset-1-desktop" type="text" name="email" placeholder="ejemplo@ejemplo.com" required>
               <label class="column is-10-desktop is-offset-1-desktop" for="">Mensaje</label>
-              <input class="column is-10-desktop is-offset-1-desktop" type="text" name="Message" placeholder="Nombre">
+              <input class="column is-10-desktop is-offset-1-desktop" type="text" name="message" placeholder="Escribe algo..." required>
               <button type="button" name="button" class="btn btn-green is-offset-1-desktop" >Enviar</button>
             </form>
           </div>
-          <div class="column is-6-desktop is-multiline">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119393.0803264913!2d-103.46046418048333!3d20.74942569576328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428af97ecfd0dc7%3A0xe8359240692a201a!2sPeso+y+Salud!5e0!3m2!1ses-419!2smx!4v1542703619694" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <div class="column is-6-desktop is-multiline is-12-mobile">
+            <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119393.0803264913!2d-103.46046418048333!3d20.74942569576328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428af97ecfd0dc7%3A0xe8359240692a201a!2sPeso+y+Salud!5e0!3m2!1ses-419!2smx!4v1542703619694" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
           </div>
         </div>
       </main>
       <footer>
         <div class="column is-12-desktop is-center">
-          Derechos Reservados
+          <span>Derechos Reservados para Peso y Salud</span>
+          <a class="" href="./cookies.html">Cookies</a>
         </div>
       </footer>
+      <script src="js/slider.js"></script>
+      <script src="js/events.js"></script>
    </body>
 </html>

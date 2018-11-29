@@ -13,6 +13,7 @@
 body {
   color: var(--gray-color);
   background-color: #F2F2F2;
+  margin: 1em;
 }
 
 input {
@@ -200,19 +201,28 @@ td {
   display: inline;
 }
 
-.quote p {
-  text-align: right;
-  font-style: italic;
-  margin: 0px;
-}
-
-.author-quote {
-  font-weight: bold;
-}
-
 .img {
   width: 9em;
   height: 9em;
+}
+
+.has-error {
+  color: var(--red-color);
+}
+
+.has-error input {
+  border: 1px solid var(--red-color);
+}
+
+.has-error input:focus {
+  border: 1px solid var(--red-color);
+  -webkit-box-shadow: 0px 0px 5px 1px var(--red-color);
+  -moz-box-shadow: 0px 0px 5px 1px var(--red-color);
+  box-shadow: 0px 0px 5px 1px var(--red-color);
+}
+
+.has-error span {
+  font-size: .7em;
 }
 
 /* mobile */
