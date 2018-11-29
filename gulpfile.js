@@ -1,20 +1,10 @@
 const gulp = require('gulp');
-const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
-const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const pump = require('pump');
 const cssnano = require('gulp-cssnano');
 const imagemin = require('gulp-imagemin');
 const gulpSequence = require('gulp-sequence');
-
-// gulp.task('babel', () => {
-//     gulp.src('js/*.js')
-//         .pipe(babel({
-//             presets: ['env'],
-//         }))
-//         .pipe(gulp.dest('dist/js'));
-// });
 
 gulp.task('babel', () => {
     gulp.src('js/*.js')
@@ -47,12 +37,10 @@ gulp.task('copyIndex', () => gulp.src('index.html')
 gulp.task('copyViews', () => gulp.src('views/**/*')
     .pipe(gulp.dest('./dist/views')));
 
-// href
-
 gulp.task('default', gulpSequence(['cssnano', 'imagemin'], 'babel', ['copyIndex', 'copyViews'], 'uglify'));
 
 gulp.watch('js/*.js', (event) => {
     gulpSequence('babel', 'uglify')((err) => {
-        // if (err) console.log(err);
+        if (err) console.log(err);
     });
 });
