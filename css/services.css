@@ -16,7 +16,7 @@ h2 {
   margin: 5px;
   justify-content: center;
 }
-.services p{
+.text p{
   margin: 10px;
   letter-spacing: normal;
   padding: 15px;
@@ -26,5 +26,4 @@ h2 {
 ul li a{
   text-decoration: none;
   font-size: 20px;
-
 }
