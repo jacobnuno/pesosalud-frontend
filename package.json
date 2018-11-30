@@ -20,8 +20,7 @@
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "font-awesome": "^4.7.0",
-    "mustache": "^3.0.1"
+    "font-awesome": "^4.7.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

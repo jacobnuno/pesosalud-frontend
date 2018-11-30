@@ -39,7 +39,7 @@ gulp.task('copyViews', () => gulp.src('views/**/*')
 
 gulp.task('default', gulpSequence(['cssnano', 'imagemin'], 'babel', ['copyIndex', 'copyViews'], 'uglify'));
 
-gulp.watch('js/*.js', (event) => {
+gulp.watch('js/*.js', () => {
     gulpSequence('babel', 'uglify')((err) => {
         if (err) console.log(err);
     });
