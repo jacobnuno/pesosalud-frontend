@@ -25,42 +25,43 @@
         </header>
       <div class="main">
         <h1 class="column is-6-desktop is-offset-3-desktop is-12-mobile title is-center">Crear Promociones</h1>
-
         <form class="column is-6-desktop is-offset-3-desktop is-10-mobile is-offset-1-mobile login" action="index.html" method="post">
-          <div class="column is-6-desktop is-multiline">
-            <label for="Idprom" class="column is-10-desktop">No. Promocion : </label>
-            <output class="column is-8-desktop" name="Idprom">1</output>
-          </div>
-          <div class="column is-6-desktop is-multiline">
-            <label for="Idser" class="column is-10-desktop">Aplicar Promocion a :</label required>
-              <select class="column is-8-desktop" name="Idser">
-                <option selected value=""> -- </option>
-                <option value="">Todos</option>
-                <option value="1">Homeopatia</option>
-                <option value="2">Electrocelulipulosis</option>
-                <option value="3">Control de Peso con Acupuntura</option>
+          <div class="column is-12-desktop is-12-mobile">
+            <label for="Idser" class="column is-10-desktop is-offset-1-desktop">Aplicar Promocion a :</label required>
+              <select class="column is-10-desktop is-offset-1-desktop" name="Idser">
+                <option value="">Elige una opcion</option>
+                <option value="Electroacupuntura">Electroacupuntura</option>
+                <option value="Electrocelulipolisis">Electrocelulipolisis</option>
+                <option value="Enfermedad">Consulta por enfermedad</option>
+                <option value="Peso">Control de peso</option>
+                <option value="Homeopatia">Homeopatía</option>
+                <option value="Mesoterapia">Mesoterapia</option>
+                <option value="peso-acupuntura">Control de peso con acupuntura</option>
+                <option value="Rejuvenecimiento">Rejuvenecimiento facial con acupuntura</option>
+                <option value="Gluteos">Lifting de glúteos</option>
+                <option value="Senos">Lifting de senos</option>
               </select>
           </div>
-          <div class="column is-6-desktop is-multiline">
-            <label for="description"  class="column is-10-desktop">Descripcion :</label required>
-            <input class="column is-8-desktop" type="text" name="description" value="" data-rule="description" >
-          </div>
           <div class="column is-12-desktop">
-            <div class="column is-6-desktop is-multiline">
+            <label for="description"  class="column is-10-desktop is-offset-1-desktop">Descripcion :</label required>
+            <textarea name="description" class="column is-10-desktop is-offset-1-desktop" placeholder="Detalles de Promocion"></textarea>
+          </div>
+          <div class="column is-10-desktop is-offset-1-desktop is-multiline">
+            <div class="column is-5-desktop is-multiline">
               <label for="dateStart" class="column is-10-desktop">Inicio</label>
-              <input type="date" class="column is-8-desktop" id="dateStart" name="dateStart" value="dateStart" data-rule="dateStart">
+              <input type="date" class="column is-12-desktop" id="dateStart" name="dateStart" value="dateStart" data-rule="dateStart">
             </div>
-            <div class="column is-6-desktop is-multiline">
+            <div class="column is-5-desktop is-offset-2-desktop is-multiline">
               <label for="dateEnd" class="column is-10-desktop">Fin</label>
-              <input type="date" class="column is-8-desktop" id="dateEnd" name="dateEnd" value="dateEnd" data-rule="dateEnd">
+              <input type="date" class="column is-12-desktop" id="dateEnd" name="dateEnd" value="dateEnd" data-rule="dateEnd">
             </div>
           </div>
-          <div class="column is-6-desktop is-multiline">
-            <label for="phone" class="column is-10-desktop">Cantidad</label>
-            <input type="text" class="column is-8-desktop" name="phone" value="" data-rule="number">
+          <div class="column is-10-desktop is-offset-1-desktop is-multiline">
+            <label for="cantidad" class="column is-12-desktop">Cantidad</label>
+            <input type="text" class="column is-12-desktop" name="cantidad" value="" data-rule="cant">
           </div>
 
-          <button type="button" name="button" class="btn btn-green" data-type="submit">Crear</button>
+          <button type="button" name="button" class="btn btn-green column is-2-desktop is-offset-5-desktop" data-type="submit">Crear</button>
         </form>
       </div>
       <footer>

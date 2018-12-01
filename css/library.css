@@ -13,10 +13,7 @@
 body {
   color: var(--gray-color);
   background-color: #F2F2F2;
-<<<<<<< HEAD
   margin: 1em;
-=======
->>>>>>> feature_services
 }
 
 input {
@@ -196,7 +193,6 @@ td {
   display: inline;
 }
 
-<<<<<<< HEAD
 .img {
   width: 9em;
   height: 9em;
@@ -219,7 +215,8 @@ td {
 
 .has-error span {
   font-size: .7em;
-=======
+}
+
 .quote p {
   text-align: right;
   font-style: italic;
@@ -233,7 +230,6 @@ td {
 .img {
   width: 9em;
   height: 9em;
->>>>>>> feature_services
 }
 
 /* mobile */
