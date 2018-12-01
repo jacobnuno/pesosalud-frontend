@@ -2,14 +2,17 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Appointment</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/library.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/appointment.css"/>
-  </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Citas</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/login.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    </head>
     <body>
-    <div class="main">
+      <div class="main">
         <h1 class="column is-3-desktop is-offset-5-desktop is-12-mobile title is-center">Agenda una cita</h1>
-        <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile appointment is-center" action="index.html" method="post">
+
+        <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile login is-center" action="index.html" method="post">
           <div class="is-multiline column is-10-desktop">
             <label for=""class="column is-12-desktop">Tipo de servicio</label>
             <select class="" name="service">
@@ -27,12 +30,12 @@
             </select>
           </div>
           <div class="is-multiline column is-10-desktop">
-            <label for=""class="column is-12-desktop">Fecha</label>
-            <input type="date" name="fecha">
+            <label for=""class="column is-12-desktop">Fecha</label required>
+            <input type="date" name="fecha" data-type="date">
           </div>
           <div class="is-multiline column is-10-desktop">
-            <label for=""class="column is-12-desktop">Hora</label>
-            <input type="time" name="hour">
+            <label for=""class="column is-12-desktop">Hora</label required>
+            <input type="time" name="hour" data-type="hour">
             <br>
           </div>
           <button type="button" name="add_appointment" class="btn btn-blue" data-type="submit">Hacer cita</button>
@@ -42,5 +45,7 @@
             <a href="#" class="btn-link">Búscalas aqui</a>
           </div>
     </div>
+      <script src="../../js/validator.js"></script>
+
     </body>
 </html>

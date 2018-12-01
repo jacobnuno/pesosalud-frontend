@@ -9,15 +9,15 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     </head>
     <body>
+
       <div class="main">
         <h1 class="column is-3-desktop is-offset-5-desktop is-12-mobile title is-center">Agenda una cita</h1>
 
-        <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile login is-center" method="post">
-          <div class="column is-12-desktop is-multiline is-12-mobile">
+        <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile login is-center" method="post" action="index">
 
-            <label for=""class="column is-12-desktop">Tipo de servicio</label>
+          <div class="column is-12-desktop is-multiline is-12-mobile">
+            <label for=""class="column is-12-desktop">Tipo de servicio</label required>
             <select class="column is-8-desktop is-10-mobile is-multiline" name="service">
-            <option value="">Elige una opcion</option>
             <option value="Electroacupuntura">Electroacupuntura</option>
             <option value="Electrocelulipolisis">Electrocelulipolisis</option>
             <option value="Enfermedad">Consulta por enfermedad</option>
@@ -30,13 +30,14 @@
             <option value="Senos">Lifting de senos</option>
             </select>
           </div>
-          <div class="column is-12-desktop is-multiline is-12-mobile">
-            <label for=""class="column is-12-desktop">Fecha</label required>
-            <input type="date" name="fecha">
+
+          <div class="column is-10-desktop is-multiline is-10-mobile">
+            <label for=""class="column is-12-desktop ">Fecha</label>
+            <input type="date" name="fecha" data-rule="date" required>
           </div>
-          <div class="column is-12-desktop is-multiline is-12-mobile">
-            <label for=""class="column is-12-desktop">Hora</label required>
-            <input type="time" name="hour">
+          <div class="column is-10-desktop is-multiline is-10-mobile">
+            <label for=""class="column is-12-desktop">Hora</label>
+            <input type="time" name="hour" data-rule="hour" required>
           </div>
           <button type="button" name="add_appointment" class="btn btn-blue"data-type="submit">Hacer cita</button>
           </form>

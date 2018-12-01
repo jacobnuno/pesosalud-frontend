@@ -1,29 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Editar dieta</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="../../css/login.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<html lang="es" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Editar dieta</title>
+      <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
+      <link rel="stylesheet" type="text/css" media="screen" href="../../css/login.css"/>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     </head>
-
-  <body>
+    <body>
     <div class="main">
-      <h1 class="column is-3-desktop is-offset-5-desktop is-12-mobile title is-center">Dietas</h1>
+
+      <h1 class="column is-3-desktop is-offset-5-desktop is-10-mobile title is-center">Dietas</h1>
 
       <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile login is-center" method="post">
+
         <h2 class="column is-8-desktop is-offset-2-desktop is-12-mobile is-center">Editar dieta</h2>
 
-        <div class="column is-12-desktop is-12-mobile is-multiline is-center">
-          <label for="name" class="column is-12-desktop is-12-mobile">Nombre</label>
-          <input class="column is-10-desktop is-6-mobile is-multiline"type="text" name="name" data-rule="word">
+        <div class="column is-12-desktop   ">
+          <label for="name" class="column is-10-desktop is-multiline">Nombre</label>
+          <input type="text" class="column is-10-desktop " name="name" value="" data-rule="word" required>
         </div>
 
-        <div class="column is-12-desktop is-12-mobile is-multiline is-center">
-          <label for="description" class="column is-12-desktop is-12-mobile">Descripcion</label>
-          <input class="column is-10-desktop is-6-mobile is-multiline"type="text" name="description"  data-rule="word">
+        <div class="column is-12-desktop ">
+          <label for="sescripcion" class="column is-10-desktop is-multiline">Descripcion</label>
+          <input type="text" class="column is-10-desktop " name="name" value="" data-rule="word" required>
         </div>
 
         <button type="button" name="edit_diets" class="btn btn-blue"data-type="submit">Actualizar</button>
