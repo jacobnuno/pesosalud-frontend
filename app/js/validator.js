@@ -3,6 +3,15 @@ const form = buttonSubmit.parentNode;
 const inputs = form.getElementsByTagName('input');
 
 buttonSubmit.onclick = function () {
+
+    for (const input of inputs) {
+        let rule = input.getAttribute('data-rule');
+        if (rule != 'radio' && rule != 'image' && rule != 'password') {
+            hasError(input);
+            window[rule](input);
+        }
+    }
+
   for (const input of inputs) {
     let rule = input.getAttribute('data-rule');
     if(rule != 'radio' && rule != 'image' && rule != 'password') {
@@ -26,7 +35,8 @@ function getError(input) {
     return `The field should be a valid ${inputRule}`;
 }
 
-function resetFormGroup(input) {
+
+function clearError(input) {
     // Remove the success and error classes
     input.parentNode.classList.remove('has-error');
     // and remove span error
@@ -45,7 +55,7 @@ function addError(input) {
 function hasError(input) {
     const divParent = input.parentNode;
     if (divParent.querySelector('span.has-error')) {
-        resetFormGroup(input);
+        clearError(input);
     }
 }
 
