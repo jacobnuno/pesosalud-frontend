@@ -3,6 +3,7 @@ const form = buttonSubmit.parentNode;
 const inputs = form.getElementsByTagName('input');
 
 buttonSubmit.onclick = function () {
+
     for (const input of inputs) {
         let rule = input.getAttribute('data-rule');
         if (rule != 'radio' && rule != 'image' && rule != 'password') {
@@ -10,6 +11,14 @@ buttonSubmit.onclick = function () {
             window[rule](input);
         }
     }
+
+  for (const input of inputs) {
+    let rule = input.getAttribute('data-rule');
+    if(rule != 'radio' && rule != 'image' && rule != 'password') {
+      hasError(input);
+      window[rule](input);
+    }
+  }
 };
 
 const regex = {
@@ -25,6 +34,7 @@ function getError(input) {
     const inputRule = input.getAttribute('data-rule');
     return `The field should be a valid ${inputRule}`;
 }
+
 
 function clearError(input) {
     // Remove the success and error classes
