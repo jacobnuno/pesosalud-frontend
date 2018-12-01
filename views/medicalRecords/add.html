@@ -53,7 +53,7 @@
           </div>
           <div class="is-multiline column is-6-desktop">
             <label for="diet" class="column is-11-desktop">Dieta</label>
-            <select class="column is-11-desktop" name="diet">
+            <select class="column is-11-desktop" name="diet" required>
               <option value="1">A1</option>
               <option value="2">A2</option>
               <option value="3">A3</option>
@@ -69,11 +69,11 @@
         <div class="column is-12-desktop">
           <div class="column is-12-desktop">
             <label for="symptom" class="column is-11-desktop">Sintomas</label>
-            <input class="column is-11-desktop" type="text" name="symptom" value="" data-rule="alphanumeric">
+            <textarea class="column is-11-desktop" type="text" name="symptom" value="" required>
           </div>
           <div class="column is-12-desktop">
             <label for="comments" class="column is-11-desktop">Comentarios</label>
-            <input class="column is-11-desktop" type="text" name="comments" value="" data-rule="alphanumeric">
+            <textarea class="column is-11-desktop" type="text" name="comments" value="" required>
           </div>
         </div>
         <button type="button" name="name" class="btn btn-blue is-center" data-type="submit">Registrar</button>

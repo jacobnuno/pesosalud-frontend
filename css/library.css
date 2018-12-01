@@ -27,6 +27,11 @@ input, select, textarea {
   border-radius: 4px;
 }
 
+textarea {
+  resize: none;
+  height: 5em;
+}
+
 input[type="radio"] {
   outline: none;
 }
