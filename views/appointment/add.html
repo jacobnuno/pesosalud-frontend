@@ -12,10 +12,11 @@
       <div class="main">
         <h1 class="column is-3-desktop is-offset-5-desktop is-12-mobile title is-center">Agenda una cita</h1>
 
-        <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile login is-center" action="index.html" method="post">
-          <div class="is-multiline column is-10-desktop">
+        <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile login is-center" method="post">
+          <div class="column is-12-desktop is-multiline is-12-mobile">
+
             <label for=""class="column is-12-desktop">Tipo de servicio</label>
-            <select class="" name="service">
+            <select class="column is-8-desktop is-10-mobile is-multiline" name="service">
             <option value="">Elige una opcion</option>
             <option value="Electroacupuntura">Electroacupuntura</option>
             <option value="Electrocelulipolisis">Electrocelulipolisis</option>
@@ -29,22 +30,23 @@
             <option value="Senos">Lifting de senos</option>
             </select>
           </div>
-          <div class="is-multiline column is-10-desktop">
+          <div class="column is-12-desktop is-multiline is-12-mobile">
             <label for=""class="column is-12-desktop">Fecha</label required>
             <input type="date" name="fecha">
           </div>
-          <div class="is-multiline column is-10-desktop">
+          <div class="column is-12-desktop is-multiline is-12-mobile">
             <label for=""class="column is-12-desktop">Hora</label required>
             <input type="time" name="hour">
-            <br>
           </div>
-          <button type="button" name="add_appointment" class="btn btn-blue" data-type="submit">Hacer cita</button>
+          <button type="button" name="add_appointment" class="btn btn-blue"data-type="submit">Hacer cita</button>
           </form>
           <div class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile login new-register is-center">
             <span>No recuerdas tus citas?</span>
             <a href="#" class="btn-link">Búscalas aqui</a>
           </div>
     </div>
+
+    <script src="../../js/validator.js"></script>
 
     </body>
 </html>
