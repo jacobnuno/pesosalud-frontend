@@ -1,33 +1,39 @@
-const cookies = require('../cookies');
+// const cookies = require('../cookies');
 
 class Users {
   constructor() {
-    const this.apiUrl = '';
+    // const this.apiUrl = 'ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000';
+    this.apiUrl = 'ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000';
 
     // obtener la cookie
     // document.cookie
     // this.token = asdfasdf
 
     // setear el token
-    this.headers = new Headers();
+    // this.headers = new Headers();
   }
 
-  function login() {
-    return await fetch(`${this.apiUrl}/${this.endpoint}/asdfasd`, {
+  static async login() {
+    return await fetch(`${apiUrl}/users/login`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        // 'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        email: 'ceoe1996@hotmail.com',
+        password: 1234
+      }),
     }).then(function(response) {
 
-      this.headers.set('Authorization', 'Bearer' + this.token);
-      return response.json();
+      // this.headers.set('Authorization', 'Bearer' + this.token);
+      // return response.json();
+      console.log(response.json());
     });
 
   }
 
-  function getAll() {
+  static async getAll() {
     return await fetch(`${this.apiUrl}/${this.endpoint}/asdfasd`, {
       method: 'GET',
       headers: {
@@ -39,7 +45,7 @@ class Users {
     });
   }
 
-  function create(form) {
+  static async create(form) {
     data = await fetch(`${this.apiUrl}/${this.endpoint}`, {
       method: 'post',
       body: new FormData(form)
