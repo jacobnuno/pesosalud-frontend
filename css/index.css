@@ -19,6 +19,7 @@ footer {
   margin-left: 1em;
 }
 
+/* FIXME esta regla deberia estar antes que cualquier otra, idealmente en el library */
 * {
   margin: 0;
   padding: 0;
