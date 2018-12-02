@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Appointment</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/library.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/appointment.css"/>
+  </head>
+    <body>
+    <div class="main">
+        <h1 class="column is-3-desktop is-offset-5-desktop is-12-mobile title is-center">Agenda una cita</h1>
+        <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile appointment is-center" action="index.html" method="post">
+          <label for=""class="column is-10-desktop">Tipo de servicio</label> <!-- FIXME los labels deben tener el atributo for indicando el id del input relacionado -->
+          <select class="" name="service">
+            <option value="">Elige una opcion</option>
+            <option value="Electroacupuntura">Electroacupuntura</option>
+            <option value="Electrocelulipolisis">Electrocelulipolisis</option>
+            <option value="Enfermedad">Consulta por enfermedad</option>
+            <option value="Peso">Control de peso</option>
+            <option value="Homeopatia">Homeopatía</option>
+            <option value="Mesoterapia">Mesoterapia</option>
+            <option value="peso-acupuntura">Control de peso con acupuntura</option>
+            <option value="Rejuvenecimiento">Rejuvenecimiento facial con acupuntura</option>
+            <option value="Gluteos">Lifting de glúteos</option>
+            <option value="Senos">Lifting de senos</option>
+            </select>
+          <label for=""class="column is-10-desktop">Fecha</label>
+          <input type="date" name="fecha">
+          <label for=""class="column is-10-desktop">Hora</label>
+          <input type="time" name="hour">
+          <br>
+          <button type="button" name="add_appointment" class="btn btn-blue">Hacer cita</button>
+          </form>
+          <div class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile login new-register is-center">
+            <span>No recuerdas tus citas?</span>
+            <a href="#" class="btn-link">Búscalas aqui</a>  <!-- FIXME los links deberian enviar a otras paginas del proyecto -->
+          </div>
+        </div>
+    </body>
+</html>
