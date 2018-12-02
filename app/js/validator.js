@@ -1,24 +1,26 @@
+// const userAPI = require('api/users');
+
+const apiUrl = 'ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000';
 const buttonSubmit = document.querySelector('button[data-type=submit]');
+const apiMethod = buttonSubmit.getAttribute('data-method');
 const form = buttonSubmit.parentNode;
 const inputs = form.getElementsByTagName('input');
 
 buttonSubmit.onclick = function () {
-
+    let formError = false;
     for (const input of inputs) {
         let rule = input.getAttribute('data-rule');
         if (rule != 'radio' && rule != 'image' && rule != 'password') {
             hasError(input);
-            window[rule](input);
+            let error = window[rule](input);
+            formError = (formError !=  true) ?  error : formError;
         }
     }
 
-  for (const input of inputs) {
-    let rule = input.getAttribute('data-rule');
-    if(rule != 'radio' && rule != 'image' && rule != 'password') {
-      hasError(input);
-      window[rule](input);
+    if(!formError) {
+      // console.log(apiMethod);
+      window[apiMethod](form);
     }
-  }
 };
 
 const regex = {
@@ -62,35 +64,136 @@ function hasError(input) {
 function word(input) {
     if (!regex.word.test(input.value)) {
         addError(input);
+        return true;
     }
+    return false;
 }
 
 function number(input) {
     if (!regex.number.test(input.value)) {
-        addError(input);
-    }
+      addError(input);
+      return true;
+  }
+  return false;
 }
 
 function decimal(input) {
     if (!regex.decimal.test(input.value)) {
-        addError(input);
-    }
+      addError(input);
+      return true;
+  }
+  return false;
 }
 
 function date(input) {
     if (!regex.date.test(input.value.replace(/-/g, ''))) {
-        addError(input);
-    }
+      addError(input);
+      return true;
+  }
+  return false;
 }
 
 function hour(input) {
     if (!regex.hour.test(input.value)) {
-        addError(input);
-    }
+      addError(input);
+      return true;
+  }
+  return false;
 }
 
 function email(input) {
     if (!regex.email.test(input.value)) {
-        addError(input);
-    }
+      addError(input);
+      return true;
+  }
+  return false;
+}
+
+// API USER
+function userLogin() {
+  console.log('llegue');
+  // fetch('http://localhost:3000/users/login', {
+    fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/users/login', {
+    method: 'POST',
+    // mode: "cors",
+    // credentials: 'same-origin',
+    headers: {
+      // 'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      email: 'ceoe1996@hotmail.com',
+      password: '1234'
+    }),
+  })
+  .then(function(response) {
+      console.log('response =', response);
+      return response.json();
+  })
+  .then(function(data) {
+      console.log('data = ', data);
+  })
+  .catch(function(err) {
+      console.log('err', err);
+  });
+
+
+// fetch('https://easy-motion.herokuapp.com/users/1',{
+// method: 'GET',
+// headers: {
+//   'Content-Type': 'application/json',
+//   'Authorization': 'Bearer $2b$10$KYmh6UKvuItTI.N867sUkOhgITgrS9SJZRlb2.ZOvrOK0kYpWVlV6'
+// },
+// })
+// .then(response => response)
+// .then(data => {
+// //console.log(data.data)
+// let jamon = data.data;
+// console.log(jamon);
+// })
+
+    //     fetch('https://easy-motion.herokuapp.com/auth/register', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify({
+    //       email: 'christopher_x10x@hotmail.com',
+    //       name: 'chris',
+    //       password: '1234567',
+    //       height: '100',
+    //       weight: '100'
+    //     })
+    // })
+    // .then(function(response) {
+    //     console.log('response =', response);
+    //     return response.json();
+    // })
+    // .then(function(data) {
+    //     console.log('data = ', data);
+    // })
+    // .catch(function(err) {
+    //     console.error(err);
+    // });
+
+    // fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/services/', {
+    //   method: 'GET',
+    //   headers: {
+    //     // 'Access-Control-Allow-Origin': '*',
+    //     'Authorization': 'Bearer $2b$04$oI4gKa14FMPA3i8sjYlHZONFzHBQ1kfzbLDYhd2KYD3rM9WNe8Bg.',
+    //     "Content-Type": "application/json"
+    //   }
+    // })
+    // .then(function(response) {
+    //     console.log('response =', response);
+    //     return response.json();
+    // })
+    // .then(function(data) {
+    //     console.log('data = ', data);
+    // })
+    // .catch(function(err) {
+    //     console.log('err', err);
+    // });
+
+
 }

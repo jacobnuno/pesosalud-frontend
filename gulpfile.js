@@ -7,7 +7,7 @@ const imagemin = require('gulp-imagemin');
 const gulpSequence = require('gulp-sequence');
 
 gulp.task('babel', () => {
-    gulp.src('js/*.js')
+    gulp.src('app/js/**/*.js')
         .pipe(babel({
             presets: ['es2015'],
         }))
@@ -16,31 +16,31 @@ gulp.task('babel', () => {
 
 gulp.task('uglify', (cb) => {
     pump([
-        gulp.src('public/js/*.js'),
+        gulp.src('public/js/**/*.js'),
         uglify(),
         gulp.dest('public/js'),
     ],
     cb);
 });
 
-gulp.task('cssnano', () => gulp.src('css/*.css')
+gulp.task('cssnano', () => gulp.src('app/css/*.css')
     .pipe(cssnano())
     .pipe(gulp.dest('public/css')));
 
-gulp.task('imagemin', () => gulp.src('img/*')
+gulp.task('imagemin', () => gulp.src('app/img/*')
     .pipe(imagemin())
     .pipe(gulp.dest('public/img')));
 
-gulp.task('copyIndex', () => gulp.src('index.html')
+gulp.task('copyIndex', () => gulp.src('app/index.html')
     .pipe(gulp.dest('public/')));
 
-gulp.task('copyViews', () => gulp.src('views/**/*')
+gulp.task('copyViews', () => gulp.src('app/views/**/*')
     .pipe(gulp.dest('public/views')));
 
-gulp.task('default', gulpSequence(['cssnano', 'imagemin'], 'babel', ['copyIndex', 'copyViews'], 'uglify'));
+gulp.task('default', gulpSequence(['cssnano', 'imagemin'], 'babel', ['copyIndex', 'copyViews']));
 
-gulp.watch('js/*.js', () => {
-    gulpSequence('babel', 'uglify')((err) => {
-        if (err) console.log(err);
-    });
-});
+// gulp.watch('js/**/*.js', () => {
+//     gulpSequence('babel', 'uglify')((err) => {
+//         if (err) console.log(err);
+//     });
+// });
