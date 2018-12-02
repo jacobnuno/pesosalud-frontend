@@ -8,6 +8,7 @@
   --light-gray-color: #ced4da;
   --link-blue: #337ab7;
   --light: #E0E0E0;
+  --dark-gray-color:#727272;
 }
 
 body {
@@ -83,7 +84,14 @@ td {
   outline: none;
   height: 2.5em;
   margin: .3em 0;
+  text-decoration: none;
 }
+
+.btn-dark-gray {
+  background: var(--dark-gray-color);
+  color: white;
+}
+
 
 .btn-green {
   background: var(--green-color);
@@ -128,6 +136,7 @@ td {
   width: 6em;
   margin: .3em 0;
   line-height: 2em;
+  text-decoration: none;
 }
 
 .column {
