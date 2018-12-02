@@ -17,7 +17,7 @@
         </div>
         <div class="column is-offset-5-desktop is-6-desktop is-multiline drop-list">
           <ul class="horizontal-list menu">
-            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Nosotros</a></li> <!-- FIXME los links deberian enviar a otras paginas del proyecto -->
             <li><a href="#">Servicios</a></li>
             <li><a href="#">¡Agenda tu Cita!</a></li>
             <li><a href="#">Iniciar Sesión</a></li>
@@ -82,8 +82,8 @@
           <div class="column is-6-desktop is-offset-3-mobile is-multiline contact-form">
             <h3 class="column is-10-desktop is-offset-1-desktop is-center">Contacto</h3>
             <form class="column is-10-desktop is-offset-1-desktop">
-              <label class="column is-10-desktop is-offset-1-desktop" for="">Nombre</label>
-              <input class="column is-10-desktop is-offset-1-desktop" type="text" name="name" placeholder="Introduce tu nombre completo" required>
+              <label class="column is-10-desktop is-offset-1-desktop" for="">Nombre</label> <!-- FIXME los labels deben tener el atributo for indicando el id del input relacionado -->
+              <input class="column is-10-desktop is-offset-1-desktop" type="text" name="name" placeholder="Introduce tu nombre completo" required> <!-- FIXME los elementos hijos heredan las clases padres, por lo tanto, creo que es redundante aplicar de nuevo las clases del grid -->
               <label class="column is-10-desktop is-offset-1-desktop" for="">Teléfono</label>
               <input class="column is-10-desktop is-offset-1-desktop" type="text" name="phone" placeholder="Introduce tu teléfono" required>
               <label class="column is-10-desktop is-offset-1-desktop" for="">Correo</label>

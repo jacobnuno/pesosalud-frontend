@@ -38,7 +38,7 @@ input[type="radio"] {
 
 input:focus {
   border: 1px solid var(--green-color);
-  -webkit-box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(52,168,83,1); /* FIXME los colores rgba tmb pueden ser variables */
   -moz-box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
   box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
 }
@@ -199,6 +199,7 @@ td {
   width: 100%;
 }
 
+/* FIXME hay dos veces esta clase, deben dejar solo una */
 .btn {
   display: inline-block;
   padding: 6px 12px;
