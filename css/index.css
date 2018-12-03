@@ -84,6 +84,10 @@ p {
   border: 1px solid #488a00;
 }
 
+.pierde-peso h3{
+  text-align: center;
+}
+
 .pierde-peso img{
   width: 75%;
 }
@@ -143,9 +147,7 @@ img {
   header, footer {
     border-radius: 4px;
   }
-  .contact-form {
-    margin-left: 18% !important;
-  }
+
   .drop-list {
     display: none;
   }
@@ -154,6 +156,7 @@ img {
   }
   .title1 {
     text-align: justify;
+    font-size: 16px;
   }
   .what-is-nutrition {
     margin: 0;
