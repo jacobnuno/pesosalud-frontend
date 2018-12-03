@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Peso y Salud</title>
+      <link rel="stylesheet" type="text/css" media="screen" href="css/library.css"/>
+      <link rel="stylesheet" type="text/css" media="screen" href="css/index.css"/>
+      <link rel="stylesheet" type="text/css" media="screen" href="css/slider.css"/>
+      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    </head>
+    <body>
+      <header>
+        <div class="column is-1-desktop is-6-mobile is-multiline logo">
+          <img src="img/logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="column is-offset-5-desktop is-6-desktop is-multiline drop-list">
+          <ul class="horizontal-list menu">
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">¡Agenda tu Cita!</a></li>
+            <li><a href="#">Iniciar Sesión</a></li>
+          </ul>
+        </div>
+        
+      </header>
+      <main>
+        <h1 class="is-center column is-12-desktop title1">¡La mejor opción para que logres un balance entre tu peso y tu salud!</h1>
+        <div class="column is-12-desktop is-12-mobile nutricion">
+          <div class="column is-multiline is-offset-1-desktop is-6-desktop is-12-mobile">
+            <p class="what-is-nutrition">Se conoce como nutrición al proceso biológico a partir del cual el organismo asimila los alimentos y los líquidos necesarios para el crecimiento, funcionamiento y mantenimiento de las funciones vitales, pero nutrición también es la parte de la medicina que se ocupa del estudio de la mejor relación entre los alimentos y la salud.</p>
+            <br/>
+            <div class="quote column is-6-desktop is-offset-6-desktop is-12-mobile">
+              <p>"El cuerpo grita… lo que la boca calla, la enfermedad es un conflicto entre la personalidad y el alma"</p>
+              <p class="author-quote">-Edward Bach</p>
+            </div>
+          </div>
+          <div class="column is-multiline is-5-desktop is-12-mobile is-center">
+            <img src="img/Nutricion.jpg" alt="Nutrición">
+          </div>
+        </div>
+        <!-- Slider -->
+        <div class="pys-slider">
+          <div class="slider">
+            <h2 class="is-center">Nuestros Servicios</h2>
+            <button type="button" id="prev"><i class="fa fa-angle-left"></i></button>
+            <ul>
+              <li class="slide active">
+                <a target="_blank" href=""><img src="./img/AcupunturaEstetica.jpg" alt="Acupuntura Estetica"></a>
+              </li>
+              <li class="slide">
+                <a target="_blank" href=""><img src="./img/AcupunturaFacial.jpg" alt="Acupuntura Facial"></a>
+              </li>
+              <li class="slide">
+                <a target="_blank" href=""><img src="./img/Electro.jpg" alt="Electro"></a>
+              </li>
+            </ul>
+            <button type="button" id="next"><i class="fa fa-angle-right"></i></button>
+          </div>
+        </div>
+        <!-- Slider -->
+        <div class="column is-12-desktop pierde-peso is-flex">
+          <div class="column is-offset-1-desktop is-4-desktop is-12-mobile is-multiline is-center">
+            <img src="img/Frutas.jpg" alt="Frutas">
+          </div>
+          <div class="column is-7-desktop is-12-mobile baja-peso is-multiline is-vertical-center">
+            <h3>Baja de peso comiendo, los resultados inmediatos</h3>
+            <h3>!Atrevete a Probarlos!</h3>
+            <div class="column is-offset-6-desktop is-6-desktop quote">
+              <p>"La perdida de peso gradual trae multiples beneficios para la salud"</p>
+            </div>
+          </div>
+        </div>
+        <div class="column is-12-desktop mision-back">
+          <div class="column is-offset-1-desktop is-10-desktop mision">
+            <h3 class="column is-12-desktop is-center">Misión:</h3>
+            <p class="is-center">Aportar valor a la nutrición y a la medicina alternativa cubriendo las necesidades de nuestros pacientes, ofreciendo servicios inovadores y de calidad logrando con ello crear un estilo de vida saludable.</p>
+            <h3 class="column is-12-desktop is-center">Visión:</h3>
+            <p class="is-center">Ser el consultorio de elección para quien quiera lograr su peso ideal, creando un impacto en los habitos alimienticios y de salud de nuestros pacientes.</p>
+          </div>
+        </div>
+        <div class="column is-12-desktop is-12-mobile contacto is-flex">
+          <div class="column is-6-desktop is-12-mobile is-multiline contact-form is-vertical-center">
+            <h3 class="column is-10-desktop is-offset-1-desktop is-12-mobile is-center">Contacto</h3>
+            <form class="column is-10-desktop is-offset-1-desktop is-12-mobile">
+              <label class="column is-10-desktop is-offset-1-desktop is-10-mobile is-offset-1-mobile" for="">Nombre</label>
+              <input class="column is-10-desktop is-offset-1-desktop is-10-mobile is-offset-1-mobile" type="text" name="name" placeholder="Introduce tu nombre completo" required>
+              <label class="column is-10-desktop is-offset-1-desktop is-10-mobile is-offset-1-mobile" for="">Teléfono</label>
+              <input class="column is-10-desktop is-offset-1-desktop is-10-mobile is-offset-1-mobile" type="text" name="phone" placeholder="Introduce tu teléfono" required>
+              <label class="column is-10-desktop is-offset-1-desktop is-10-mobile is-offset-1-mobile" for="">Correo</label>
+              <input class="column is-10-desktop is-offset-1-desktop is-10-mobile is-offset-1-mobile" type="text" name="email" placeholder="ejemplo@ejemplo.com" required>
+              <label class="column is-10-desktop is-offset-1-desktop is-10-mobile is-offset-1-mobile" for="">Mensaje</label>
+              <input class="column is-10-desktop is-offset-1-desktop is-10-mobile is-offset-1-mobile" type="text" name="message" placeholder="Escribe algo..." required>
+              <button type="button" name="button" class="btn btn-green is-offset-1-desktop is-offset-1-mobile" >Enviar</button>
+            </form>
+          </div>
+          <div class="column is-6-desktop is-multiline is-12-mobile">
+            <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119393.0803264913!2d-103.46046418048333!3d20.74942569576328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428af97ecfd0dc7%3A0xe8359240692a201a!2sPeso+y+Salud!5e0!3m2!1ses-419!2smx!4v1542703619694" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div class="column is-12-desktop is-center">
+          <span>Derechos Reservados para Peso y Salud</span>
+          <a href="views/cookies.html">Cookies</a>
+        </div>
+      </footer>
+      <script src="js/slider.js"></script>
+      <script src="js/events.js"></script>
+   </body>
+</html>
