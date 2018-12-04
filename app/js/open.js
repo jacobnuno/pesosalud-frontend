@@ -1,8 +1,8 @@
-import { getCookie } from './cookies.js';
+// import { getCookie } from './cookies.js';
 
 const apiUrl = 'http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000';
 // const apiUrl = 'http://localhost:3000';
-const token =  '$2b$04$dO7S1wXssTu/ABWIkcPOEefqxtUsdUV8SnIVgznZGFEPWcOoa4G9S';
+const token =  '$2b$04$WaCYQAzeWHZzk8.V/7Mc6uKHmXxpfrFNj0irCM8KxC3ASLUfxeEWa';
 const roles = {
   1: 'admin',
   2: 'doctora',
@@ -17,9 +17,8 @@ const gender = {
 function userGetAll() {
     fetch(`${apiUrl}/users/`, {
     method: 'GET',
-    // mode: 'cors',
+    mode: 'cors',
     headers: {
-      'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
     }
@@ -50,6 +49,32 @@ function userGetAll() {
         td = document.createElement('td');
         td.appendChild(document.createTextNode(roles[data.data[i]['UserType']]));
         tr.appendChild(td);
+        // ver
+        td = document.createElement('td');
+        let a = document.createElement('a');
+        let createAText = document.createTextNode('Ver');
+        a.setAttribute('href', `./view.html?id=${data.data[i]['id']}`);
+        a.setAttribute('class', "btn-action btn-green");
+        a.appendChild(createAText);
+        td.appendChild(a);
+        tr.appendChild(td);
+        // editar
+        a = document.createElement('a');
+        createAText = document.createTextNode('Editar');
+        a.setAttribute('href', `./edit.html?id=${data.data[i]['id']}`);
+        a.setAttribute('class', "btn-action btn-orange");
+        a.appendChild(createAText);
+        td.appendChild(a);
+        tr.appendChild(td);
+        // acticar/desactivar
+        // a = document.createElement('a');
+        // createAText = document.createTextNode(data.data[i]['Active'] ? 'Desactivar' : 'Activar');
+        // a.setAttribute('href', "#");
+        // a.setAttribute('class', data.data[i]['Active'] ? 'btn-action btn-red' : 'btn-action btn-blue');
+        // a.appendChild(createAText);
+        // td.appendChild(a);
+        // tr.appendChild(td);
+
         tableBody.appendChild(tr);
       }
     })
