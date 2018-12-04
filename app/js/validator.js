@@ -112,10 +112,10 @@ function email(input) {
 // API USER
 function userLogin() {
   console.log('llegue');
-  // fetch('http://localhost:3000/users/login', {
-    fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/users/login', {
+  fetch('http://localhost:3000/users/login', {
+    // fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/users/login', {
     method: 'POST',
-    // mode: "cors",
+    mode: "cors",
     // credentials: 'same-origin',
     headers: {
       // 'Content-Type': 'application/x-www-form-urlencoded'
