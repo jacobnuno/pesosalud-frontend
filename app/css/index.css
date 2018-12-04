@@ -3,6 +3,7 @@ header{
   height: 5em;
   width: 100%;
   padding: 0px, 10px;
+<<<<<<< HEAD
   display: flex;
   line-height: 5em;
   border-radius: 4px;
@@ -10,10 +11,18 @@ header{
 
 footer {
   background-color: var(--light-gray-color);
+=======
+  display: inline-block;
+}
+
+footer {
+  background-color: #ddd;
+>>>>>>> feature_services
   height: 3em;
   width: 100%;
   padding: 0px, 10px;
   display: inline-block;
+<<<<<<< HEAD
   color: black;
   border-radius: 4px;
 }
@@ -26,6 +35,8 @@ footer a {
 
 footer a:hover {
   background: var(--gray-color);
+=======
+>>>>>>> feature_services
 }
 
 .logo{
@@ -40,6 +51,7 @@ footer a:hover {
 
 }
 
+<<<<<<< HEAD
 .quote p {
   text-align: right;
   font-style: italic;
@@ -50,6 +62,8 @@ footer a:hover {
   font-weight: bold;
 }
 
+=======
+>>>>>>> feature_services
 header div .is-multiline{
   height: 100%
 }
@@ -79,9 +93,15 @@ p {
 }
 
 .servicios > div {
+<<<<<<< HEAD
   background-color: #e0ffd5;
   border-radius: 1em;
   border: 1px solid #488a00;
+=======
+  background-color: #E6F2FF;
+  border-radius: 50px;
+  border: 1px solid;
+>>>>>>> feature_services
 }
 
 .pierde-peso h3{
@@ -95,15 +115,23 @@ p {
 .mision-back {
   background-image: url("../img/BackgroudMission.jpg");
   padding: 10px 0px;
+<<<<<<< HEAD
   border-radius: 4px;
+=======
+>>>>>>> feature_services
 }
 
 .mision {
   background-color: #FFFFFF;
   opacity: 0.7;
+<<<<<<< HEAD
   border: 1px solid #488a00;
   filter: alpha(opacity=60);
   border-radius: .8em;
+=======
+  border: 1px solid black;
+  filter: alpha(opacity=60);
+>>>>>>> feature_services
 }
 
 .mision h3 {
@@ -116,6 +144,7 @@ form {
   padding: .4em 0 .4em .5em;
   border-radius: 4px;
 }
+<<<<<<< HEAD
 
 .maps {
   border-radius: 4px;
@@ -227,3 +256,5 @@ img {
     z-index: 10 !important;
   }
 }
+=======
+>>>>>>> feature_services
