@@ -17,13 +17,13 @@
         <h2 class="column is-8-desktop is-offset-2-desktop is-12-mobile is-center">Editar cita</h2>
 
         <div class="column is-12-desktop is-12-mobile is-multiline is-center">
-          <label for="name" class="column is-12-desktop is-12-mobile">Estatus</label>
-          <select class="" name="status" required>
+          <label for="status" class="column is-12-desktop is-12-mobile">Estatus</label>
+          <select id="txtStatus"  name="status" required>
           <option value="active">Activo</option>
           <option value="inactive">Inactivo</option>
           </select>
         </div>
-        <button type="button" name="add_diets" class="btn btn-blue"data-type="submit">Agregar</button>
+        <button type="button" name="button" class="btn btn-blue" data-type="submit" data-method="appointmentEdit">Agregar</button>
 
       </form>
       </div>

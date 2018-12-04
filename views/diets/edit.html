@@ -18,16 +18,15 @@
 
         <div class="column is-12-desktop is-12-mobile is-multiline is-center">
           <label for="name" class="column is-12-desktop is-12-mobile">Nombre</label>
-          <input class="column is-10-desktop is-6-mobile is-multiline"type="text" name="name" data-rule="word">
+          <input id="txtName" class="column is-10-desktop is-6-mobile is-multiline" type="text" name="name" data-rule="word">
         </div>
 
         <div class="column is-12-desktop is-12-mobile is-multiline is-center">
           <label for="description" class="column is-12-desktop is-12-mobile">Descripcion</label>
-          <input class="column is-10-desktop is-6-mobile is-multiline"type="text" name="description"  data-rule="word">
+          <input id="txtDescription" class="column is-10-desktop is-6-mobile is-multiline" type="text" name="description"  data-rule="word">
         </div>
 
-        <button type="button" name="edit_diets" class="btn btn-blue"data-type="submit">Actualizarr</button>
-
+        <button type="button" name="button" class="btn btn-blue" data-type="submit" data-method="dietsEdit">Actualizarr</button>
       </form>
       </div>
     <script src="../../js/validator.js"></script>

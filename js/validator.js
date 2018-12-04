@@ -1,4 +1,6 @@
+const apiUrl = 'ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000';
 const buttonSubmit = document.querySelector('button[data-type=submit]');
+const apiMethod = buttonSubmit.getAttribute('data-method');
 const form = buttonSubmit.parentNode;
 const inputs = form.getElementsByTagName('input');
 
@@ -83,4 +85,178 @@ function email(input) {
     if (!regex.email.test(input.value)) {
         addError(input);
     }
+}
+function userLogin() {
+  console.log('llegue');
+  // fetch('http://localhost:3000/users/login', {
+    fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/users/login', {
+    method: 'POST',
+    // mode: "cors",
+    // credentials: 'same-origin',
+    headers: {
+      // 'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      email: 'ceoe1996@hotmail.com',
+      password: '1234'
+    }),
+  })
+  .then(function(response) {
+      console.log('response =', response);
+      return response.json();
+  })
+  .then(function(data) {
+      console.log('data = ', data);
+  })
+  .catch(function(err) {
+      console.log('err', err);
+  });
+
+function dietsAdd() {
+  console.log("entro");
+  fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/', {
+    method: 'POST',
+      // mode: "cors",
+      // credentials: 'same-origin',
+    headers: {
+        // 'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
+    },
+    body: const body = {
+      Name: document.getElementsById('txtName').value,
+      Description: document.getElementsById('txtDescription').value,
+    },
+  })
+  .then(function(response) {
+      console.log('response =', response);
+      return response.json();
+  })
+  .then(function(data) {
+      console.log('data = ', data);
+  })
+  .catch(function(err) {
+      console.log('err', err);
+  });
+
+function appointmentAdd() {
+  fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/appointments/', {
+    method: 'POST',
+      // mode: "cors",
+      // credentials: 'same-origin',
+    headers: {
+        // 'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
+    },
+    body: const body = {
+      Service: document.getElementsById('txtService').value,
+      Date: document.getElementsById('txtDate').value,
+      Hour: document.getElementsById('txtHour').value,
+    }
+    },
+  })
+  .then(function(response) {
+      console.log('response =', response);
+      return response.json();
+  })
+  .then(function(data) {
+      console.log('data = ', data);
+  })
+  .catch(function(err) {
+      console.log('err', err);
+  });
+
+function appointmentEdit() {
+  fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/appointments/id', {
+    method: 'PUT',
+      // mode: "cors",
+      // credentials: 'same-origin',
+    headers: {
+        // 'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
+    },
+    body: const body = {
+      Status: document.getElementsById('txtStatus').value,
+    }
+    },
+  })
+  .then(function(response) {
+      console.log('response =', response);
+      return response.json();
+  })
+  .then(function(data) {
+      console.log('data = ', data);
+  })
+  .catch(function(err) {
+      console.log('err', err);
+  });
+
+function dietsEdit() {
+  fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/id', {
+    method: 'PUT',
+      // mode: "cors",
+      // credentials: 'same-origin',
+    headers: {
+        // 'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
+    },
+    body: const body = {
+      Name: document.getElementsById('txtName').value,
+      Description: document.getElementsById('txtDescription').value,
+    }
+    },
+  })
+  .then(function(response) {
+      console.log('response =', response);
+      return response.json();
+  })
+  .then(function(data) {
+      console.log('data = ', data);
+  })
+  .catch(function(err) {
+      console.log('err', err);
+  });
+
+function dietsFind() {
+  fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/id', {
+    method: 'GET',
+      // mode: "cors",
+      // credentials: 'same-origin',
+    headers: {
+        // 'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
+    },
+    body: const body = {
+      Date: document.getElementsById('txtDate').value,
+      Hour: document.getElementsById('txtHour').value,
+    }
+    },
+  })
+  .then(function(response) {
+      console.log('response =', response);
+      return response.json();
+  })
+  .then(function(data) {
+      console.log('data = ', data);
+  })
+  .catch(function(err) {
+      console.log('err', err);
+  });
+
+window.onload = function() {
+  const functions = {
+    dietsGetAll: dietsGetAll(),
+  };
+  const table=getElementsByTagName('table')[0];
+  const method = table.getAttribute('data-method');
+  functions[method];
+}
+
+window.onload = function() {
+  const functions = {
+    appointmentsGetAll: appointmentsGetAll(),
+  };
+  const table=getElementsByTagName('table')[0];
+  const method = table.getAttribute('data-method');
+  functions[method];
 }
