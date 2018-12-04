@@ -111,21 +111,22 @@ function email(input) {
 
 // API USER
 function addUser(){
-  const body = {
-      Name: document.getElementById('txtName').value,
-      Email: document.getElementById('txtEmail').value,
-      Password: document.getElementById('txtPass').value,
-      Phone: document.getElementById('txtPhone').value,
-  }
 
-  console.log(body);
+
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/users/', {
       method: 'POST',
       mode: 'cors',
       headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-wwww-form-urlencoded',
       },
-      body: body,
+      body: JSON.stringify({
+          Email: document.getElementById('txtEmail').value,
+          Gender: 'M',
+          Name: document.getElementById('txtName').value,
+          Password: document.getElementById('txtPass').value,
+          Phone: document.getElementById('txtPhone').value,
+          UserType: 1,
+      }),
   })
   .then(function(response) {
       console.log('response =', response);
