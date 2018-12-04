@@ -3,13 +3,12 @@
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Crear Servicio</title>
+      <title>Editar Servicio</title>
       <link rel="icon" href="../../img/favicon.ico">
       <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
       <link rel="stylesheet" type="text/css" media="screen" href="../../css/index.css">
       <link rel="stylesheet" type="text/css" media="screen" href="../../css/services.css"/>
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Cinzel|Frank+Ruhl+Libre|Poppins|Quicksand" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -26,27 +25,23 @@
           </div>
         </header>
       <div class="main">
-        <h1 class="column is-6-desktop is-offset-3-desktop is-12-mobile title is-center title">Agregar Nuevo Servicio</h1>
+        <h1 class="column is-6-desktop is-offset-3-desktop is-12-mobile title is-center title">Editar Servicio</h1>
         <form class="column is-6-desktop is-offset-3-desktop is-10-mobile is-offset-1-mobile login" action="index.html" method="post">
-          <div class="column is-12-desktop is-offset-1-desktop is-12-mobile">
-            <label for="name" class="column is-10-desktop">Nombre de Servicio:</label>
-            <input type="text" class="column is-10-desktop" id="nameSer" name="name" value="" data-rule="word">
-          </div>
           <div class="column is-12-desktop">
-            <label for="description"  class="column is-10-desktop is-offset-1-desktop">Descripcion :</label required>
-            <textarea name="description" class="column is-10-desktop is-offset-1-desktop" placeholder="Agrega información del Servicio"></textarea>
+            <label for="description"  class="column is-10-desktop is-offset-1-desktop">Agrega una nueva descripcion :</label required>
+            <textarea name="description" class="column is-10-desktop is-offset-1-desktop" placeholder="Detalles de Servicio"></textarea>
           </div>
           <div class="column is-10-desktop is-offset-1-desktop is-multiline">
             <div class="column is-5-desktop is-multiline">
               <label for="price" class="column is-10-desktop">Precio:</label>
-              <input type="price" class="column is-12-desktop" id="priceSer" name="price" value="" data-rule="decimal">
+              <input id="txtPrice" type="text" class="column is-12-desktop"  name="price" value="" data-rule="decimal">
             </div>
             <div class="column is-5-desktop is-offset-2-desktop is-multiline">
               <label for="duration" class="column is-10-desktop">Duración:</label>
-              <input type="duration" class="column is-12-desktop" id="durationSer" name="duration" value="" data-rule="number">
+              <input id="txtDuration" type="text" class="column is-12-desktop"  name="duration" value="" data-rule="number">
             </div>
           </div>
-          <button type="button" name="button" class="btn btn-green column is-6-desktop is-offset-3-desktop" data-type="submit">Crear Nuevo Servicio</button>
+          <button type="button" name="button" class="btn btn-green column is-6-desktop is-offset-3-desktop" data-type="submit" data-method="put">Modificar</button>
         </form>
       </div>
       <footer>

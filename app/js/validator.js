@@ -271,6 +271,170 @@ function dietsFind() {
       console.log('err', err);
   });
 
+  function promotionAdd() {
+    const body = {
+      dateStart: document.getElementById('txtdateStart').value
+      dateEnd:   document.getElementById('txtdateEnd').value
+      cantidad:  document.getElementById('txtcantidad').value
+    }
+      fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+              body:body,
+          }),
+      })
+      .then(function(response) {
+          console.log('response =', response);
+        return response.json();
+    })
+    .then(function(data) {
+        console.log('data = ', data);
+    })
+    .catch(function(err) {
+        console.log('err', err);
+    });
+  }
+
+  function promotionFind() {
+    const body = {
+      dateStart: document.getElementById('txtdateStart').value
+      dateEnd:   document.getElementById('txtdateEnd').value
+      cantidad:  document.getElementById('txtcantidad').value
+    }
+      fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
+          method: 'PUT',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+              body:body,
+          }),
+      })
+      .then(function(response) {
+          console.log('response =', response);
+        return response.json();
+    })
+    .then(function(data) {
+        console.log('data = ', data);
+    })
+    .catch(function(err) {
+        console.log('err', err);
+    });
+  }
+
+
+  function promotionEdit() {
+    const body = {
+      dateStart: document.getElementById('txtdateStart').value
+      dateEnd:   document.getElementById('txtdateEnd').value
+      // cantidad:  document.getElementById('txtcantidad').value
+    }
+      fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
+          method: 'PUT',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+              body:body,
+          }),
+      })
+      .then(function(response) {
+          console.log('response =', response);
+        return response.json();
+    })
+    .then(function(data) {
+        console.log('data = ', data);
+    })
+    .catch(function(err) {
+        console.log('err', err);
+    });
+  }
+
+
+  function servicesAdd() {
+    const body = {
+      nameSer: document.getElementById('txtNameSer').value
+      price: document.getElementById('txtPrice').value
+      duration: document.getElementById('txtDuration').value
+    }
+      fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+              body:body,
+          }),
+      })
+      .then(function(response) {
+          console.log('response =', response);
+        return response.json();
+    })
+    .then(function(data) {
+        console.log('data = ', data);
+    })
+    .catch(function(err) {
+        console.log('err', err);
+    });
+  }
+
+  function servicesFind() {
+    const body = {
+      nameSer: document.getElementById('txtNameSer').value
+      price: document.getElementById('txtPrice').value
+      duration: document.getElementById('txtDuration').value
+    }
+      fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
+          method: 'PUT',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+              body:body,
+          }),
+      })
+      .then(function(response) {
+          console.log('response =', response);
+        return response.json();
+    })
+    .then(function(data) {
+        console.log('data = ', data);
+    })
+    .catch(function(err) {
+        console.log('err', err);
+    });
+  }
+
+  function servicesEdit() {
+    const body = {
+      // nameSer: document.getElementById('txtNameSer').value
+      price: document.getElementById('txtPrice').value
+      duration: document.getElementById('txtDuration').value
+    }
+      fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
+          method: 'PUT',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+              body:body,
+          }),
+      })
+      .then(function(response) {
+          console.log('response =', response);
+        return response.json();
+    })
+    .then(function(data) {
+        console.log('data = ', data);
+    })
+    .catch(function(err) {
+        console.log('err', err);
+    });
+  }
+
 window.onload = function() {
   const functions = {
     dietsGetAll: dietsGetAll(),
@@ -288,3 +452,21 @@ window.onload = function() {
   const method = table.getAttribute('data-method');
   functions[method];
 }
+
+window.onload = function (){
+  const functions = {
+    userGetAll: promotionsGetAll(),
+  };
+  const table =getElementsByTagName('table')[0];
+  const method = table.getAttribute('data-method');
+  functions[method];
+};
+
+window.onload = function (){
+  const functions = {
+    userGetAll: servicesGetAll(),
+  };
+  const table =getElementsByTagName('table')[0];
+  const method = table.getAttribute('data-method');
+  functions[method];
+};

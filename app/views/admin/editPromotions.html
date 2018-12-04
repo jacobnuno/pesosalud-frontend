@@ -34,14 +34,14 @@
           <div class="column is-10-desktop is-offset-1-desktop is-multiline">
             <div class="column is-5-desktop is-multiline">
               <label for="dateStart" class="column is-10-desktop">Fecha de Inicio:</label>
-              <input type="date" class="column is-12-desktop" id="dateStart" name="dateStart" value="dateStart" data-rule="date">
+              <input id="txtdateStart" type="date" class="column is-12-desktop"  name="dateStart" value="dateStart" data-rule="date">
             </div>
             <div class="column is-5-desktop is-offset-2-desktop is-multiline">
               <label for="dateEnd" class="column is-10-desktop">Fecha de Finalización:</label>
-              <input type="date" class="column is-12-desktop" id="dateEnd" name="dateEnd" value="dateEnd" data-rule="date">
+              <input id="txtdateEnd"   type="date" class="column is-12-desktop"  name="dateEnd" value="dateEnd" data-rule="date">
             </div>
           </div>
-          <button type="button" name="button" class="btn btn-green column is-6-desktop is-offset-3-desktop" data-type="submit">Modificar</button>
+          <button type="button" name="button" class="btn btn-green column is-6-desktop is-offset-3-desktop" data-type="submit" data-method="put">Modificar</button>
         </form>
       </div>
       <footer>
