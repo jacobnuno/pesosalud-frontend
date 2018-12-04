@@ -86,10 +86,6 @@ td {
   overflow-x: auto;
 }
 
-.is-flex {
-  display: flex;
-}
-
 .form-group {
   display: block;
   width: 100%;
@@ -238,6 +234,22 @@ td {
 
 .has-error span {
   font-size: .7em;
+  display: block;
+}
+
+.quote p {
+  text-align: right;
+  font-style: italic;
+  margin: 0px;
+}
+
+.author-quote {
+  font-weight: bold;
+}
+
+.img {
+  width: 9em;
+  height: 9em;
 }
 
 /* mobile */
@@ -411,9 +423,12 @@ td {
     flex: none;
     width: 100%;
   }
+
   .column.is-offset-12-desktop {
     margin-left: 100%;
   }
+<<<<<<< HEAD:css/library.css
+=======
 
   .is-vertical-center {
     justify-content: center;
@@ -421,6 +436,7 @@ td {
     display: flex;
   }
 
+>>>>>>> dev:app/css/library.css
   .is-flex {
     display: flex;
   }

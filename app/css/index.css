@@ -10,6 +10,11 @@ header{
 
 footer {
   background-color: var(--light-gray-color);
+  display: inline-block;
+}
+
+footer {
+  background-color: #ddd;
   height: 3em;
   width: 100%;
   padding: 0px, 10px;
@@ -139,6 +144,38 @@ img {
   height: 17em;
 }
 
+.menuicon {
+  display: none;
+}
+
+.menures {
+  display: none;
+}
+
+.menures ul {
+  background-color: var(--light-gray-color);
+  z-index: 10;
+}
+
+.menures li {
+  list-style: none;
+}
+
+.menures a {
+  text-align: center;
+  text-decoration: none;
+  color: var(--green-color);
+  display: block;
+  padding: 0.5em;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .menures {
+    display: none !important;
+  }
+}
 @media screen and (max-width: 768px) {
   header, footer {
     border-radius: 4px;
@@ -146,8 +183,16 @@ img {
   .contact-form {
     margin-left: 18% !important;
   }
+
   .drop-list {
     display: none;
+  }
+  .menuicon {
+    display: inline-block;
+    text-align: right;
+  }
+  .menures {
+
   }
   .logo {
     text-align: center;
