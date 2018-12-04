@@ -57,5 +57,10 @@ function userGetAll() {
 }
 
 window.onload = function () {
-    userGetAll();
+    const functions = {
+      userGetAll: userGetAll(),
+    };
+    const table = document.getElementsByTagName('table')[0];
+    const method = table.getAttribute('data-method');
+    functions[method];
 };
