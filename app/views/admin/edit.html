@@ -11,7 +11,7 @@
     <body>
       <!-- TODO: HEADER -->
 
-      <div class="main">
+      <div class="main" data-type="userEdit">
         <h1 class="column is-6-desktop is-offset-3-desktop is-12-mobile title is-center">Editar Usuario</h1>
 
         <form class="column is-6-desktop is-offset-3-desktop is-10-mobile is-offset-1-mobile login" action="index.html" method="post">
@@ -26,7 +26,7 @@
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="coments" class="column is-10-desktop">Comentarios</label>
-            <textarea name="coments" rows="2" cols="40" placeholder="Escribe algo..."></textarea>
+            <textarea name="coments" class="column is-8-desktop" rows="1" cols="10" placeholder="Escribe algo..."></textarea>
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="registeredDate" class="column is-10-desktop">Fecha de Alta</label>
@@ -37,5 +37,6 @@
       </div>
 
       <!-- TODO: FOOTER -->
+      <script src="../../js/user.js"></script>
    </body>
 </html>
