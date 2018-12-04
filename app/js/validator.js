@@ -111,6 +111,13 @@ function email(input) {
 
 // API USER
 function userLogin() {
+    const body = {
+        Name: document.getElementById('txtName').value,
+        Email: document.getElementById('txtEmail').value,
+        Password: document.getElementById('txtPass').value,
+        Phone: document.getElementById('txtPhone').value,
+    }
+
     fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/users/login', {
         method: 'POST',
         headers: {
@@ -158,6 +165,7 @@ function dietsAdd() {
   .catch(function(err) {
       console.log('err', err);
   });
+
 
 function appointmentAdd() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/appointments/', {
