@@ -10,6 +10,11 @@ header{
 
 footer {
   background-color: var(--light-gray-color);
+  display: inline-block;
+}
+
+footer {
+  background-color: #ddd;
   height: 3em;
   width: 100%;
   padding: 0px, 10px;
@@ -178,7 +183,7 @@ img {
   .contact-form {
     margin-left: 18% !important;
   }
-  
+
   .drop-list {
     display: none;
   }

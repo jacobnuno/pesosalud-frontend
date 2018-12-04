@@ -17,15 +17,15 @@
         <form class="column is-6-desktop is-offset-3-desktop is-10-mobile is-offset-1-mobile login" action="index.html" method="post">
           <div class="column is-6-desktop is-multiline">
             <label for="name" class="column is-10-desktop">Nombre</label>
-            <input type="text" class="column is-8-desktop" name="name" value="" data-rule="word" required>
+            <input id="txtName" type="text" class="column is-8-desktop" name="name" value="" data-rule="word" required>
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="email" class="column is-10-desktop">E-mail</label required>
-            <input class="column is-8-desktop" type="text" name="email" value="" data-rule="email" placeholder="ejemplo@ejemplo.com">
+            <input id="txtEmail" class="column is-8-desktop" type="text" name="email" value="" data-rule="email" placeholder="ejemplo@ejemplo.com">
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="password"  class="column is-10-desktop">Contraseña</label required>
-            <input class="column is-8-desktop" type="password" name="password" value="" data-rule="password" placeholder="Contraseña">
+            <input id="txtPass" class="column is-8-desktop" type="password" name="password" value="" data-rule="password" placeholder="Contraseña">
           </div>
           <div class="column is-12-desktop">
             <div class="column is-6-desktop is-multiline">
@@ -39,11 +39,11 @@
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="phone" class="column is-10-desktop">Teléfono</label>
-            <input type="text" class="column is-8-desktop" name="phone" value="" data-rule="number">
+            <input id="txtPhone" type="text" class="column is-8-desktop" name="phone" value="" data-rule="number">
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="height" class="column is-10-desktop">Peso</label>
-            <input type="text" class="column is-8-desktop" name="height" value="" data-rule="decimal">
+            <input id="txtPeso" type="text" class="column is-8-desktop" name="height" value="" data-rule="decimal">
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="birthDate" class="column is-10-desktop">Fecha de Nacimiento</label>
