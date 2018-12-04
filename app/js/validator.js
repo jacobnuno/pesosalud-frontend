@@ -159,7 +159,7 @@ function dietsAdd() {
 function appointmentAdd() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/appointments/', {
     method: 'POST',
-
+    mode: 'cors',
     headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
       'Content-Type': 'application/x-www-form-urlencoded'
@@ -184,7 +184,7 @@ function appointmentAdd() {
 function appointmentEdit() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/appointments/id', {
     method: 'PUT',
-      // mode: "cors",
+    mode: "cors",
   // credentials: 'same-origin',
     headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
@@ -208,7 +208,7 @@ function appointmentEdit() {
 function dietsEdit() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/id', {
     method: 'PUT',
-
+    mode: 'cors',
     headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
       'Content-Type': 'application/x-www-form-urlencoded'
@@ -233,7 +233,7 @@ function dietsFind() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/id', {
     method: 'GET',
 
-      // mode: "cors",
+    mode: "cors",
       // credentials: 'same-origin',
     headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
