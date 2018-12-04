@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Editar Servicio</title>
+      <link rel="icon" href="../../img/favicon.ico">
+      <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
+      <link rel="stylesheet" type="text/css" media="screen" href="../../css/index.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="../../css/services.css"/>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+          <div class="column is-1-desktop is-multiline">
+            <img src="../../img/logo.png" alt="Logo" class="logo">
+          </div>
+          <div class="column is-offset-5-desktop is-6-desktop is-multiline">
+            <ul class="horizontal-list menu">
+              <li><a href="#">USUARIOS</a></li>
+              <li><a href="#">PROMOCIONES</a></li>
+              <li><a href="#">SERVICIOS</a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          </div>
+        </header>
+      <div class="main">
+        <h1 class="column is-6-desktop is-offset-3-desktop is-12-mobile title is-center title">Editar Servicio</h1>
+        <form class="column is-6-desktop is-offset-3-desktop is-10-mobile is-offset-1-mobile login" action="index.html" method="post">
+          <div class="column is-12-desktop">
+            <label for="description"  class="column is-10-desktop is-offset-1-desktop">Agrega una nueva descripcion :</label required>
+            <textarea name="description" class="column is-10-desktop is-offset-1-desktop" placeholder="Detalles de Servicio"></textarea>
+          </div>
+          <div class="column is-10-desktop is-offset-1-desktop is-multiline">
+            <div class="column is-5-desktop is-multiline">
+              <label for="price" class="column is-10-desktop">Precio:</label>
+              <input id="txtPrice" type="text" class="column is-12-desktop"  name="price" value="" data-rule="decimal">
+            </div>
+            <div class="column is-5-desktop is-offset-2-desktop is-multiline">
+              <label for="duration" class="column is-10-desktop">Duración:</label>
+              <input id="txtDuration" type="text" class="column is-12-desktop"  name="duration" value="" data-rule="number">
+            </div>
+          </div>
+          <button type="button" name="button" class="btn btn-green column is-6-desktop is-offset-3-desktop" data-type="submit" data-method="put">Modificar</button>
+        </form>
+      </div>
+      <footer>
+          <div class="column is-12-desktop is-center">
+            <span>Derechos Reservados</span>
+          </div>
+      </footer>
+      <script src="../../js/validator.js"></script>
+   </body>
+</html>

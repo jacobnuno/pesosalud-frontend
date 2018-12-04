@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Crear Promocion</title>
+      <link rel="icon" href="../../img/favicon.ico">
+      <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
+      <link rel="stylesheet" type="text/css" media="screen" href="../../css/index.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="../../css/promotionsAdm.css"/>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Cinzel|Frank+Ruhl+Libre|Poppins|Quicksand" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+          <div class="column is-1-desktop is-multiline">
+            <img src="../../img/logo.png" alt="Logo" class="logo">
+          </div>
+          <div class="column is-offset-5-desktop is-6-desktop is-multiline">
+            <ul class="horizontal-list menu">
+              <li><a href="#">USUARIOS</a></li>
+              <li><a href="#">PROMOCIONES</a></li>
+              <li><a href="#">SERVICIOS</a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          </div>
+        </header>
+      <div class="main">
+        <h1 class="column is-6-desktop is-offset-3-desktop is-12-mobile title is-center">Crear Promociones</h1>
+        <form class="column is-6-desktop is-offset-3-desktop is-10-mobile is-offset-1-mobile login" action="index.html" method="post">
+          <div class="column is-12-desktop is-12-mobile">
+            <label for="Idser" class="column is-10-desktop is-offset-1-desktop">Aplicar Promocion a :</label required>
+              <select class="column is-10-desktop is-offset-1-desktop" name="Idser" required>
+                <option value="">Elige una opcion</option>
+                <option value="Electroacupuntura">Electroacupuntura</option>
+                <option value="Electrocelulipolisis">Electrocelulipolisis</option>
+                <option value="Enfermedad">Consulta por enfermedad</option>
+                <option value="Peso">Control de peso</option>
+                <option value="Homeopatia">Homeopatía</option>
+                <option value="Mesoterapia">Mesoterapia</option>
+                <option value="peso-acupuntura">Control de peso con acupuntura</option>
+                <option value="Rejuvenecimiento">Rejuvenecimiento facial con acupuntura</option>
+                <option value="Gluteos">Lifting de glúteos</option>
+                <option value="Senos">Lifting de senos</option>
+              </select>
+          </div>
+          <div class="column is-12-desktop">
+            <label for="description"  class="column is-10-desktop is-offset-1-desktop">Descripcion :</label required>
+            <textarea name="description" class="column is-10-desktop is-offset-1-desktop" placeholder="Detalles de Promocion"></textarea>
+          </div>
+          <div class="column is-10-desktop is-offset-1-desktop is-multiline">
+            <div class="column is-5-desktop is-multiline">
+              <label for="dateStart" class="column is-10-desktop">Inicio</label>
+              <input id="txtdateStart" type="date" class="column is-12-desktop"  name="dateStart" value="dateStart" data-rule="date">
+            </div>
+            <div class="column is-5-desktop is-offset-2-desktop is-multiline">
+              <label for="dateEnd" class="column is-10-desktop">Fin</label>
+              <input id="txtdateEnd" type="date" class="column is-12-desktop"  name="dateEnd" value="dateEnd" data-rule="date">
+            </div>
+          </div>
+          <div class="column is-10-desktop is-offset-1-desktop is-multiline">
+            <label for="cantidad" class="column is-12-desktop">Cantidad</label>
+            <input id="txtcantidad" type="text" class="column is-12-desktop" name="cantidad" value="" data-rule="number">
+          </div>
+
+          <button type="button" name="button" class="btn btn-green column is-6-desktop is-offset-3-desktop" data-type="submit" data-method="post">Crear</button>
+        </form>
+      </div>
+      <footer>
+          <div class="column is-12-desktop is-center">
+            <span>Derechos Reservados</span>
+          </div>
+      </footer>
+      <script src="../../js/validator.js"></script>
+   </body>
+</html>

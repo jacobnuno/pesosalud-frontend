@@ -111,6 +111,13 @@ function email(input) {
 
 // API USER
 function userLogin() {
+    const body = {
+        Name: document.getElementById('txtName').value,
+        Email: document.getElementById('txtEmail').value,
+        Password: document.getElementById('txtPass').value,
+        Phone: document.getElementById('txtPhone').value,
+    }
+
     fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/users/login', {
         method: 'POST',
         headers: {
@@ -132,3 +139,324 @@ function userLogin() {
       console.log('err', err);
   });
 }
+
+function dietsAdd() {
+  console.log("entro ");
+  fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/', {
+    method: 'POST',
+      // mode: "cors",
+      // credentials: 'same-origin',
+    headers: {
+        // 'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
+    },
+    body: {
+      Name: document.getElementsById('txtName').value,
+      Description: document.getElementsById('txtDescription').value,
+    },
+  })
+  .then(function(response) {
+      console.log('response =', response);
+      return response.json();
+  })
+  .then(function(data) {
+      console.log('data = ', data);
+  })
+  .catch(function(err) {
+      console.log('err', err);
+  });
+}
+
+function appointmentAdd() {
+  fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/appointments/', {
+    method: 'POST',
+      // mode: "cors",
+      // credentials: 'same-origin',
+    headers: {
+        // 'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
+    },
+    body: {
+      Service: document.getElementsById('txtService').value,
+      Date: document.getElementsById('txtDate').value,
+      Hour: document.getElementsById('txtHour').value,
+    },
+  })
+  .then(function(response) {
+      console.log('response =', response);
+      return response.json();
+  })
+  .then(function(data) {
+      console.log('data = ', data);
+  })
+  .catch(function(err) {
+      console.log('err', err);
+  });
+}
+
+function appointmentEdit() {
+  fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/appointments/id', {
+    method: 'PUT',
+      // mode: "cors",
+      // credentials: 'same-origin',
+    headers: {
+        // 'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
+    },
+    body: {
+      Status: document.getElementsById('txtStatus').value,
+    },
+  })
+  .then(function(response) {
+      console.log('response =', response);
+      return response.json();
+  })
+  .then(function(data) {
+      console.log('data = ', data);
+  })
+  .catch(function(err) {
+      console.log('err', err);
+  });
+}
+
+function dietsEdit() {
+  fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/id', {
+    method: 'PUT',
+      // mode: "cors",
+      // credentials: 'same-origin',
+    headers: {
+        // 'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: {
+      Name: document.getElementsById('txtName').value,
+      Description: document.getElementsById('txtDescription').value,
+    },
+  })
+  .then(function(response) {
+      console.log('response =', response);
+      return response.json();
+  })
+  .then(function(data) {
+      console.log('data = ', data);
+  })
+  .catch(function(err) {
+      console.log('err', err);
+  });
+}
+
+function dietsFind() {
+  fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/id', {
+    method: 'GET',
+      // mode: "cors",
+      // credentials: 'same-origin',
+    headers: {
+        // 'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: {
+      Date: document.getElementsById('txtDate').value,
+      Hour: document.getElementsById('txtHour').value,
+    },
+  })
+  .then(function(response) {
+      console.log('response =', response);
+      return response.json();
+  })
+  .then(function(data) {
+      console.log('data = ', data);
+  })
+  .catch(function(err) {
+      console.log('err', err);
+  });
+}
+
+  function promotionAdd() {
+    const body = {
+      dateStart: document.getElementById('txtdateStart').value,
+      dateEnd:   document.getElementById('txtdateEnd').value,
+      cantidad:  document.getElementById('txtcantidad').value,
+    }
+      fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body:body,
+      })
+      .then(function(response) {
+          console.log('response =', response);
+        return response.json();
+    })
+    .then(function(data) {
+        console.log('data = ', data);
+    })
+    .catch(function(err) {
+        console.log('err', err);
+    });
+  }
+
+  function promotionFind() {
+    const body = {
+      dateStart: document.getElementById('txtdateStart').value,
+      dateEnd:   document.getElementById('txtdateEnd').value,
+      cantidad:  document.getElementById('txtcantidad').value,
+    }
+      fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
+          method: 'PUT',
+          headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body:body,
+      })
+      .then(function(response) {
+          console.log('response =', response);
+        return response.json();
+    })
+    .then(function(data) {
+        console.log('data = ', data);
+    })
+    .catch(function(err) {
+        console.log('err', err);
+    });
+  }
+
+
+  function promotionEdit() {
+    const body = {
+      dateStart: document.getElementById('txtdateStart').value,
+      dateEnd:   document.getElementById('txtdateEnd').value,
+      // cantidad:  document.getElementById('txtcantidad').value
+    }
+      fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
+          method: 'PUT',
+          headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body:body,
+      })
+      .then(function(response) {
+          console.log('response =', response);
+        return response.json();
+    })
+    .then(function(data) {
+        console.log('data = ', data);
+    })
+    .catch(function(err) {
+        console.log('err', err);
+    });
+  }
+
+
+  function servicesAdd() {
+    const body = {
+      nameSer: document.getElementById('txtNameSer').value,
+      price: document.getElementById('txtPrice').value,
+      duration: document.getElementById('txtDuration').value,
+    }
+      fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body:body,
+      })
+      .then(function(response) {
+          console.log('response =', response);
+        return response.json();
+    })
+    .then(function(data) {
+        console.log('data = ', data);
+    })
+    .catch(function(err) {
+        console.log('err', err);
+    });
+  }
+
+  function servicesFind() {
+    const body = {
+      nameSer: document.getElementById('txtNameSer').value,
+      price: document.getElementById('txtPrice').value,
+      duration: document.getElementById('txtDuration').value,
+    }
+      fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
+          method: 'PUT',
+          headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body:body,
+      })
+      .then(function(response) {
+          console.log('response =', response);
+        return response.json();
+    })
+    .then(function(data) {
+        console.log('data = ', data);
+    })
+    .catch(function(err) {
+        console.log('err', err);
+    });
+  }
+
+  function servicesEdit() {
+    const body = {
+      // nameSer: document.getElementById('txtNameSer').value
+      price: document.getElementById('txtPrice').value,
+      duration: document.getElementById('txtDuration').value,
+    }
+      fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
+          method: 'PUT',
+          headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: JSON.stringify({
+              body:body,
+          }),
+      })
+      .then(function(response) {
+          console.log('response =', response);
+        return response.json();
+    })
+    .then(function(data) {
+        console.log('data = ', data);
+    })
+    .catch(function(err) {
+        console.log('err', err);
+    });
+  }
+
+// window.onload = function() {
+//   const functions = {
+//     dietsGetAll: dietsGetAll(),
+//   };
+//   const table=getElementsByTagName('table')[0];
+//   const method = table.getAttribute('data-method');
+//   functions[method];
+// }
+//
+// window.onload = function() {
+//   const functions = {
+//     appointmentsGetAll: appointmentsGetAll(),
+//   };
+//   const table=getElementsByTagName('table')[0];
+//   const method = table.getAttribute('data-method');
+//   functions[method];
+// }
+//
+// window.onload = function (){
+//   const functions = {
+//     promotionsGetAll: promotionsGetAll(),
+//   };
+//   const table =getElementsByTagName('table')[0];
+//   const method = table.getAttribute('data-method');
+//   functions[method];
+// }
+//
+// window.onload = function (){
+//   const functions = {
+//     servicesGetAll: servicesGetAll(),
+//   };
+//   const table =getElementsByTagName('table')[0];
+//   const method = table.getAttribute('data-method');
+//   functions[method];
+// }

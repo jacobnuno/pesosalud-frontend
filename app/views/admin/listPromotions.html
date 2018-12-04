@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title>Lista Promociones</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
+      <link rel="stylesheet" type="text/css" media="screen" href="../../css/promotionsAdm.css"/>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Cinzel|Frank+Ruhl+Libre|Poppins|Quicksand" rel="stylesheet">
+    </head>
+    <body>
+
+      <div class="main">
+        <h1 class="column is-5-desktop is-offset-5-desktop is-12-mobile title">Lista de Promociones</h1>
+        <div class="is-flex">
+          <table class="is-center table-responsive" align="center" data-method="promotionsGetAll">
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Servicio</th>
+                <th>Inicia</th>
+                <th>Termina</th>
+                <th>Cantidad</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Homeopatia</td>
+                <td>15/05/2018</td>
+                <td>18/12/2018</td>
+                <td>5</td>
+                <td>
+                  <a class="btn-action btn-orange" href="./editPromotions.html">Editar</a>
+                  <a class="btn-action btn-green" href="#">Activar</a>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Control de Peso con Acupuntura</td>
+                <td>15/05/2018</td>
+                <td>15/05/2018</td>
+                <td>33</td>
+                <td>
+                  <a class="btn-action btn-orange" href="./editPromotions.html">Editar</a>
+                  <a class="btn-action btn-dark-gray" href="#">Desactivar</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+      <!-- TODO: FOOTER -->
+   </body>
+</html>
