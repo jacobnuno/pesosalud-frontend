@@ -3,26 +3,17 @@ header{
   height: 5em;
   width: 100%;
   padding: 0px, 10px;
-<<<<<<< HEAD
   display: flex;
   line-height: 5em;
   border-radius: 4px;
 }
 
 footer {
-  background-color: var(--light-gray-color);
-=======
-  display: inline-block;
-}
-
-footer {
   background-color: #ddd;
->>>>>>> feature_services
   height: 3em;
   width: 100%;
   padding: 0px, 10px;
   display: inline-block;
-<<<<<<< HEAD
   color: black;
   border-radius: 4px;
 }
@@ -35,8 +26,6 @@ footer a {
 
 footer a:hover {
   background: var(--gray-color);
-=======
->>>>>>> feature_services
 }
 
 .logo{
@@ -51,7 +40,7 @@ footer a:hover {
 
 }
 
-<<<<<<< HEAD
+
 .quote p {
   text-align: right;
   font-style: italic;
