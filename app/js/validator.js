@@ -111,31 +111,41 @@ function email(input) {
 
 // API USER
 function userLogin() {
-  console.log('llegue');
-  // fetch('http://localhost:3000/users/login', {
-    fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/users/login', {
-    method: 'POST',
-    // mode: "cors",
-    // credentials: 'same-origin',
-    headers: {
-      // 'Content-Type': 'application/x-www-form-urlencoded'
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      email: 'ceoe1996@hotmail.com',
-      password: '1234'
-    }),
-  })
-  .then(function(response) {
-      console.log('response =', response);
-      return response.json();
-  })
-  .then(function(data) {
-      console.log('data = ', data);
-  })
-  .catch(function(err) {
-      console.log('err', err);
-  });
+    console.log('llegue');
+
+    const body = {
+        Name: document.getElementById('txtName').value,
+        Email: document.getElementById('txtEmail').value,
+        Password: document.getElementById('txtPass').value,
+        Phone: document.getElementById('txtPhone').value,
+    }
+
+    console.log(body);
+
+    fetch('http://localhost:3000/users/login', {
+    // fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/users/login', {
+        method: 'POST',
+        // mode: 'cors',
+        // credentials: 'same-origin',
+        headers: {
+            // 'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            email: 'ceoe1996@hotmail.com',
+            password: '1234',
+        }),
+    })
+        .then((response) => {
+            console.log('response =', response);
+            return response.json();
+        })
+        .then((data) => {
+            console.log('data = ', data);
+        })
+        .catch((err) => {
+            console.log('err', err);
+        });
 
 
 // fetch('https://easy-motion.herokuapp.com/users/1',{
@@ -194,6 +204,4 @@ function userLogin() {
     // .catch(function(err) {
     //     console.log('err', err);
     // });
-
-
 }
