@@ -8,7 +8,7 @@ h2 {
   justify-content:space-around;
   margin: auto;
   padding: 2px ;
-} 
+}
 
  .services {
   width: 100%;
@@ -30,4 +30,10 @@ font-size: 1.5em;
 ul li a{
   text-decoration: none;
   font-size: 20px;
+}
+.title{
+  font-size: 1.8em;
+  padding: .5em;
+  font-family:'Poppins',sans-serif;
+  color:var(--orange-color);
 }
