@@ -1,7 +1,8 @@
+
 h2 {
   font-size: 2.5em;
   text-align: center;
-  font-family:sans-serif;
+  font-family:'Quicksand',sans-serif;
   margin:15px;
 }
 .services div{
@@ -21,7 +22,7 @@ h2 {
   /* justify-content: center; */
 }
 .text p{
-margin: 10px;
+margin: 8px;
 letter-spacing: normal;
 padding: 15px;
 justify-content: space-around;
@@ -33,7 +34,7 @@ ul li a{
   font-size: 20px;
 }
 .title{
-  font-size: 1.8em;
+  font-size: 3em;
   padding: .5em;
   font-family:'Poppins',sans-serif;
   color:var(--orange-color);

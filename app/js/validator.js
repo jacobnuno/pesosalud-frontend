@@ -150,7 +150,7 @@ function dietsAdd() {
         // 'Content-Type': 'application/x-www-form-urlencoded'
       'Content-Type': 'application/json'
     },
-    body: const body = {
+    body: {
       Name: document.getElementsById('txtName').value,
       Description: document.getElementsById('txtDescription').value,
     },
@@ -165,7 +165,7 @@ function dietsAdd() {
   .catch(function(err) {
       console.log('err', err);
   });
-
+}
 
 function appointmentAdd() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/appointments/', {
@@ -176,11 +176,10 @@ function appointmentAdd() {
         // 'Content-Type': 'application/x-www-form-urlencoded'
       'Content-Type': 'application/json'
     },
-    body: const body = {
+    body: {
       Service: document.getElementsById('txtService').value,
       Date: document.getElementsById('txtDate').value,
       Hour: document.getElementsById('txtHour').value,
-    }
     },
   })
   .then(function(response) {
@@ -193,6 +192,7 @@ function appointmentAdd() {
   .catch(function(err) {
       console.log('err', err);
   });
+}
 
 function appointmentEdit() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/appointments/id', {
@@ -203,9 +203,8 @@ function appointmentEdit() {
         // 'Content-Type': 'application/x-www-form-urlencoded'
       'Content-Type': 'application/json'
     },
-    body: const body = {
+    body: {
       Status: document.getElementsById('txtStatus').value,
-    }
     },
   })
   .then(function(response) {
@@ -218,6 +217,7 @@ function appointmentEdit() {
   .catch(function(err) {
       console.log('err', err);
   });
+}
 
 function dietsEdit() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/id', {
@@ -226,12 +226,11 @@ function dietsEdit() {
       // credentials: 'same-origin',
     headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: const body = {
+    body: {
       Name: document.getElementsById('txtName').value,
       Description: document.getElementsById('txtDescription').value,
-    }
     },
   })
   .then(function(response) {
@@ -244,6 +243,7 @@ function dietsEdit() {
   .catch(function(err) {
       console.log('err', err);
   });
+}
 
 function dietsFind() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/id', {
@@ -252,12 +252,11 @@ function dietsFind() {
       // credentials: 'same-origin',
     headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: const body = {
+    body: {
       Date: document.getElementsById('txtDate').value,
       Hour: document.getElementsById('txtHour').value,
-    }
     },
   })
   .then(function(response) {
@@ -270,21 +269,20 @@ function dietsFind() {
   .catch(function(err) {
       console.log('err', err);
   });
+}
 
   function promotionAdd() {
     const body = {
-      dateStart: document.getElementById('txtdateStart').value
-      dateEnd:   document.getElementById('txtdateEnd').value
-      cantidad:  document.getElementById('txtcantidad').value
+      dateStart: document.getElementById('txtdateStart').value,
+      dateEnd:   document.getElementById('txtdateEnd').value,
+      cantidad:  document.getElementById('txtcantidad').value,
     }
       fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
           method: 'POST',
           headers: {
-              'Content-Type': 'application/json',
+              'Content-Type': 'application/x-www-form-urlencoded',
           },
-          body: JSON.stringify({
-              body:body,
-          }),
+          body:body,
       })
       .then(function(response) {
           console.log('response =', response);
@@ -300,18 +298,16 @@ function dietsFind() {
 
   function promotionFind() {
     const body = {
-      dateStart: document.getElementById('txtdateStart').value
-      dateEnd:   document.getElementById('txtdateEnd').value
-      cantidad:  document.getElementById('txtcantidad').value
+      dateStart: document.getElementById('txtdateStart').value,
+      dateEnd:   document.getElementById('txtdateEnd').value,
+      cantidad:  document.getElementById('txtcantidad').value,
     }
       fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
           method: 'PUT',
           headers: {
-              'Content-Type': 'application/json',
+              'Content-Type': 'application/x-www-form-urlencoded',
           },
-          body: JSON.stringify({
-              body:body,
-          }),
+          body:body,
       })
       .then(function(response) {
           console.log('response =', response);
@@ -328,18 +324,16 @@ function dietsFind() {
 
   function promotionEdit() {
     const body = {
-      dateStart: document.getElementById('txtdateStart').value
-      dateEnd:   document.getElementById('txtdateEnd').value
+      dateStart: document.getElementById('txtdateStart').value,
+      dateEnd:   document.getElementById('txtdateEnd').value,
       // cantidad:  document.getElementById('txtcantidad').value
     }
       fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
           method: 'PUT',
           headers: {
-              'Content-Type': 'application/json',
+              'Content-Type': 'application/x-www-form-urlencoded',
           },
-          body: JSON.stringify({
-              body:body,
-          }),
+          body:body,
       })
       .then(function(response) {
           console.log('response =', response);
@@ -356,18 +350,16 @@ function dietsFind() {
 
   function servicesAdd() {
     const body = {
-      nameSer: document.getElementById('txtNameSer').value
-      price: document.getElementById('txtPrice').value
-      duration: document.getElementById('txtDuration').value
+      nameSer: document.getElementById('txtNameSer').value,
+      price: document.getElementById('txtPrice').value,
+      duration: document.getElementById('txtDuration').value,
     }
       fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
           method: 'POST',
           headers: {
-              'Content-Type': 'application/json',
+              'Content-Type': 'application/x-www-form-urlencoded',
           },
-          body: JSON.stringify({
-              body:body,
-          }),
+          body:body,
       })
       .then(function(response) {
           console.log('response =', response);
@@ -383,18 +375,16 @@ function dietsFind() {
 
   function servicesFind() {
     const body = {
-      nameSer: document.getElementById('txtNameSer').value
-      price: document.getElementById('txtPrice').value
-      duration: document.getElementById('txtDuration').value
+      nameSer: document.getElementById('txtNameSer').value,
+      price: document.getElementById('txtPrice').value,
+      duration: document.getElementById('txtDuration').value,
     }
       fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
           method: 'PUT',
           headers: {
-              'Content-Type': 'application/json',
+              'Content-Type': 'application/x-www-form-urlencoded',
           },
-          body: JSON.stringify({
-              body:body,
-          }),
+          body:body,
       })
       .then(function(response) {
           console.log('response =', response);
@@ -411,13 +401,13 @@ function dietsFind() {
   function servicesEdit() {
     const body = {
       // nameSer: document.getElementById('txtNameSer').value
-      price: document.getElementById('txtPrice').value
-      duration: document.getElementById('txtDuration').value
+      price: document.getElementById('txtPrice').value,
+      duration: document.getElementById('txtDuration').value,
     }
       fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
           method: 'PUT',
           headers: {
-              'Content-Type': 'application/json',
+              'Content-Type': 'application/x-www-form-urlencoded',
           },
           body: JSON.stringify({
               body:body,
@@ -435,38 +425,38 @@ function dietsFind() {
     });
   }
 
-window.onload = function() {
-  const functions = {
-    dietsGetAll: dietsGetAll(),
-  };
-  const table=getElementsByTagName('table')[0];
-  const method = table.getAttribute('data-method');
-  functions[method];
-}
-
-window.onload = function() {
-  const functions = {
-    appointmentsGetAll: appointmentsGetAll(),
-  };
-  const table=getElementsByTagName('table')[0];
-  const method = table.getAttribute('data-method');
-  functions[method];
-}
-
-window.onload = function (){
-  const functions = {
-    userGetAll: promotionsGetAll(),
-  };
-  const table =getElementsByTagName('table')[0];
-  const method = table.getAttribute('data-method');
-  functions[method];
-};
-
-window.onload = function (){
-  const functions = {
-    userGetAll: servicesGetAll(),
-  };
-  const table =getElementsByTagName('table')[0];
-  const method = table.getAttribute('data-method');
-  functions[method];
-};
+// window.onload = function() {
+//   const functions = {
+//     dietsGetAll: dietsGetAll(),
+//   };
+//   const table=getElementsByTagName('table')[0];
+//   const method = table.getAttribute('data-method');
+//   functions[method];
+// }
+//
+// window.onload = function() {
+//   const functions = {
+//     appointmentsGetAll: appointmentsGetAll(),
+//   };
+//   const table=getElementsByTagName('table')[0];
+//   const method = table.getAttribute('data-method');
+//   functions[method];
+// }
+//
+// window.onload = function (){
+//   const functions = {
+//     promotionsGetAll: promotionsGetAll(),
+//   };
+//   const table =getElementsByTagName('table')[0];
+//   const method = table.getAttribute('data-method');
+//   functions[method];
+// }
+//
+// window.onload = function (){
+//   const functions = {
+//     servicesGetAll: servicesGetAll(),
+//   };
+//   const table =getElementsByTagName('table')[0];
+//   const method = table.getAttribute('data-method');
+//   functions[method];
+// }
