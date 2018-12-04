@@ -5,7 +5,7 @@ class Cookies {
         this.cookieExdays = cookieExdays;
     }
 
-    static myfn(cookieName, cookieValue, cookieExdays) {
+    static setCookie(cookieName, cookieValue, cookieExdays) {
         const d = new Date();
         d.setTime(d.getTime() + (cookieExdays * 24 * 60 * 60 * 1000));
         let expires = 'expires='+ d.toUTCString();
@@ -40,4 +40,4 @@ class Cookies {
     }
 }
 
-module.exports = new Cookies();
+export default Cookies;
