@@ -1,40 +1,46 @@
 const gulp = require('gulp');
-const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
-const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const pump = require('pump');
 const cssnano = require('gulp-cssnano');
 const imagemin = require('gulp-imagemin');
+const gulpSequence = require('gulp-sequence');
 
 gulp.task('babel', () => {
- gulp.src('js/*.js')
-.pipe(babel({
-   "presets": ["env"]
-}))
-.pipe(gulp.dest('dist/js'));
- });
+    gulp.src('app/js/**/*.js')
+        .pipe(babel({
+            presets: ['es2015'],
+        }))
+        .pipe(gulp.dest('public/js'));
+});
 
-gulp.task('uglify', function (cb) {
-  pump([
-        gulp.src('dist/js/*.js'),
+gulp.task('uglify', (cb) => {
+    pump([
+        gulp.src('public/js/**/*.js'),
         uglify(),
-        gulp.dest('dist/js')
+        gulp.dest('public/js'),
     ],
-    cb
-  );
+    cb);
 });
 
-gulp.task('cssnano', function () {
-    return gulp.src('css/*.css')
-        .pipe(cssnano())
-        .pipe(gulp.dest('dist/css'));
-});
+gulp.task('cssnano', () => gulp.src('app/css/*.css')
+    .pipe(cssnano())
+    .pipe(gulp.dest('public/css')));
 
-gulp.task('imagemin', () =>
-    gulp.src('img/*')
-        .pipe(imagemin())
-        .pipe(gulp.dest('dist/img'))
-);
+gulp.task('imagemin', () => gulp.src('app/img/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('public/img')));
 
-gulp.task('default', ['babel', 'cssnano', 'imagemin', 'uglify']);
+gulp.task('copyIndex', () => gulp.src('app/index.html')
+    .pipe(gulp.dest('public/')));
+
+gulp.task('copyViews', () => gulp.src('app/views/**/*')
+    .pipe(gulp.dest('public/views')));
+
+gulp.task('default', gulpSequence(['cssnano', 'imagemin'], 'babel', ['copyIndex', 'copyViews']));
+
+// gulp.watch('js/**/*.js', () => {
+//     gulpSequence('babel', 'uglify')((err) => {
+//         if (err) console.log(err);
+//     });
+// });
