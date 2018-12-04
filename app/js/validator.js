@@ -132,21 +132,18 @@ function userLogin() {
       console.log('err', err);
   });
 }
-
 function dietsAdd() {
-  console.log("entro ");
+  console.log('entro');
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/', {
     method: 'POST',
-      // mode: "cors",
-      // credentials: 'same-origin',
-    headers: {
+      headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: const body = {
-      Name: document.getElementsById('txtName').value,
-      Description: document.getElementsById('txtDescription').value,
-    },
+      body: JSON.stringify ({
+        name: document.getElementsById('txtName').value,
+        description: document.getElementsById('txtDescription').value,
+    }),
   })
   .then(function(response) {
       console.log('response =', response);
@@ -158,23 +155,21 @@ function dietsAdd() {
   .catch(function(err) {
       console.log('err', err);
   });
-
+}
 function appointmentAdd() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/appointments/', {
     method: 'POST',
-      // mode: "cors",
-      // credentials: 'same-origin',
+
     headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: const body = {
+    body: JSON.stringify({
       Service: document.getElementsById('txtService').value,
       Date: document.getElementsById('txtDate').value,
       Hour: document.getElementsById('txtHour').value,
-    }
-    },
-  })
+    }),
+    })
   .then(function(response) {
       console.log('response =', response);
       return response.json();
@@ -185,20 +180,19 @@ function appointmentAdd() {
   .catch(function(err) {
       console.log('err', err);
   });
-
+}
 function appointmentEdit() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/appointments/id', {
     method: 'PUT',
       // mode: "cors",
-      // credentials: 'same-origin',
+  // credentials: 'same-origin',
     headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: const body = {
+    body: JSON.stringify({
       Status: document.getElementsById('txtStatus').value,
-    }
-    },
+  }),
   })
   .then(function(response) {
       console.log('response =', response);
@@ -210,21 +204,19 @@ function appointmentEdit() {
   .catch(function(err) {
       console.log('err', err);
   });
-
+}
 function dietsEdit() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/id', {
     method: 'PUT',
-      // mode: "cors",
-      // credentials: 'same-origin',
+
     headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: const body = {
+    body: JSON.stringify({
       Name: document.getElementsById('txtName').value,
       Description: document.getElementsById('txtDescription').value,
-    }
-    },
+  }),
   })
   .then(function(response) {
       console.log('response =', response);
@@ -236,21 +228,21 @@ function dietsEdit() {
   .catch(function(err) {
       console.log('err', err);
   });
-
+}
 function dietsFind() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/id', {
     method: 'GET',
+
       // mode: "cors",
       // credentials: 'same-origin',
     headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: const body = {
+    body: JSON.stringify({
       Date: document.getElementsById('txtDate').value,
       Hour: document.getElementsById('txtHour').value,
-    }
-    },
+  }),
   })
   .then(function(response) {
       console.log('response =', response);
@@ -262,21 +254,4 @@ function dietsFind() {
   .catch(function(err) {
       console.log('err', err);
   });
-
-window.onload = function() {
-  const functions = {
-    dietsGetAll: dietsGetAll(),
-  };
-  const table=getElementsByTagName('table')[0];
-  const method = table.getAttribute('data-method');
-  functions[method];
-}
-
-window.onload = function() {
-  const functions = {
-    appointmentsGetAll: appointmentsGetAll(),
-  };
-  const table=getElementsByTagName('table')[0];
-  const method = table.getAttribute('data-method');
-  functions[method];
 }
