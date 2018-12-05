@@ -246,6 +246,16 @@ td {
   display: block;
 }
 
+.quote p {
+  text-align: right;
+  font-style: italic;
+  margin: 0px;
+}
+
+.author-quote {
+  font-weight: bold;
+}
+
 .modal {
   position: fixed;
   font-family: Arial, Helvetica, sans-serif;
