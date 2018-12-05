@@ -194,7 +194,7 @@ function appointmentAdd() {
     mode: 'cors',
     headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
     },
     body: {
       Service: document.getElementsById('txtService').value,
@@ -221,7 +221,7 @@ function appointmentEdit() {
   // credentials: 'same-origin',
     headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
     },
     body: {
       Status: document.getElementsById('txtStatus').value,
@@ -245,7 +245,7 @@ function dietsEdit() {
     mode: 'cors',
     headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
     },
     body: {
       Name: document.getElementsById('txtName').value,
@@ -272,7 +272,7 @@ function dietsFind() {
       // credentials: 'same-origin',
     headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
     },
     body: {
       Date: document.getElementsById('txtDate').value,
@@ -300,7 +300,7 @@ function dietsFind() {
       fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
           method: 'POST',
           headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
+              'Content-Type': 'application/json',
           },
           body:body,
       })
@@ -325,7 +325,7 @@ function dietsFind() {
       fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
           method: 'PUT',
           headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
+              'Content-Type': 'application/json',
           },
           body:body,
       })
@@ -351,7 +351,7 @@ function dietsFind() {
       fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
           method: 'PUT',
           headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
+              'Content-Type': 'application/json',
           },
           body:body,
       })
@@ -377,7 +377,7 @@ function dietsFind() {
       fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
           method: 'POST',
           headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
+              'Content-Type': 'application/json',
           },
           body:body,
       })
@@ -402,7 +402,7 @@ function dietsFind() {
       fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
           method: 'PUT',
           headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
+              'Content-Type': 'application/json',
           },
           body:body,
       })
@@ -427,7 +427,7 @@ function dietsFind() {
       fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
           method: 'PUT',
           headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
+              'Content-Type': 'application/json',
           },
           body: JSON.stringify({
               body:body,
