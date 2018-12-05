@@ -110,23 +110,43 @@ function email(input) {
 }
 
 // API USER
-function userLogin() {
-    const body = {
-        Name: document.getElementById('txtName').value,
-        Email: document.getElementById('txtEmail').value,
-        Password: document.getElementById('txtPass').value,
-        Phone: document.getElementById('txtPhone').value,
-    }
+function addUser(){
 
+
+  fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/users/', {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+          'Content-Type': 'application/x-wwww-form-urlencoded',
+      },
+      body: JSON.stringify({
+          Email: document.getElementById('txtEmail').value,
+          Gender: 'M',
+          Name: document.getElementById('txtName').value,
+          Password: document.getElementById('txtPass').value,
+          Phone: document.getElementById('txtPhone').value,
+          UserType: 1,
+      }),
+  })
+  .then(function(response) {
+      console.log('response =', response);
+    return response.json();
+})
+.then(function(data) {
+    console.log('data = ', data);
+})
+.catch(function(err) {
+    console.log('err', err);
+});
+}
+
+function userLogin() {
     fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/users/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            email: 'ceoe1996@hotmail.com',
-            password: '1234',
-        }),
+        body: body,
     })
     .then(function(response) {
         console.log('response =', response);
@@ -145,7 +165,11 @@ function dietsAdd() {
     method: 'POST',
       headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
+    },
+    body: {
+      Name: document.getElementsById('txtName').value,
+      Description: document.getElementsById('txtDescription').value,
     },
       body: JSON.stringify ({
         name: document.getElementsById('txtName').value,
@@ -172,12 +196,12 @@ function appointmentAdd() {
         // 'Content-Type': 'application/x-www-form-urlencoded'
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: JSON.stringify({
+    body: {
       Service: document.getElementsById('txtService').value,
       Date: document.getElementsById('txtDate').value,
       Hour: document.getElementsById('txtHour').value,
-    }),
-    })
+    },
+  })
   .then(function(response) {
       console.log('response =', response);
       return response.json();
@@ -189,6 +213,7 @@ function appointmentAdd() {
       console.log('err', err);
   });
 }
+
 function appointmentEdit() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/appointments/id', {
     method: 'PUT',
@@ -198,9 +223,9 @@ function appointmentEdit() {
         // 'Content-Type': 'application/x-www-form-urlencoded'
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: JSON.stringify({
+    body: {
       Status: document.getElementsById('txtStatus').value,
-  }),
+    },
   })
   .then(function(response) {
       console.log('response =', response);
@@ -213,6 +238,7 @@ function appointmentEdit() {
       console.log('err', err);
   });
 }
+
 function dietsEdit() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/id', {
     method: 'PUT',
@@ -221,10 +247,10 @@ function dietsEdit() {
         // 'Content-Type': 'application/x-www-form-urlencoded'
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: JSON.stringify({
+    body: {
       Name: document.getElementsById('txtName').value,
       Description: document.getElementsById('txtDescription').value,
-  }),
+    },
   })
   .then(function(response) {
       console.log('response =', response);
@@ -237,6 +263,7 @@ function dietsEdit() {
       console.log('err', err);
   });
 }
+
 function dietsFind() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/id', {
     method: 'GET',
@@ -247,10 +274,10 @@ function dietsFind() {
         // 'Content-Type': 'application/x-www-form-urlencoded'
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: JSON.stringify({
+    body: {
       Date: document.getElementsById('txtDate').value,
       Hour: document.getElementsById('txtHour').value,
-  }),
+    },
   })
   .then(function(response) {
       console.log('response =', response);
@@ -263,3 +290,21 @@ function dietsFind() {
       console.log('err', err);
   });
 }
+
+// window.onload = function() {
+//   const functions = {
+//     dietsGetAll: dietsGetAll(),
+//   };
+//   const table=getElementsByTagName('table')[0];
+//   const method = table.getAttribute('data-method');
+//   functions[method];
+// }
+
+// window.onload = function() {
+//   const functions = {
+//     appointmentsGetAll: appointmentsGetAll(),
+//   };
+//   const table=getElementsByTagName('table')[0];
+//   const method = table.getAttribute('data-method');
+//   functions[method];
+// }
