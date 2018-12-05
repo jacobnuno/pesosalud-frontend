@@ -110,23 +110,43 @@ function email(input) {
 }
 
 // API USER
-function userLogin() {
-    const body = {
-        Name: document.getElementById('txtName').value,
-        Email: document.getElementById('txtEmail').value,
-        Password: document.getElementById('txtPass').value,
-        Phone: document.getElementById('txtPhone').value,
-    }
+function addUser(){
 
+
+  fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/users/', {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+          'Content-Type': 'application/x-wwww-form-urlencoded',
+      },
+      body: JSON.stringify({
+          Email: document.getElementById('txtEmail').value,
+          Gender: 'M',
+          Name: document.getElementById('txtName').value,
+          Password: document.getElementById('txtPass').value,
+          Phone: document.getElementById('txtPhone').value,
+          UserType: 1,
+      }),
+  })
+  .then(function(response) {
+      console.log('response =', response);
+    return response.json();
+})
+.then(function(data) {
+    console.log('data = ', data);
+})
+.catch(function(err) {
+    console.log('err', err);
+});
+}
+
+function userLogin() {
     fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/users/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            email: 'ceoe1996@hotmail.com',
-            password: '1234',
-        }),
+        body: body,
     })
     .then(function(response) {
         console.log('response =', response);
@@ -139,14 +159,11 @@ function userLogin() {
       console.log('err', err);
   });
 }
-
 function dietsAdd() {
-  console.log("entro ");
+  console.log('entro');
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/', {
     method: 'POST',
-      // mode: "cors",
-      // credentials: 'same-origin',
-    headers: {
+      headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
       'Content-Type': 'application/json'
     },
@@ -154,6 +171,10 @@ function dietsAdd() {
       Name: document.getElementsById('txtName').value,
       Description: document.getElementsById('txtDescription').value,
     },
+      body: JSON.stringify ({
+        name: document.getElementsById('txtName').value,
+        description: document.getElementsById('txtDescription').value,
+    }),
   })
   .then(function(response) {
       console.log('response =', response);
@@ -170,11 +191,10 @@ function dietsAdd() {
 function appointmentAdd() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/appointments/', {
     method: 'POST',
-      // mode: "cors",
-      // credentials: 'same-origin',
+    mode: 'cors',
     headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
     body: {
       Service: document.getElementsById('txtService').value,
@@ -197,11 +217,11 @@ function appointmentAdd() {
 function appointmentEdit() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/appointments/id', {
     method: 'PUT',
-      // mode: "cors",
-      // credentials: 'same-origin',
+    mode: "cors",
+  // credentials: 'same-origin',
     headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
     body: {
       Status: document.getElementsById('txtStatus').value,
@@ -222,11 +242,10 @@ function appointmentEdit() {
 function dietsEdit() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/id', {
     method: 'PUT',
-      // mode: "cors",
-      // credentials: 'same-origin',
+    mode: 'cors',
     headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
-      'Content-Type': 'application/x-www-form-urlencoded',
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
     body: {
       Name: document.getElementsById('txtName').value,
@@ -248,11 +267,12 @@ function dietsEdit() {
 function dietsFind() {
   fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/id', {
     method: 'GET',
-      // mode: "cors",
+
+    mode: "cors",
       // credentials: 'same-origin',
     headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
-      'Content-Type': 'application/x-www-form-urlencoded',
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
     body: {
       Date: document.getElementsById('txtDate').value,

@@ -9,7 +9,7 @@ header{
 }
 
 footer {
-  background-color: #ddd;
+  background-color: var(--light-gray-color);
   height: 3em;
   width: 100%;
   padding: 0px, 10px;
@@ -40,7 +40,6 @@ footer a:hover {
 
 }
 
-
 .quote p {
   text-align: right;
   font-style: italic;
@@ -51,8 +50,6 @@ footer a:hover {
   font-weight: bold;
 }
 
-=======
->>>>>>> feature_services
 header div .is-multiline{
   height: 100%
 }
@@ -82,19 +79,9 @@ p {
 }
 
 .servicios > div {
-<<<<<<< HEAD
   background-color: #e0ffd5;
   border-radius: 1em;
   border: 1px solid #488a00;
-=======
-  background-color: #E6F2FF;
-  border-radius: 50px;
-  border: 1px solid;
->>>>>>> feature_services
-}
-
-.pierde-peso h3{
-  text-align: center;
 }
 
 .pierde-peso img{
@@ -104,23 +91,15 @@ p {
 .mision-back {
   background-image: url("../img/BackgroudMission.jpg");
   padding: 10px 0px;
-<<<<<<< HEAD
   border-radius: 4px;
-=======
->>>>>>> feature_services
 }
 
 .mision {
   background-color: #FFFFFF;
   opacity: 0.7;
-<<<<<<< HEAD
   border: 1px solid #488a00;
   filter: alpha(opacity=60);
   border-radius: .8em;
-=======
-  border: 1px solid black;
-  filter: alpha(opacity=60);
->>>>>>> feature_services
 }
 
 .mision h3 {
@@ -133,7 +112,6 @@ form {
   padding: .4em 0 .4em .5em;
   border-radius: 4px;
 }
-<<<<<<< HEAD
 
 .maps {
   border-radius: 4px;
@@ -197,7 +175,6 @@ img {
   header, footer {
     border-radius: 4px;
   }
-
   .contact-form {
     margin-left: 18% !important;
   }
@@ -217,7 +194,6 @@ img {
   }
   .title1 {
     text-align: justify;
-    font-size: 16px;
   }
   .what-is-nutrition {
     margin: 0;
@@ -245,5 +221,3 @@ img {
     z-index: 10 !important;
   }
 }
-=======
->>>>>>> feature_services
