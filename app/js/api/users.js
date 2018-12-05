@@ -13,48 +13,51 @@ class Users {
     // this.headers = new Headers();
   }
 
-  static async login() {
-    return await fetch(`${apiUrl}/users/login`, {
+  static async login(form) {
+    const email = form.getElementsById('email').value;
+    const pass = form.getElementsById('password').value;
+    await fetch(`${this.apiUrl}/users/login`, {
       method: 'POST',
       headers: {
-        // 'Content-Type': 'application/x-www-form-urlencoded'
-        'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        email: 'ceoe1996@hotmail.com',
-        password: 1234
-      }),
-    }).then(function(response) {
-
-      // this.headers.set('Authorization', 'Bearer' + this.token);
-      // return response.json();
-      console.log(response.json());
-    });
-
-  }
-
-  static async getAll() {
-    return await fetch(`${this.apiUrl}/${this.endpoint}/asdfasd`, {
-      method: 'GET',
-      headers: {
-        'Authorization': 'Bearer' + this.token,
-        "Content-Type": "application/json"
-      }
-    }).then(function(response) {
-      return response.json();
-    });
-  }
-
-  static async create(form) {
-    data = await fetch(`${this.apiUrl}/${this.endpoint}`, {
-      method: 'post',
-      body: new FormData(form)
-    }).then(function(response){
-
+      body: {
+        email,
+        password: pass,
+      },
     })
-
-    document.cookie = 'credentials' + "=" + data.token + ";path=/;expires=" + d.toGMTString();
+      .then((response) => {
+        console.log('response: ', response);
+        return response.json();
+      })
+      .then((data) => {
+        console.log('data: ', data);
+      })
+      .catch(err => console.log('err', err));
   }
+
+  // static async getAll() {
+  //   return await fetch(`${this.apiUrl}/${this.endpoint}/asdfasd`, {
+  //     method: 'GET',
+  //     headers: {
+  //       'Authorization': 'Bearer' + this.token,
+  //       "Content-Type": "application/json"
+  //     }
+  //   }).then(function(response) {
+  //     return response.json();
+  //   });
+  // }
+  //
+  // static async create(form) {
+  //   data = await fetch(`${this.apiUrl}/${this.endpoint}`, {
+  //     method: 'post',
+  //     body: new FormData(form)
+  //   }).then(function(response){
+  //
+  //   })
+  //   document.cookie = 'credentials' + "=" + data.token + ";path=/;expires=" + d.toGMTString();
+  // }
 }
 
 module.exports = new Users();
