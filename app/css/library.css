@@ -57,7 +57,7 @@ select {
 textarea:focus {
   border: 1px solid var(--green-color);
   -webkit-box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
-  -moz-box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(5disabled2,168,83,1);
   box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
 }
 
