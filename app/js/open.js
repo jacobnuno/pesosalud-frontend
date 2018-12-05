@@ -1,4 +1,4 @@
-// import { getCookie } from './cookies.js';
+import cookies from './cookies.js';
 
 const apiUrl = 'http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000';
 // const apiUrl = 'http://localhost:3000';

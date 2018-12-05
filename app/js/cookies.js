@@ -1,10 +1,4 @@
 class Cookies {
-    constructor(cookieName, cookieValue, cookieExdays) {
-        this.cookieName = cookieName;
-        this.cookieValue = cookieValue;
-        this.cookieExdays = cookieExdays;
-    }
-
     static setCookie(cookieName, cookieValue, cookieExdays) {
         const d = new Date();
         d.setTime(d.getTime() + (cookieExdays * 24 * 60 * 60 * 1000));
