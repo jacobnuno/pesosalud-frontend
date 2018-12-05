@@ -86,10 +86,6 @@ td {
   overflow-x: auto;
 }
 
-.is-flex {
-  display: flex;
-}
-
 .form-group {
   display: block;
   width: 100%;
@@ -149,7 +145,7 @@ td {
   outline: none;
   height: 2em;
   width: 6em;
-  margin: .3em 0;
+  margin: .2em;
   line-height: 2em;
 }
 
@@ -294,6 +290,20 @@ td {
 }
 .close-modal:hover {
   background: #00d9ff;
+}
+.quote p {
+  text-align: right;
+  font-style: italic;
+  margin: 0px;
+}
+
+.author-quote {
+  font-weight: bold;
+}
+
+.img {
+  width: 9em;
+  height: 9em;
 }
 
 /* mobile */
@@ -467,6 +477,7 @@ td {
     flex: none;
     width: 100%;
   }
+
   .column.is-offset-12-desktop {
     margin-left: 100%;
   }

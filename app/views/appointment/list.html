@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Citas</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  </head>
+  <body>
+    <div class="main">
+      <h1 class="column is-3-desktop is-offset-5-desktop is-12-mobile is-center">Lista de citas</h1>
+      <div class="is-flex">
+        <table class="is-center table-responsive" align="center" data-method="appointmentsGetAll">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Usuario</th>
+              <th>Servicio</th>
+              <th>Status</th>
+              <th>Acciones</th>
+              </tr>
+              </thead>
+          <tbody>
+            <tr>
+            <td>20/11/2018</td>
+            <td>Juan Perez Gonzalez</td>
+            <td>Electroacupuntura</td>
+            <td>Activo</td>
+            <td>
+              <a class="btn-action btn-orange" href="#">Editar</a>
+            </td>
+            </tr>
+            <tr>
+              <td>21/11/2019</td>
+              <td>Andrea Vazquez Gervacio</td>
+            </tr>
+              <td>Homeopatia</td>
+              <td>Activo</td>
+              <td>
+                <a class="btn-action btn-orange" href="#">Editar</a>
+
+              </td>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </body>
+</html>
