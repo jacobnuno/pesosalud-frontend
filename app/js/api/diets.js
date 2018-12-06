@@ -3,7 +3,7 @@
 class Diets {
   constructor() {
     // const this.apiUrl = 'ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000';
-    this.apiUrl = 'ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000';
+    this.apiUrl = 'https://pesoysalud.herokuapp.com/diets/';
   }
 
   static async getAll() {
