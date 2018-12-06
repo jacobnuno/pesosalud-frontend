@@ -64,6 +64,7 @@ class Users {
   //   }).then(function(response){
   //
   //   })
+
   //
   //   document.cookie = 'credentials' + "=" + data.token + ";path=/;expires=" + d.toGMTString();
   // }
