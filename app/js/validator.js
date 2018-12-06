@@ -104,6 +104,56 @@ class Validator {
     }
     return false;
   }
+
+// API USER
+function addUser(){
+  const today = new Date();
+
+  const body = {
+    Email: document.getElementById('txtEmail').value,
+    Gender: document.getElementById('txtGender').value,
+    Name: document.getElementById('txtName').value,
+    Password: document.getElementById('txtPass').value,
+    Phone: document.getElementById('txtPhone').value,
+    Weight: document.getElementById('txtWeight').value,
+    Height: document.getElementById('txtHeight').value,
+    Birthdate: document.getElementById('txtBirthdate').value,
+    Comments: document.getElementById('txtComments').value,
+    // registeredDate: dateFormat(new Date(), 'Y-m-d h:i:s'),
+    UserType: 4,
+  }
+
+  console.log(body);
+  fetch('https://pesoysalud.herokuapp.com/users/', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+          Email: document.getElementById('txtEmail').value,
+          Gender: document.getElementById('txtGender').value,
+          Name: document.getElementById('txtName').value,
+          Password: document.getElementById('txtPass').value,
+          Phone: document.getElementById('txtPhone').value,
+          Weight: document.getElementById('txtWeight').value,
+          Height: document.getElementById('txtHeight').value,
+          BirthDate: document.getElementById('txtBirthdate').value,
+          Comments: document.getElementById('txtComments').value,
+          registeredDate: `20180101`,
+          UserType: '4',
+      }),
+  })
+  .then(function(response) {
+      console.log('response =', response);
+    return response.json();
+})
+.then(function(data) {
+    console.log('data = ', data);
+})
+.catch(function(err) {
+    console.log('err', err);
+});
 }
+
 
 export default Validator;
