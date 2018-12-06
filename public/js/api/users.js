@@ -1,149 +1,188 @@
-"use strict";
+import Cookies from '../cookies.js';
 
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-// const cookies = require('../cookies');
-var Users =
-/*#__PURE__*/
-function () {
-  function Users() {
-    _classCallCheck(this, Users);
-
-    // const this.apiUrl = 'ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000';
-    this.apiUrl = 'ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000'; // obtener la cookie
-    // document.cookie
-    // this.token = asdfasdf
-    // setear el token
-    // this.headers = new Headers();
+class Users {
+  static login(form) {
+    Cookies.hasSession('session-token');
+    const email = form.querySelector('input[name="email"]').value;
+    const pass = form.querySelector('input[name="password"]').value;
+    fetch('https://pesoysalud.herokuapp.com/users/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        // 'Content-Type': 'application/x-wwww-form-urlencoded',
+      },
+      body: JSON.stringify({
+        email: email,
+        password: pass,
+      }),
+    })
+      .then((response) => {
+        console.log('response: ', response);
+        return response.json();
+      })
+      .then((data) => {
+        console.log('data: ', data);
+        Cookies.setCookie('session-token', data.token, 168);
+        Cookies.setCookie('user-id', data.id, 168);
+        window.location.replace('../../index.html');
+      })
+      .catch((err) => {
+        console.log('err', err);
+        alert('Your credentials are incorrect');
+      });
   }
 
-  _createClass(Users, null, [{
-    key: "login",
-    value: function () {
-      var _login = _asyncToGenerator(
-      /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee() {
-        return regeneratorRuntime.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return fetch("".concat(apiUrl, "/users/login"), {
-                  method: 'POST',
-                  headers: {
-                    // 'Content-Type': 'application/x-www-form-urlencoded'
-                    'Content-Type': 'application/json'
-                  },
-                  body: JSON.stringify({
-                    email: 'ceoe1996@hotmail.com',
-                    password: 1234
-                  })
-                }).then(function (response) {
-                  // this.headers.set('Authorization', 'Bearer' + this.token);
-                  // return response.json();
-                  console.log(response.json());
-                });
-
-              case 2:
-                return _context.abrupt("return", _context.sent);
-
-              case 3:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, this);
-      }));
-
-      function login() {
-        return _login.apply(this, arguments);
+  static getOne(form) {
+    const userId = Cookies.getCookie('user-id');
+    const token = Cookies.getCookie('session-token');
+    fetch(`https://pesoysalud.herokuapp.com/users/${userId}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
       }
+    })
+      .then((response) => {
+        console.log('response: ', response);
+        return response.json();
+      })
+      .then((data) => {
+        console.log('data: ', data);
+        form.querySelector('input[name="name"]').value = data.data[0].name ? data.data[0].name : '';
+        form.querySelector('input[name="email"]').value = data.data[0].email ? data.data[0].email : '';
+        form.querySelector('input[name="phone"]').value = data.data[0].phone ? data.data[0].phone : '';
+        form.querySelector('input[name="height"]').value = data.data[0].Height ? data.data[0].Height : '';
+        form.querySelector('textarea[name="coments"]').value = data.data[0].Coments ? data.data[0].Coments : '';
+      })
+      .catch(err => console.log('err', err));
+  }
 
-      return login;
-    }()
-  }, {
-    key: "getAll",
-    value: function () {
-      var _getAll = _asyncToGenerator(
-      /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee2() {
-        return regeneratorRuntime.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _context2.next = 2;
-                return fetch("".concat(this.apiUrl, "/").concat(this.endpoint, "/asdfasd"), {
-                  method: 'GET',
-                  headers: {
-                    'Authorization': 'Bearer' + this.token,
-                    "Content-Type": "application/json"
-                  }
-                }).then(function (response) {
-                  return response.json();
-                });
+  // static async create(form) {
+  //   data = await fetch(`${this.apiUrl}/${this.endpoint}`, {
+  //     method: 'post',
+  //     body: new FormData(form)
+  //   }).then(function(response){
+  //
+  //   })
 
-              case 2:
-                return _context2.abrupt("return", _context2.sent);
+  //
+  //   document.cookie = 'credentials' + "=" + data.token + ";path=/;expires=" + d.toGMTString();
+  // }
 
-              case 3:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2, this);
-      }));
+  // static getAll() {
+  //   const userId = Cookies.getCookie('user-id');
+  //   const token = Cookies.getCookie('session-token');
+  //   const roles = {
+  //     1: 'admin',
+  //     2: 'doctora',
+  //     3: 'recepcionista',
+  //     4: 'paciente',
+  //   }
+  //   const gender = {
+  //     M: 'Masculino',
+  //     F: 'Femenino',
+  //   }
+  //   fetch(`https://pesoysalud.herokuapp.com/users/`, {
+  //     method: 'GET',
+  //     headers: {
+  //       'Authorization': `Bearer ${token}`,
+  //       "Content-Type": "application/json"
+  //     }
+  //   })
+  //     .then((response) => {
+  //       console.log('response: ', response);
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       console.log('data: ', data);
+  //       const tableBody = document.getElementsByTagName('tbody')[0];
+  //       for (i = 0; i < data.data.length; i++) {
+  //         let tr = document.createElement('tr');
+  //         let td = document.createElement('td');
+  //         td.appendChild(document.createTextNode(data.data[i]['id']));
+  //         tr.appendChild(td);
+  //         td = document.createElement('td');
+  //         td.appendChild(document.createTextNode(data.data[i]['name']));
+  //         tr.appendChild(td);
+  //         td = document.createElement('td');
+  //         td.appendChild(document.createTextNode(data.data[i]['email']));
+  //         tr.appendChild(td);
+  //         td = document.createElement('td');
+  //         td.appendChild(document.createTextNode(gender[data.data[i]['gender']]));
+  //         tr.appendChild(td);
+  //         td = document.createElement('td');
+  //         td.appendChild(document.createTextNode(data.data[i]['phone']));
+  //         tr.appendChild(td);
+  //         td = document.createElement('td');
+  //         td.appendChild(document.createTextNode(roles[data.data[i]['UserType']]));
+  //         tr.appendChild(td);
+  //         // ver
+  //         td = document.createElement('td');
+  //         let a = document.createElement('a');
+  //         let createAText = document.createTextNode('Ver');
+  //         a.setAttribute('href', `./view.html?id=${data.data[i]['id']}`);
+  //         a.setAttribute('class', "btn-action btn-green");
+  //         a.appendChild(createAText);
+  //         td.appendChild(a);
+  //         tr.appendChild(td);
+  //         // editar
+  //         a = document.createElement('a');
+  //         createAText = document.createTextNode('Editar');
+  //         a.setAttribute('href', `./edit.html?id=${data.data[i]['id']}`);
+  //         a.setAttribute('class', "btn-action btn-orange");
+  //         a.appendChild(createAText);
+  //         td.appendChild(a);
+  //         tr.appendChild(td);
+  //         // acticar/desactivar
+  //         // a = document.createElement('a');
+  //         // createAText = document.createTextNode(data.data[i]['Active'] ? 'Desactivar' : 'Activar');
+  //         // a.setAttribute('href', "#");
+  //         // a.setAttribute('class', data.data[i]['Active'] ? 'btn-action btn-red' : 'btn-action btn-blue');
+  //         // a.appendChild(createAText);
+  //         // td.appendChild(a);
+  //         // tr.appendChild(td);
+  //
+  //         tableBody.appendChild(tr);
+  //       }
+  //     })
+  //     .catch(err => console.log('err', err));
+  // }
 
-      function getAll() {
-        return _getAll.apply(this, arguments);
-      }
+  //
+  // static async userEdit() {
+  //     const url = window.location;
+  //     const id = url.toString().substring(url.toString().lastIndexOf('=') + 1);
+  //     console.log('id: ', id);
+  //     fetch(`${apiUrl}/users/${id}`, {
+  //     method: 'GET',
+  //     mode: 'cors',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       Authorization: `Bearer ${token}`,
+  //     }
+  //   })
+  //     .then(function(response) {
+  //       console.log('response: ', response);
+  //       return response.json();
+  //     })
+  //     .then(function(data) {
+  //       console.log('data: ', data);
+  //       let username =
+  //       // const tableBody = document.getElementsByTagName('tbody')[0];
+  //       // for (i = 0; i < data.data.length; i++) {
+  //       //   let tr = document.createElement('tr');
+  //       //   let td = document.createElement('td');
+  //       //   td.appendChild(document.createTextNode(data.data[i]['id']));
+  //       //   tr.appendChild(td);
+  //       //   td = document.createElement('td');
+  //       //   td.appendChild(document.createTextNode(data.data[i]['name']));
+  //       //   tr.appendChild(td);
+  //       //   td = document.createElement('td');
+  //       //   td.appendChild(document.createTextNode(data.data[i]['email']));
+  //
+  //     })
+  //     .catch(err => console.log('err', err));
+  // }
+}
 
-      return getAll;
-    }()
-  }, {
-    key: "create",
-    value: function () {
-      var _create = _asyncToGenerator(
-      /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee3(form) {
-        return regeneratorRuntime.wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
-                _context3.next = 2;
-                return fetch("".concat(this.apiUrl, "/").concat(this.endpoint), {
-                  method: 'post',
-                  body: new FormData(form)
-                }).then(function (response) {});
-
-              case 2:
-                data = _context3.sent;
-                document.cookie = 'credentials' + "=" + data.token + ";path=/;expires=" + d.toGMTString();
-
-              case 4:
-              case "end":
-                return _context3.stop();
-            }
-          }
-        }, _callee3, this);
-      }));
-
-      function create(_x) {
-        return _create.apply(this, arguments);
-      }
-
-      return create;
-    }()
-  }]);
-
-  return Users;
-}();
-
-module.exports = new Users();
+export default Users;

@@ -1,74 +1,33 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Cookies =
-/*#__PURE__*/
-function () {
-  function Cookies(cookieName, cookieValue, cookieExdays) {
-    _classCallCheck(this, Cookies);
-
-    this.cookieName = cookieName;
-    this.cookieValue = cookieValue;
-    this.cookieExdays = cookieExdays;
+class Cookies {
+  static setCookie(cookieName, cookieValue, cookieExdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (cookieExdays * 24 * 60 * 60 * 1000));
+    let expires = 'expires='+ d.toUTCString();
+    document.cookie = cookieName + '=' + cookieValue + ';' + expires + ';path=/';
+    // window.location.replace('../index.html');
   }
 
-  _createClass(Cookies, null, [{
-    key: "setCookie",
-    value: function setCookie(cookieName, cookieValue, cookieExdays) {
-      var d = new Date();
-      d.setTime(d.getTime() + cookieExdays * 24 * 60 * 60 * 1000);
-      var expires = 'expires=' + d.toUTCString();
-      document.cookie = cookieName + '=' + cookieValue + ';' + expires + ';path=/';
+  static hasSession(cookieName) {
+    let cookie = this.getCookie(cookieName);
+    if(cookie === undefined || cookie == null) {
+      window.location.replace('../index.html');
     }
-  }, {
-    key: "getCookie",
-    value: function getCookie(cookieName) {
-      var name = cookieName + '=';
-      var ca = document.cookie.split(';');
+  }
 
-      for (var i = 0; i < ca.length; i += 1) {
+  static getCookie(cookieName) {
+    var name = cookieName + '=';
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i += 1) {
         var c = ca[i];
-
-        while (c.charAt(0) == ' ') {
-          c = c.substring(1);
-        }
-
-        if (c.indexOf(name) == 0) {
-          return c.substring(name.length, c.length);
-        }
+      while (c.charAt(0)==' ') {
+        c = c.substring(1);
       }
-
-      return '';
-    }
-  }, {
-    key: "checkCookie",
-    value: function checkCookie() {
-      var username = getCookie('username');
-
-      if (username != '') {
-        alert('Welcome again ' + username);
-      } else {
-        username = prompt('Please enter your name: ', '');
-
-        if (username != '' && username != null) {
-          setCookie('username', username, 365);
-        }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
       }
     }
-  }]);
+    return '';
+  }
+}
 
-  return Cookies;
-}();
-
-var _default = Cookies;
-exports.default = _default;
+export default Cookies;
