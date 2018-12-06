@@ -57,29 +57,6 @@ class Users {
       .catch(err => console.log('err', err));
   }
 
-  static async create(form) {
-    data = await fetch(`${this.apiUrl}/${this.endpoint}`, {
-      method: 'post',
-      body: new FormData(form)
-    }).then(function(response){
-
-    })
-
-    document.cookie = 'credentials' + "=" + data.token + ";path=/;expires=" + d.toGMTString();
-  }
-
-  // static async getAll() {
-  //   return await fetch(`${this.apiUrl}/${this.endpoint}/asdfasd`, {
-  //     method: 'GET',
-  //     headers: {
-  //       'Authorization': 'Bearer' + this.token,
-  //       "Content-Type": "application/json"
-  //     }
-  //   }).then(function(response) {
-  //     return response.json();
-  //   });
-  // }
-  //
   // static async create(form) {
   //   data = await fetch(`${this.apiUrl}/${this.endpoint}`, {
   //     method: 'post',
@@ -90,6 +67,86 @@ class Users {
   //
   //   document.cookie = 'credentials' + "=" + data.token + ";path=/;expires=" + d.toGMTString();
   // }
+
+  // static getAll() {
+  //   const userId = Cookies.getCookie('user-id');
+  //   const token = Cookies.getCookie('session-token');
+  //   const roles = {
+  //     1: 'admin',
+  //     2: 'doctora',
+  //     3: 'recepcionista',
+  //     4: 'paciente',
+  //   }
+  //   const gender = {
+  //     M: 'Masculino',
+  //     F: 'Femenino',
+  //   }
+  //   fetch(`https://pesoysalud.herokuapp.com/users/`, {
+  //     method: 'GET',
+  //     headers: {
+  //       'Authorization': `Bearer ${token}`,
+  //       "Content-Type": "application/json"
+  //     }
+  //   })
+  //     .then((response) => {
+  //       console.log('response: ', response);
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       console.log('data: ', data);
+  //       const tableBody = document.getElementsByTagName('tbody')[0];
+  //       for (i = 0; i < data.data.length; i++) {
+  //         let tr = document.createElement('tr');
+  //         let td = document.createElement('td');
+  //         td.appendChild(document.createTextNode(data.data[i]['id']));
+  //         tr.appendChild(td);
+  //         td = document.createElement('td');
+  //         td.appendChild(document.createTextNode(data.data[i]['name']));
+  //         tr.appendChild(td);
+  //         td = document.createElement('td');
+  //         td.appendChild(document.createTextNode(data.data[i]['email']));
+  //         tr.appendChild(td);
+  //         td = document.createElement('td');
+  //         td.appendChild(document.createTextNode(gender[data.data[i]['gender']]));
+  //         tr.appendChild(td);
+  //         td = document.createElement('td');
+  //         td.appendChild(document.createTextNode(data.data[i]['phone']));
+  //         tr.appendChild(td);
+  //         td = document.createElement('td');
+  //         td.appendChild(document.createTextNode(roles[data.data[i]['UserType']]));
+  //         tr.appendChild(td);
+  //         // ver
+  //         td = document.createElement('td');
+  //         let a = document.createElement('a');
+  //         let createAText = document.createTextNode('Ver');
+  //         a.setAttribute('href', `./view.html?id=${data.data[i]['id']}`);
+  //         a.setAttribute('class', "btn-action btn-green");
+  //         a.appendChild(createAText);
+  //         td.appendChild(a);
+  //         tr.appendChild(td);
+  //         // editar
+  //         a = document.createElement('a');
+  //         createAText = document.createTextNode('Editar');
+  //         a.setAttribute('href', `./edit.html?id=${data.data[i]['id']}`);
+  //         a.setAttribute('class', "btn-action btn-orange");
+  //         a.appendChild(createAText);
+  //         td.appendChild(a);
+  //         tr.appendChild(td);
+  //         // acticar/desactivar
+  //         // a = document.createElement('a');
+  //         // createAText = document.createTextNode(data.data[i]['Active'] ? 'Desactivar' : 'Activar');
+  //         // a.setAttribute('href', "#");
+  //         // a.setAttribute('class', data.data[i]['Active'] ? 'btn-action btn-red' : 'btn-action btn-blue');
+  //         // a.appendChild(createAText);
+  //         // td.appendChild(a);
+  //         // tr.appendChild(td);
+  //
+  //         tableBody.appendChild(tr);
+  //       }
+  //     })
+  //     .catch(err => console.log('err', err));
+  // }
+
   //
   // static async userEdit() {
   //     const url = window.location;
