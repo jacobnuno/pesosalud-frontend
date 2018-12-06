@@ -4,14 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Buscar cita</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="../../css/login.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="../../css/index.css"/>
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
     <link rel="icon" href="../../img/favicon.ico">
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/index.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/header.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/login.css"/>
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Frank+Ruhl+Libre|Poppins|Quicksand" rel="stylesheet">
     </head>
+  <body>
     <header>
       <div class="column is-1-desktop is-6-mobile is-multiline logo">
           <a href="../../index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
@@ -21,7 +23,7 @@
         <ul class="horizontal-list menu">
           <li><a href="../../views/aboutUs.html">Nosotros</a></li>
           <li><a href="../../views/services.html">Servicios</a></li>
-          <li><a href="../views/appointment/add.html">¡Agenda tu cita!</a></li>
+          <li><a href="../../views/appointment/add.html">¡Agenda tu cita!</a></li>
           <li><a href="../../views/login.html">Iniciar Sesión</a></li>
         </ul>
       </div>
@@ -34,7 +36,6 @@
         <li><a href="../../views/login.html">Iniciar Sesión</a></li>
       </ul>
     </div>
-  <body>
     <div class="main" >
       <h2 class="column is-2-desktop is-offset-5-desktop is-12-mobile title is-center">Busca tus citas</h2>
       <form class="column is-2-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile appointment is-center" method="post">
@@ -54,6 +55,13 @@
           <button data-type="submit" name="button" class="btn btn-blue" data-method="dietsFind">Buscar</button>
         </form>
       </div>
+      <footer>
+        <div class="column is-12-desktop is-center">
+          <span>Derechos Reservados para Peso y Salud</span>
+          <a href="../views/cookies.html">Cookies</a>
+        </div>
+      </footer>
+      <script src="../../js/events.js"></script>
     <script src="../../js/validator.js"></script>
   </body>
 </html>
