@@ -4,7 +4,7 @@ class Cookies {
     d.setTime(d.getTime() + (cookieExdays * 24 * 60 * 60 * 1000));
     let expires = 'expires='+ d.toUTCString();
     document.cookie = cookieName + '=' + cookieValue + ';' + expires + ';path=/';
-    window.location.replace('./index.html');
+    window.location.replace('../index.html');
   }
 
   static hasSession() {
@@ -23,7 +23,7 @@ class Cookies {
         c = c.substring(1);
       }
       if (c.indexOf(name) == 0) {
-        return c.substring(name.length,c.length);
+        return c.substring(name.length, c.length);
       }
     }
     return '';

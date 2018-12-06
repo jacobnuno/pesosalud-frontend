@@ -1,21 +1,7 @@
-// const cookies = require('../cookies');
+import Cookies from '../cookies.js';
 
 class Users {
-//   constructor() {
-    // const this.apiUrl = 'ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000';
-    // this.apiUrl = 'localhost:3000';
-    // this.apiUrl = 'ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000';
-
-    // obtener la cookie
-    // document.cookie
-    // this.token = asdfasdf
-
-    // setear el token
-    // this.headers = new Headers();
-//   }
-
   static login(form) {
-    const apiUrl = 'https://pesoysalud.herokuapp.com';
     const email = form.querySelector('input[name="email"]').value;
     const pass = form.querySelector('input[name="password"]').value;
     fetch('https://pesoysalud.herokuapp.com/users/login', {
@@ -25,9 +11,9 @@ class Users {
         // 'Content-Type': 'application/x-wwww-form-urlencoded',
       },
       body: JSON.stringify({
-          email: email,
-          password: pass,
-        }),
+        email: email,
+        password: pass,
+      }),
     })
       .then((response) => {
         console.log('response: ', response);
@@ -35,6 +21,7 @@ class Users {
       })
       .then((data) => {
         console.log('data: ', data);
+        Cookies.setCookie('session-token', data.data.token, 168);
       })
       .catch(err => console.log('err', err));
   }
