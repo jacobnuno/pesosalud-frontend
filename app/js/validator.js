@@ -111,21 +111,40 @@ function email(input) {
 
 // API USER
 function addUser(){
+  const today = new Date();
 
+  const body = {
+    Email: document.getElementById('txtEmail').value,
+    Gender: document.getElementById('txtGender').value,
+    Name: document.getElementById('txtName').value,
+    Password: document.getElementById('txtPass').value,
+    Phone: document.getElementById('txtPhone').value,
+    Weight: document.getElementById('txtWeight').value,
+    Height: document.getElementById('txtHeight').value,
+    Birthdate: document.getElementById('txtBirthdate').value,
+    Comments: document.getElementById('txtComments').value,
+    // registeredDate: dateFormat(new Date(), 'Y-m-d h:i:s'),
+    UserType: 4,
+  }
 
-  fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/users/', {
+  console.log(body);
+  fetch('https://pesoysalud.herokuapp.com/users/', {
       method: 'POST',
-      mode: 'cors',
       headers: {
-          'Content-Type': 'application/x-wwww-form-urlencoded',
+          'Content-Type': 'application/json',
       },
       body: JSON.stringify({
           Email: document.getElementById('txtEmail').value,
-          Gender: 'M',
+          Gender: document.getElementById('txtGender').value,
           Name: document.getElementById('txtName').value,
           Password: document.getElementById('txtPass').value,
           Phone: document.getElementById('txtPhone').value,
-          UserType: 1,
+          Weight: document.getElementById('txtWeight').value,
+          Height: document.getElementById('txtHeight').value,
+          BirthDate: document.getElementById('txtBirthdate').value,
+          Comments: document.getElementById('txtComments').value,
+          registeredDate: `20180101`,
+          UserType: '4',
       }),
   })
   .then(function(response) {
