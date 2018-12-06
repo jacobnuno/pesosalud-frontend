@@ -42,11 +42,11 @@
         <h1 class="column is-3-desktop is-offset-5-desktop is-12-mobile title is-center">Login en Peso y Salud</h1>
 
         <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile login" action="index.html" method="post">
-          <label id="email" for="email" class="column is-10-desktop">E-mail</label>
-          <input class="column is-8-desktop" type="text" name="email" value="" placeholder="ejemplo@ejemplo.com">
+          <label for="email" class="column is-10-desktop">E-mail</label>
+          <input id="email" class="column is-8-desktop" type="text" name="email" value="" placeholder="ejemplo@ejemplo.com" data-rule="email">
           <label for="password" class="column is-4-desktop is-3-mobile is-multiline">Contraseña</label>
           <a class="column is-8-desktop is-9-mobile is-multiline is-center btn-link" href="#">Olvidaste tu contraseña?</a>
-          <input id="password" class="column is-8-desktop" type="password" name="password" value="" placeholder="Contraseña">
+          <input id="password" class="column is-8-desktop" type="password" name="password" value="" placeholder="Contraseña" data-rule="password">
           <button type="button" name="button" class="btn btn-blue" data-type="submit">Login</button>
         </form>
 

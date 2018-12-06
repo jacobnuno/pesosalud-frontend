@@ -5,8 +5,9 @@ class Validator {
     for (const input of inputs) {
       let rule = input.getAttribute('data-rule');
       if (rule != 'radio' && rule != 'image' && rule != 'password') {
-        hasError(input);
-        let error = window[rule](input);
+        Validator.hasError(input);
+        console.log('lala: ', Validator[rule]);
+        let error = Validator[rule](input);
         formError = (formError !=  true) ?  error : formError;
       }
     }
@@ -17,7 +18,7 @@ class Validator {
     return true;
   }
 
-  static regex() {
+  static get regex() {
     return {
       word: /^[a-zA-Z\s]+$/,
       email: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -43,7 +44,7 @@ class Validator {
   static addError(input) {
     const divParent = input.parentNode;
     const newSpan = document.createElement('span');
-    newSpan.appendChild(document.createTextNode(getError(input)));
+    newSpan.appendChild(document.createTextNode(Validator.getError(input)));
     newSpan.classList.add('has-error');
     divParent.appendChild(newSpan);
     divParent.classList.add('has-error');
@@ -52,53 +53,53 @@ class Validator {
   static hasError(input) {
     const divParent = input.parentNode;
     if (divParent.querySelector('span.has-error')) {
-      this.clearError(input);
+      Validator.clearError(input);
     }
   }
 
   static word(input) {
-    if (!this.regex.word.test(input.value)) {
-      this.addError(input);
+    if (!Validator.regex.word.test(input.value)) {
+      Validator.addError(input);
       return true;
     }
     return false;
   }
 
   static number(input) {
-    if (!this.regex.number.test(input.value)) {
-      this.addError(input);
+    if (!Validator.regex.number.test(input.value)) {
+      Validator.addError(input);
       return true;
     }
     return false;
   }
 
   static decimal(input) {
-    if (!this.regex.decimal.test(input.value)) {
-      this.addError(input);
+    if (!Validator.regex.decimal.test(input.value)) {
+      Validator.addError(input);
       return true;
     }
     return false;
   }
 
   static date(input) {
-    if (!this.regex.date.test(input.value.replace(/-/g, ''))) {
-      this.addError(input);
+    if (!Validator.regex.date.test(input.value.replace(/-/g, ''))) {
+      Validator.addError(input);
       return true;
     }
     return false;
   }
 
   static hour(input) {
-    if (!this.regex.hour.test(input.value)) {
-      this.addError(input);
+    if (!Validator.regex.hour.test(input.value)) {
+      Validator.addError(input);
       return true;
     }
     return false;
   }
 
   static email(input) {
-    if (!this.regex.email.test(input.value)) {
-      this.addError(input);
+    if (!Validator.regex.email.test(input.value)) {
+      Validator.addError(input);
       return true;
     }
     return false;

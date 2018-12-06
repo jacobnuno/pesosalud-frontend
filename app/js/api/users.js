@@ -1,9 +1,9 @@
 // const cookies = require('../cookies');
 
 class Users {
-  constructor() {
+//   constructor() {
     // const this.apiUrl = 'ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000';
-    this.apiUrl = 'localhost:3000';
+    // this.apiUrl = 'localhost:3000';
     // this.apiUrl = 'ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000';
 
     // obtener la cookie
@@ -12,23 +12,23 @@ class Users {
 
     // setear el token
     // this.headers = new Headers();
-  }
+//   }
 
-  static async login(form) {
-    const email = form.getElementsById('email').value;
-    const pass = form.getElementsById('password').value;
-    await fetch(`${this.apiUrl}/users/login`, {
+  static login(form) {
+    const apiUrl = 'https://pesoysalud.herokuapp.com';
+    const email = form.querySelector('input[name="email"]').value;
+    const pass = form.querySelector('input[name="password"]').value;
+    fetch('https://pesoysalud.herokuapp.com/users/login', {
       method: 'POST',
       headers: {
-        // 'Content-Type': 'application/x-www-form-urlencoded'
         'Content-Type': 'application/json',
       },
       body: {
-        email,
+        email: email,
         password: pass,
       },
     })
-      .then((response) => {
+      .then(function(response) {
         console.log('response: ', response);
         return response.json();
       })
@@ -97,4 +97,4 @@ class Users {
   // }
 }
 
-module.exports = new Users();
+export default Users;
