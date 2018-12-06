@@ -4,18 +4,43 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Lista de Usuarios</title>
+      <link rel="icon" href="../../img/favicon.ico">
       <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
+      <link rel="stylesheet" type="text/css" media="screen" href="../../css/index.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="../../css/header.css"/>
       <link rel="stylesheet" type="text/css" media="screen" href="../../css/login.css"/>
+      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Cinzel|Frank+Ruhl+Libre|Poppins|Quicksand" rel="stylesheet">
     </head>
     <body>
-      <!-- TODO: HEADER -->
-
+      <header>
+        <div class="column is-1-desktop is-11-mobile is-multiline is-flex logo">
+          <a href="../../index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
+        </div>
+        <button class="menuicon column is-1-mobile" type="button" id="toggleMenu"><i class="fa fa-bars"></i></button>
+        <div class="column is-11-desktop is-multiline drop-list">
+          <ul class="horizontal-list menu">
+            <li><a href="../../views/aboutUs.html">Nosotros</a></li>
+            <li><a href="../../views/services.html">Servicios</a></li>
+            <li><a href="../../views/appointment/add.html">¡Agenda tu Cita!</a></li>
+            <li><a href="../../views/login.html">Iniciar Sesión</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="menures" id="menuResponsive">
+        <ul>
+          <li><a href="../../views/aboutUs.html">Nosotros</a></li>
+          <li><a href="../../views/services.html">Servicios</a></li>
+          <li><a href="../../views/appointment/add.html">¡Agenda tu Cita!</a></li>
+          <li><a href="../../views/login.html">Iniciar Sesión</a></li>
+        </ul>
+      </div>
       <div class="main">
         <h1 class="column is-3-desktop is-offset-5-desktop is-12-mobile is-center">Lista de Usuarios</h1>
 
         <div class="is-flex">
-          <table class="is-center table-responsive" align="center">
+          <table class="is-center table-responsive" align="center" data-method="userGetAll">
             <thead>
               <tr>
                 <th>id</th>
@@ -28,37 +53,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Juan Perez Gonzalez</td>
-                <td>juan@gmail.com</td>
-                <td>Hombre</td>
-                <td>3331919574</td>
-                <td>Paciente</td>
-                <td>
-                  <a class="btn-action btn-green" href="./view.html">Ver</a>
-                  <a class="btn-action btn-orange" href="./edit.html">Editar</a>
-                  <a class="btn-action btn-blue" href="#">Activar</a>
-                </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Alonso Guerrero Gonzalez</td>
-                <td>alonso@gmail.com</td>
-                <td>Hombre</td>
-                <td>3331789574</td>
-                <td>Paciente</td>
-                <td>
-                  <a class="btn-action btn-green" href="./view.html">Ver</a>
-                  <a class="btn-action btn-orange" href="./edit.html">Editar</a>
-                  <a class="btn-action btn-red" href="#">Desactivar</a>
-                </td>
-              </tr>
             </tbody>
           </table>
         </div>
 
-
       <!-- TODO: FOOTER -->
+      <script src="../../js/open.js" type="module"></script>
    </body>
 </html>

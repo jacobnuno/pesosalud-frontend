@@ -4,47 +4,83 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Citas</title>
+    <link rel="icon" href="../../img/favicon.ico">
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="../../css/login.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/index.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/header.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/login.css"/>
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  </head>
-  <body>
-    <div class="main">
-      <h1 class="column is-3-desktop is-offset-5-desktop is-12-mobile is-center">Lista de citas</h1>
-      <div class="is-flex">
-        <table class="is-center table-responsive" align="center" data-method="appointmentsGetAll">
-          <thead>
-            <tr>
-              <th>Fecha</th>
-              <th>Usuario</th>
-              <th>Servicio</th>
-              <th>Status</th>
-              <th>Acciones</th>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Frank+Ruhl+Libre|Poppins|Quicksand" rel="stylesheet">
+    </head>
+    <body>
+      <header>
+        <div class="column is-1-desktop is-6-mobile is-multiline logo">
+            <a href="../../index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
+        </div>
+        <button class="menuicon column is-1-mobile" type="button" id="toggleMenu"><i class="fa fa-bars"></i></button>
+        <div class="column is-offset-5-desktop is-6-desktop is-multiline drop-list">
+          <ul class="horizontal-list menu">
+            <li><a href="../../views/aboutUs.html">Nosotros</a></li>
+            <li><a href="../../views/services.html">Servicios</a></li>
+            <li><a href="../../views/appointment/add.html">¡Agenda tu cita!</a></li>
+            <li><a href="../../views/login.html">Iniciar Sesión</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="menures" id="menuResponsive">
+        <ul>
+          <li><a href="../../views/aboutUs.html">Nosotros</a></li>
+          <li><a href="../../views/services.html">Servicios</a></li>
+          <li><a href="../../views/appointment/add.html">¡Agenda tu Cita!</a></li> <!-- verificar esto!! -->
+          <li><a href="../../views/login.html">Iniciar Sesión</a></li>
+        </ul>
+      </div>
+      <div class="main">
+        <h1 class="column is-3-desktop is-offset-5-desktop is-12-mobile is-center">Lista de citas</h1>
+        <div class="is-flex">
+          <table class="column is-12-desktop is-offset-3-desktop is-12-mobile is-center table-responsive" data-method="dietsGetAll">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Usuario</th>
+                <th>Servicio</th>
+                <th>Status</th>
+                <th>Acciones</th>
               </tr>
-              </thead>
-          <tbody>
-            <tr>
-            <td>20/11/2018</td>
-            <td>Juan Perez Gonzalez</td>
-            <td>Electroacupuntura</td>
-            <td>Activo</td>
-            <td>
-              <a class="btn-action btn-orange" href="#">Editar</a>
-            </td>
-            </tr>
-            <tr>
-              <td>21/11/2019</td>
-              <td>Andrea Vazquez Gervacio</td>
-            </tr>
-              <td>Homeopatia</td>
+            </thead>
+            <tbody>
+              <tr>
+              <td>20/11/2018</td>
+              <td>Juan Perez Gonzalez</td>
+              <td>Electroacupuntura</td>
               <td>Activo</td>
               <td>
-                <a class="btn-action btn-orange" href="#">Editar</a>
-
+                <a class="btn-action btn-orange" href="../../views/appointment/edit.html">Editar</a>
               </td>
+              </tr>
+              <tr>
+                <td>21/11/2019</td>
+                <td>Andrea Vazquez Gervacio</td>
+                <td>Homeopatia</td>
+                <td>Activo</td>
+                <td>
+                  <a class="btn-action btn-orange" href="../../views/appointment/edit.html">Editar</a>
+
+                </td>
+              </tr>
             </tbody>
-          </table>
+
+            </table>
+
+          </div>
         </div>
-      </div>
-  </body>
+        <footer>
+          <div class="column is-12-desktop is-center">
+            <span>Derechos Reservados para Peso y Salud</span>
+            <a href="../views/cookies.html">Cookies</a>
+          </div>
+        </footer>
+        <script src="../../js/events.js"></script>
+    </body>
 </html>

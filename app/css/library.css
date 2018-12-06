@@ -8,6 +8,7 @@
   --light-gray-color: #ced4da;
   --link-blue: #337ab7;
   --light: #E0E0E0;
+  --dark-gray-color:#727272;
 }
 
 body {
@@ -57,7 +58,7 @@ select {
 textarea:focus {
   border: 1px solid var(--green-color);
   -webkit-box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
-  -moz-box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(5disabled2,168,83,1);
   box-shadow: 0px 0px 5px 1px rgba(52,168,83,1);
 }
 
@@ -102,7 +103,14 @@ td {
   outline: none;
   height: 2.5em;
   margin: .3em 0;
+  text-decoration: none;
 }
+
+.btn-dark-gray {
+  background: var(--dark-gray-color);
+  color: white;
+}
+
 
 .btn-green {
   background: var(--green-color);
@@ -145,8 +153,9 @@ td {
   outline: none;
   height: 2em;
   width: 6em;
-  margin: .3em 0;
+  margin: .2em;
   line-height: 2em;
+  text-decoration: none;
 }
 
 .column {
@@ -237,6 +246,70 @@ td {
   display: block;
 }
 
+.quote p {
+  text-align: right;
+  font-style: italic;
+  margin: 0px;
+}
+
+.author-quote {
+  font-weight: bold;
+}
+
+.modal {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 99999;
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+.modal:target {
+  opacity:1;
+  pointer-events: auto;
+}
+.modal > div {
+  width: 400px;
+  position: relative;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background: #fff;
+  background: -moz-linear-gradient(#fff, #999);
+  background: -webkit-linear-gradient(#fff, #999);
+  background: -o-linear-gradient(#fff, #999);
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+}
+.close-modal {
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  -moz-box-shadow: 1px 1px 3px #000;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px #000;
+}
+.close-modal:hover {
+  background: #00d9ff;
+}
 .quote p {
   text-align: right;
   font-style: italic;
@@ -427,8 +500,6 @@ td {
   .column.is-offset-12-desktop {
     margin-left: 100%;
   }
-<<<<<<< HEAD:css/library.css
-=======
 
   .is-vertical-center {
     justify-content: center;
@@ -436,7 +507,6 @@ td {
     display: flex;
   }
 
->>>>>>> dev:app/css/library.css
   .is-flex {
     display: flex;
   }
