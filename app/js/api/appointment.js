@@ -1,27 +1,24 @@
-// const cookies = require('../cookies');
+import Cookies from '../cookies.js';
 
 class Appointment {
-  constructor() {
-    // const this.apiUrl = 'ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000';
-    this.apiUrl = 'https://pesoysalud.herokuapp.com';
+  static async create(form) {
+    data = await fetch(`${this.apiUrl}/${this.endpoint}`, {
+      method: 'post',
+      body: new FormData(form)
+    }).then(function(response){
+    })
+    document.cookie = 'credentials' + "=" + data.token + ";path=/;expires=" + d.toGMTString();
   }
 
-  static async create(form) {
-    const service = form.getElementById('service').value;
-    const hour = form.getElementById('hour').value;
-    const date = form.getElementById('date').value;
-
-    await fetch(`${this.apiUrl}/appointment/add`, {
-      method: 'POST',
+  static getOne(form) {
+    const appointmentId = Cookies.getCookie('appointment-id');
+    const token = Cookies.getCookie('session-token');
+    fetch(`https://pesoysalud.herokuapp.com/appointment/${appointmentId}`, {
+      method: 'GET',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization':
-      },
-      body: {
-        service,
-        hour,
-        date,
-      },
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
     })
       .then((response) => {
         console.log('response: ', response);
@@ -29,15 +26,13 @@ class Appointment {
       })
       .then((data) => {
         console.log('data: ', data);
-      })
+        form.querySelector('select[name="service"]').value = data.data[0].service ? data.data[0].service : '';
+        form.querySelector('input[name="date"]').value = data.data[0].date ? data.data[0].date : '';
+        form.querySelector('input[name="hour"]').value = data.data[0].hour ? data.data[0].hour : '';
+        })
       .catch(err => console.log('err', err));
   }
 
-  static async edit() {
-  }
-
-  static async findById() {
-  }
 }
 
-module.exports = new Appointment();
+export default Appointment;
