@@ -90,6 +90,6 @@ window.onload = function () {
     userEdit: userEdit(),
   };
   const div = document.querySelector('div.main');
-  const view = div.getAttribute('data-type');
+  const view = div.getAttribute('data-view');
   functions[view];
 };

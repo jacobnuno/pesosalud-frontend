@@ -2,28 +2,40 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Peso y Salud</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Peso y Salud</title>
     <link rel="icon" href="../img/favicon.ico">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/library.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/index.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/header.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/services.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Frank+Ruhl+Libre|Poppins|Quicksand" rel="stylesheet">
   </head>
   <body>
-      <header>
-        <div class="column is-1-desktop is-multiline">
-          <img src="../img/logo.png" alt="Logo" class="logo">
-        </div>
-        <div class="column is-offset-5-desktop is-6-desktop is-multiline">
-          <ul class="horizontal-list menu">
-            <li><a href="../views/aboutUs.html">Nosotros</a></li>
-            <li><a href="../views/services.html">Servicios</a></li>
-            <li><a href="../views/addAppointment.html">¡Agenda tu Cita!</a></li>
-            <li><a href="../views/login.html">Iniciar Sesión</a></li>
-          </ul>
-        </div>
-      </header>
+    <header>
+      <div class="column is-1-desktop is-11-mobile is-multiline is-flex logo">
+        <a href="../index.html"><img src="../img/logo.png" alt="Logo" class="logo"></a>
+      </div>
+      <button class="menuicon column is-1-mobile" type="button" id="toggleMenu"><i class="fa fa-bars"></i></button>
+      <div class="column is-11-desktop is-multiline drop-list">
+        <ul class="horizontal-list menu">
+          <li><a href="../views/aboutUs.html">Nosotros</a></li>
+          <li><a href="../views/services.html">Servicios</a></li>
+          <li><a href="../views/appointment/add.html">¡Agenda tu Cita!</a></li>
+          <li><a href="../views/login.html">Iniciar Sesión</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="menures" id="menuResponsive">
+      <ul>
+        <li><a href="../views/aboutUs.html">Nosotros</a></li>
+        <li><a href="../views/services.html">Servicios</a></li>
+        <li><a href="../views/appointment/add.html">¡Agenda tu Cita!</a></li>
+        <li><a href="../views/login.html">Iniciar Sesión</a></li>
+      </ul>
+    </div>
     <section class="services">
         <h2 class="column is-12-desktop title is-center ">Control de Peso con Acupuntura</h2>
           <div class="column is-12-desktop is-12-mobile is-center">
@@ -68,9 +80,12 @@
           </div>
     </section>
     <footer>
-        <div class="column is-12-desktop is-center">
-          <span>Derechos Reservados</span>
-        </div>
+      <div class="column is-12-desktop is-center">
+        <span>Derechos Reservados para Peso y Salud</span>
+        <a href="../views/cookies.html">Cookies</a>
+      </div>
     </footer>
+    <script src="../js/slider.js"></script>
+    <script src="../js/events.js"></script>
   </body>
 </html>
