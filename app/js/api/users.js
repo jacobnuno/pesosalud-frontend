@@ -22,13 +22,14 @@ class Users {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        // 'Content-Type': 'application/x-wwww-form-urlencoded',
       },
-      body: {
-        email: email,
-        password: pass,
-      },
+      body: JSON.stringify({
+          email: email,
+          password: pass,
+        }),
     })
-      .then(function(response) {
+      .then((response) => {
         console.log('response: ', response);
         return response.json();
       })
