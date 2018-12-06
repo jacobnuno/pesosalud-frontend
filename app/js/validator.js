@@ -104,10 +104,28 @@ class Validator {
     }
     return false;
   }
-  function addAppointment() {
-    fetch('https://pesoysalud.herokuapp.com/appointment/', {
+
+// API USER
+function addUser(){
+  const today = new Date();
+
+  const body = {
+    Email: document.getElementById('txtEmail').value,
+    Gender: document.getElementById('txtGender').value,
+    Name: document.getElementById('txtName').value,
+    Password: document.getElementById('txtPass').value,
+    Phone: document.getElementById('txtPhone').value,
+    Weight: document.getElementById('txtWeight').value,
+    Height: document.getElementById('txtHeight').value,
+    Birthdate: document.getElementById('txtBirthdate').value,
+    Comments: document.getElementById('txtComments').value,
+    // registeredDate: dateFormat(new Date(), 'Y-m-d h:i:s'),
+    UserType: 4,
+  }
+
+  console.log(body);
+  fetch('https://pesoysalud.herokuapp.com/users/', {
       method: 'POST',
-      mode: 'cors',
       headers: {
         'Content-Type': 'application/x-wwww-form-urlencoded',
       },
