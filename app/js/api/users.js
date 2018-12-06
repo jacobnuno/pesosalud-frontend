@@ -2,6 +2,7 @@ import Cookies from '../cookies.js';
 
 class Users {
   static login(form) {
+    Cookies.hasSession('session-token');
     const email = form.querySelector('input[name="email"]').value;
     const pass = form.querySelector('input[name="password"]').value;
     fetch('https://pesoysalud.herokuapp.com/users/login', {
@@ -21,9 +22,50 @@ class Users {
       })
       .then((data) => {
         console.log('data: ', data);
-        Cookies.setCookie('session-token', data.data.token, 168);
+        Cookies.setCookie('session-token', data.token, 168);
+        Cookies.setCookie('user-id', data.id, 168);
+        window.location.replace('../../index.html');
+      })
+      .catch((err) => {
+        console.log('err', err);
+        alert('Your credentials are incorrect');
+      });
+  }
+
+  static getOne(form) {
+    const userId = Cookies.getCookie('user-id');
+    const token = Cookies.getCookie('session-token');
+    fetch(`https://pesoysalud.herokuapp.com/users/${userId}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
+    })
+      .then((response) => {
+        console.log('response: ', response);
+        return response.json();
+      })
+      .then((data) => {
+        console.log('data: ', data);
+        form.querySelector('input[name="name"]').value = data.data[0].name ? data.data[0].name : '';
+        form.querySelector('input[name="email"]').value = data.data[0].email ? data.data[0].email : '';
+        form.querySelector('input[name="phone"]').value = data.data[0].phone ? data.data[0].phone : '';
+        form.querySelector('input[name="height"]').value = data.data[0].Height ? data.data[0].Height : '';
+        form.querySelector('textarea[name="coments"]').value = data.data[0].Coments ? data.data[0].Coments : '';
       })
       .catch(err => console.log('err', err));
+  }
+
+  static async create(form) {
+    data = await fetch(`${this.apiUrl}/${this.endpoint}`, {
+      method: 'post',
+      body: new FormData(form)
+    }).then(function(response){
+
+    })
+
+    document.cookie = 'credentials' + "=" + data.token + ";path=/;expires=" + d.toGMTString();
   }
 
   // static async getAll() {
