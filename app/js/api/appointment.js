@@ -32,7 +32,6 @@ class Appointment {
         })
       .catch(err => console.log('err', err));
   }
-
 }
 
 export default Appointment;

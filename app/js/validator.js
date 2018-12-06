@@ -104,6 +104,54 @@ class Validator {
     }
     return false;
   }
+  function addAppointment() {
+    fetch('https://pesoysalud.herokuapp.com/appointment/', {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/x-wwww-form-urlencoded',
+      },
+      body: JSON.stringify({
+        Service: document.getElementById('txtService').value,
+        Date: document.getElementById('txtService').value,
+        Hour: document.getElementById('txtHour').value,
+
+        }),
+    })
+  .then(function(response) {
+        console.log('response =', response);
+        return response.json();
+  })
+      .then(function(data) {
+        console.log('data = ', data);
+  })
+  .catch(function(err) {
+        console.log('err', err);
+  });
+  }
+  function addDiet() {
+
+    fetch('https://pesoysalud.herokuapp.com/diets/diets/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        Nombre: document.getElementById('txtEmail').value,
+        Descripcion: document.getElementsById('txtDescription').value,
+        }),
+    })
+  .then(function(response) {
+        console.log('response =', response);
+        return response.json();
+  })
+      .then(function(data) {
+        console.log('data = ', data);
+  })
+  .catch(function(err) {
+        console.log('err', err);
+  });
+  }
 }
 
 export default Validator;

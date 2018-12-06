@@ -158,7 +158,7 @@ function userLogin() {
   });
 }
 
-function addDiets() {
+function addDiet() {
 
   fetch('https://pesoysalud.herokuapp.com/diets/diets/', {
     method: 'POST',
