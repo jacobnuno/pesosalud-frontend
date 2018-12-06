@@ -1,11 +1,20 @@
 import Cookies from '../cookies.js';
 
 class Users {
-  static login(form) {
-    Cookies.hasSession('session-token');
-    const email = form.querySelector('input[name="email"]').value;
-    const pass = form.querySelector('input[name="password"]').value;
-    fetch('https://pesoysalud.herokuapp.com/users/login', {
+  constructor() {
+    // const this.apiUrl = 'ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000';
+    this.apiUrl = 'https://pesoysalud.herokuapp.com';
+
+    // obtener la cookie
+    // document.cookie
+    // this.token = asdfasdf
+
+    // setear el token
+    // this.headers = new Headers();
+  }
+
+  static async login() {
+    return await fetch(`${apiUrl}/users/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
