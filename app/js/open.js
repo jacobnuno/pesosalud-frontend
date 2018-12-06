@@ -1,8 +1,3 @@
-import cookies from './cookies.js';
-
-const apiUrl = 'http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000';
-// const apiUrl = 'http://localhost:3000';
-const token =  '$2b$04$WaCYQAzeWHZzk8.V/7Mc6uKHmXxpfrFNj0irCM8KxC3ASLUfxeEWa';
 const roles = {
   1: 'admin',
   2: 'doctora',
@@ -15,12 +10,10 @@ const gender = {
 }
 
 function userGetAll() {
-    fetch(`${apiUrl}/users/`, {
+    fetch('https://pesoysalud.herokuapp.com/users/', {
     method: 'GET',
-    mode: 'cors',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
     }
   })
     .then(function(response) {
@@ -29,7 +22,7 @@ function userGetAll() {
     })
     .then(function(data) {
       const tableBody = document.getElementsByTagName('tbody')[0];
-      for (i = 0; i < data.data.length; i++) {
+      for (var i = 0; i < data.data.length; i++) {
         let tr = document.createElement('tr');
         let td = document.createElement('td');
         td.appendChild(document.createTextNode(data.data[i]['id']));

@@ -4,13 +4,13 @@ class Cookies {
     d.setTime(d.getTime() + (cookieExdays * 24 * 60 * 60 * 1000));
     let expires = 'expires='+ d.toUTCString();
     document.cookie = cookieName + '=' + cookieValue + ';' + expires + ';path=/';
-    window.location.replace('../index.html');
+    // window.location.replace('../index.html');
   }
 
-  static hasSession() {
-    let token = this.getCookie('session-token');
-    if(token === undefined || token == null) {
-      window.location.replace('./index.html');
+  static hasSession(cookieName) {
+    let cookie = this.getCookie(cookieName);
+    if(cookie === undefined || cookie == null) {
+      window.location.replace('../index.html');
     }
   }
 
