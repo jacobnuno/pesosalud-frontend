@@ -1,37 +1,31 @@
-"use strict";
+const Slider = (function () {
+    const slides = document.querySelectorAll('.slider li');
+    console.log('slides', slides);
+    console.log('length: ', slides.length);
+    let currentSlide = 0;
 
-var Slider = function () {
-  var slides = document.querySelectorAll('.slider li');
-  console.log('slides', slides);
-  console.log('length: ', slides.length);
-  var currentSlide = 0;
+    const next = function () {
+        slides[currentSlide].classList.toggle('active');
+        if (currentSlide < slides.length - 1) {
+            currentSlide += 1;
+        } else {
+            currentSlide = 0;
+        }
+        slides[currentSlide].classList.toggle('active');
+    };
 
-  var next = function next() {
-    slides[currentSlide].classList.toggle('active');
+    const prev = function () {
+        slides[currentSlide].classList.toggle('active');
+        if (currentSlide > 0) {
+            currentSlide -= 1;
+        } else {
+            currentSlide = slides.length - 1;
+        }
+        slides[currentSlide].classList.toggle('active');
+    };
 
-    if (currentSlide < slides.length - 1) {
-      currentSlide += 1;
-    } else {
-      currentSlide = 0;
-    }
-
-    slides[currentSlide].classList.toggle('active');
-  };
-
-  var prev = function prev() {
-    slides[currentSlide].classList.toggle('active');
-
-    if (currentSlide > 0) {
-      currentSlide -= 1;
-    } else {
-      currentSlide = slides.length - 1;
-    }
-
-    slides[currentSlide].classList.toggle('active');
-  };
-
-  return {
-    next: next,
-    prev: prev
-  };
-}();
+    return {
+        next,
+        prev,
+    };
+}());

@@ -1,4 +1,5 @@
 // fetch
+
 // function loadUsers() {
 //   let post = API.users.getAll();
 //   renderUsers(users, 'index-users');
@@ -12,4 +13,3 @@
 //     usersTpl.parent.appendChild(newUser);
 //   })
 // }
-"use strict";

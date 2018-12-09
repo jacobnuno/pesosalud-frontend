@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Editar cita</title>
+    <link rel="icon" href="../../img/favicon.ico">
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/index.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/header.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/login.css"/>
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Frank+Ruhl+Libre|Poppins|Quicksand" rel="stylesheet">
+  </head>
+   <body>
+     <header>
+       <div class="column is-1-desktop is-6-mobile is-multiline logo">
+           <a href="../../index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
+       </div>
+       <button class="menuicon column is-1-mobile" type="button" id="toggleMenu"><i class="fa fa-bars"></i></button>
+       <div class="column is-offset-5-desktop is-6-desktop is-multiline drop-list">
+         <ul class="horizontal-list menu">
+           <li><a href="../../views/aboutUs.html">Nosotros</a></li>
+           <li><a href="../../views/services.html">Servicios</a></li>
+           <li><a href="../../views/appointment/add.html">¡Agenda tu cita!</a></li>
+           <li><a href="../../views/login.html">Iniciar Sesión</a></li>
+         </ul>
+       </div>
+     </header>
+     <div class="menures" id="menuResponsive">
+       <ul>
+         <li><a href="../../views/aboutUs.html">Nosotros</a></li>
+         <li><a href="../../views/services.html">Servicios</a></li>
+         <li><a href="../views/appointment/add.html">¡Agenda tu Cita!</a></li> <!-- verificar esto!! -->
+         <li><a href="../../views/login.html">Iniciar Sesión</a></li>
+       </ul>
+     </div>
+    <div class="main">
+      <h1 class="column is-3-desktop is-offset-5-desktop is-12-mobile title is-center">Citas</h1>
+      <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile login is-center" method="post">
+        <h2 class="column is-8-desktop is-offset-2-desktop is-12-mobile is-center">Editar cita</h2>
+        <div class="column is-12-desktop is-12-mobile is-multiline is-center">
+          <label for="status" class="column is-12-desktop is-12-mobile">Estatus</label>
+          <select id="txtStatus"  name="status" required>
+          <option value="">Selecciona una opcion</option>
+          <option value="active">Activo</option>
+          <option value="inactive">Inactivo</option>
+          </select>
+        </div>
+        <button data-submit="submit" name="button" class="btn btn-blue" data-method="appointmentEdit">Agregar</button>
+      </form>
+      </div>
+      <footer>
+        <div class="column is-12-desktop is-center">
+          <span>Derechos Reservados para Peso y Salud</span>
+          <a href="../views/cookies.html">Cookies</a>
+        </div>
+      </footer>
+      <script src="../../js/events.js"></script>
+    <script src="../../js/validator.js"></script>
+  </body>
+</html>

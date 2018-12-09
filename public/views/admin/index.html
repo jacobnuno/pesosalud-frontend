@@ -4,13 +4,38 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Lista de Usuarios</title>
+      <link rel="icon" href="../../img/favicon.ico">
       <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
+      <link rel="stylesheet" type="text/css" media="screen" href="../../css/index.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="../../css/header.css"/>
       <link rel="stylesheet" type="text/css" media="screen" href="../../css/login.css"/>
+      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Cinzel|Frank+Ruhl+Libre|Poppins|Quicksand" rel="stylesheet">
     </head>
     <body>
-      <!-- TODO: HEADER -->
-
+      <header>
+        <div class="column is-1-desktop is-11-mobile is-multiline is-flex logo">
+          <a href="../../index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
+        </div>
+        <button class="menuicon column is-1-mobile" type="button" id="toggleMenu"><i class="fa fa-bars"></i></button>
+        <div class="column is-11-desktop is-multiline drop-list">
+          <ul class="horizontal-list menu">
+            <li><a href="../../views/aboutUs.html">Nosotros</a></li>
+            <li><a href="../../views/services.html">Servicios</a></li>
+            <li><a href="../../views/appointment/add.html">¡Agenda tu Cita!</a></li>
+            <li><a href="../../views/login.html">Iniciar Sesión</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="menures" id="menuResponsive">
+        <ul>
+          <li><a href="../../views/aboutUs.html">Nosotros</a></li>
+          <li><a href="../../views/services.html">Servicios</a></li>
+          <li><a href="../../views/appointment/add.html">¡Agenda tu Cita!</a></li>
+          <li><a href="../../views/login.html">Iniciar Sesión</a></li>
+        </ul>
+      </div>
       <div class="main">
         <h1 class="column is-3-desktop is-offset-5-desktop is-12-mobile is-center">Lista de Usuarios</h1>
 
@@ -32,8 +57,12 @@
           </table>
         </div>
 
-
-      <!-- TODO: FOOTER -->
+        <footer>
+          <div class="column is-12-desktop is-center">
+            <span>Derechos Reservados para Peso y Salud</span>
+            <a href="../views/cookies.html">Cookies</a>
+          </div>
+        </footer>
       <script src="../../js/open.js" type="module"></script>
    </body>
 </html>
