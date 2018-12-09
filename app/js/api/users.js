@@ -3,7 +3,7 @@
 class Users {
   constructor() {
     // const this.apiUrl = 'ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000';
-    this.apiUrl = 'ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000';
+    this.apiUrl = '';
 
     // obtener la cookie
     // document.cookie

@@ -11,9 +11,9 @@ buttonSubmit.onclick = function () {
   for (const input of inputs) {
    let rule = input.getAttribute('data-rule');
    if (rule != 'radio' && rule != 'image' && rule != 'password') {
-          hasError(input);
-          let error = window[rule](input);
-          formError = (formError !=  true) ?  error : formError;
+      hasError(input);
+      let error = window[rule](input);
+      formError = (formError !=  true) ?  error : formError;
       }
   }
 
@@ -111,7 +111,7 @@ function email(input) {
 
 // API USER
 function addUser() {
-fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/users/', {
+fetch('https://pesoysalud.herokuapp.com', {
     method: 'POST',
     mode: 'cors',
     headers: {
@@ -139,7 +139,7 @@ fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/users/', {
 }
 
 function userLogin() {
-  fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/users/login', {
+  fetch('https://pesoysalud.herokuapp.com', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -159,7 +159,7 @@ function userLogin() {
 }
 function dietsAdd() {
   console.log('entro');
-  fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/', {
+  fetch('https://pesoysalud.herokuapp.com', {
     method: 'POST',
       headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded'
@@ -187,7 +187,7 @@ function dietsAdd() {
 }
 
 function appointmentAdd() {
-  fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/appointments/', {
+  fetch('https://pesoysalud.herokuapp.com', {
     method: 'POST',
     mode: 'cors',
     headers: {
@@ -213,7 +213,7 @@ function appointmentAdd() {
 }
 
 function appointmentEdit() {
-  fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/appointments/id', {
+  fetch('https://pesoysalud.herokuapp.com', {
     method: 'PUT',
     mode: "cors",
   // credentials: 'same-origin',
@@ -238,7 +238,7 @@ function appointmentEdit() {
 }
 
 function dietsEdit() {
-  fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/id', {
+  fetch('https://pesoysalud.herokuapp.com', {
     method: 'PUT',
     mode: 'cors',
     headers: {
@@ -263,7 +263,7 @@ function dietsEdit() {
 }
 
 function dietsFind() {
-  fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/diets/id', {
+  fetch('https://pesoysalud.herokuapp.com', {
     method: 'GET',
 
     mode: "cors",
@@ -295,7 +295,7 @@ function dietsFind() {
       dateEnd:   document.getElementById('txtdateEnd').value,
       cantidad:  document.getElementById('txtcantidad').value,
     }
-      fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
+      fetch('https://pesoysalud.herokuapp.com/', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/x-www-form-urlencoded',
@@ -320,7 +320,7 @@ function dietsFind() {
       dateEnd:   document.getElementById('txtdateEnd').value,
       cantidad:  document.getElementById('txtcantidad').value,
     }
-      fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
+      fetch('https://pesoysalud.herokuapp.com/', {
           method: 'PUT',
           headers: {
               'Content-Type': 'application/x-www-form-urlencoded',
@@ -346,7 +346,7 @@ function dietsFind() {
       dateEnd:   document.getElementById('txtdateEnd').value,
       // cantidad:  document.getElementById('txtcantidad').value
     }
-      fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
+      fetch('https://pesoysalud.herokuapp.com/admin/editPromotions', {
           method: 'PUT',
           headers: {
               'Content-Type': 'application/x-www-form-urlencoded',
@@ -372,7 +372,7 @@ function dietsFind() {
       price: document.getElementById('txtPrice').value,
       duration: document.getElementById('txtDuration').value,
     }
-      fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
+      fetch('https://pesoysalud.herokuapp.com/addService', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/x-www-form-urlencoded',
@@ -397,7 +397,7 @@ function dietsFind() {
       price: document.getElementById('txtPrice').value,
       duration: document.getElementById('txtDuration').value,
     }
-      fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
+      fetch('https://pesoysalud.herokuapp.com', {
           method: 'PUT',
           headers: {
               'Content-Type': 'application/x-www-form-urlencoded',
@@ -405,11 +405,11 @@ function dietsFind() {
           body:body,
       })
       .then(function(response) {
-          console.log('response =', response);
-        return response.json();
+      console.log('response =', response);
+      return response.json();
     })
     .then(function(data) {
-        console.log('data = ', data);
+      console.log('data = ', data);
     })
     .catch(function(err) {
         console.log('err', err);
@@ -422,7 +422,7 @@ function servicesEdit() {
     price: document.getElementById('txtPrice').value,
     duration: document.getElementById('txtDuration').value,
   }
-    fetch('http://ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000/promotions', {
+    fetch('https://pesoysalud.herokuapp.com/admin/editServices', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',

@@ -1,6 +1,6 @@
-class Services { 
+class Services {
   constructor() {
-    this.apiUrl = '';
+    this.apiUrl = 'https://pesoysalud.herokuapp.com';
   }
   static async create(form) {
     data = await fetch( `${this.apiUrl}/${this.endpoint}`, {
