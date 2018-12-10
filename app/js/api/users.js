@@ -66,6 +66,40 @@ class Users {
       .catch(err => console.log('err', err));
   }
 
+  static create(form) {
+       let status;
+       fetch(`https://pesoysalud.herokuapp.com/users/`, {
+           method: 'POST',
+           mode: 'cors',
+           headers: {
+               'Content-Type': 'application/json',
+           },
+           body: JSON.stringify({
+               Email: form.querySelector('input[id="txtEmail"]').value,
+               Gender: form.querySelector('select[id="txtGender"]').value,
+               Name: form.querySelector('input[id="txtName"]').value,
+               Password: form.querySelector('input[id="txtPass"]').value,
+               Phone: form.querySelector('input[id="txtPhone"]').value,
+               Height: form.querySelector('input[id="txtHeight"]').value,
+               BirthDate: form.querySelector('input[id="txtBirthdate"]').value,
+               Comments: form.querySelector('textarea[id="txtComments"]').value,
+               UserType: '4',
+           }),
+       })
+       .then((response) => {
+           console.log('response =', response);
+           status = response.status;
+           return response.json();
+         })
+       .then(function(data) {
+           console.log('data = ', data);
+           alert(data.message);
+         })
+       .catch(function(err) {
+         console.log('err', err);
+       });
+   }
+   
   // static async create(form) {
   //   data = await fetch(`${this.apiUrl}/${this.endpoint}`, {
   //     method: 'post',
