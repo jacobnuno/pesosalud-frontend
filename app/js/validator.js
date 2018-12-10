@@ -106,7 +106,7 @@ class Validator {
   }
 
 // API USER
-function addUser(){
+addUser(){
   const today = new Date();
 
   const body = {
