@@ -7,6 +7,7 @@
     <link rel="icon" href="../../img/favicon.ico">
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/index.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/header.css"/>
     <link rel="stylesheet" href="../../../node_modules/font-awesome/css/font-awesome.css">
     <link rel="icon" href="../../img/favicon.ico">
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/header.css"/>
@@ -37,8 +38,17 @@
         <li><a href="../../views/login.html">Iniciar Sesión</a></li>
       </ul>
     </div>
-    <div class="main" >
+    <div class="main">
       <h2 class="column is-3-desktop is-offset-5-desktop is-12-mobile title is-center">Busca tus citas</h2>
+      <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile appointment is-center" method="post">
+        <div class="column is-10-desktop is-multiline is-12-mobile">
+          <label for="name" class="column is-12-desktop">Busca por nombre</label>
+          <input id="txtName" class="column is-12-desktop is-10-mobile is-offset-1-mobile" type="text" name="name" data-rule="word" required>
+        </div>
+        <button data-type="submit" name="button" class="btn btn-blue" data-method="appointmentFind" type="button">Buscar</button>
+      </form>
+    </div>
+    <div class="main" >
       <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile appointment is-center" method="post">
         <div class="column is-10-desktop is-multiline is-12-mobile">
           <label for="date" class="column is-12-desktop">Busca por fecha</label>
@@ -47,15 +57,7 @@
         <button data-type="submit" name="button" class="btn btn-blue" data-method="dietsFind">Buscar</button>
       </form>
       </div>
-      <div class="main">
-        <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile appointment is-center" method="post">
-          <div class="column is-10-desktop is-multiline is-12-mobile">
-            <label for="name" class="column is-12-desktop">Busca por nombre</label>
-            <input id="txtName" class="column is-12-desktop is-10-mobile is-offset-1-mobile" type="text" name="name" data-rule="word" required>
-          </div>
-          <button data-type="submit" name="button" class="btn btn-blue" data-method="appointmentFind">Buscar</button>
-        </form>
-      </div>
+
       <footer>
         <div class="column is-12-desktop is-center">
           <span>Derechos Reservados para Peso y Salud</span>
@@ -63,6 +65,7 @@
         </div>
       </footer>
       <script src="../../js/events.js"></script>
+    <script src="../../js/validatorOld.js"></script>
     <script src="../../js/validator.js"></script>
   </body>
 </html>
