@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/index.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/header.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/login.css"/>
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../../../node_modules/font-awesome/css/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Frank+Ruhl+Libre|Poppins|Quicksand" rel="stylesheet">
     </head>
@@ -25,6 +25,8 @@
           <li><a href="../../views/services.html">Servicios</a></li>
           <li><a href="../../views/appointment/add.html">¡Agenda tu cita!</a></li>
           <li><a href="../../views/login.html">Iniciar Sesión</a></li>
+          <li class="hidden"><a href="views/admin/index.html" id="role">Panel Administrativo</a></li>
+          <li class="hidden"><button class="btn btn-orange" id="logout">Sign Out</button></li>
         </ul>
       </div>
     </header>
@@ -72,5 +74,8 @@
       </div>
     </footer>
     <script src="../../js/appointmentProfile.js" type="module"></script>
+    <script src="../../js/home.js" type="module">
+
+    </script>
   </body>
 </html>
