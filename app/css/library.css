@@ -325,9 +325,6 @@ td {
   height: 9em;
 }
 
-.hidden{
-  display: none !important;
-}
 
 /* mobile */
 @media screen and (max-width: 768px) {
