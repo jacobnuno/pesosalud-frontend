@@ -10,11 +10,11 @@ const roles = {
   4: 'paciente',
 }
 
-function appointmentEdit() {
+function dietsEdit() {
     const url = window.location;
     const id = url.toString().substring(url.toString().lastIndexOf('=') + 1);
     console.log('id: ', id);
-    fetch(`${apiUrl}/appointment/${id}`, {
+    fetch(`${apiUrl}/diets/${id}`, {
     method: 'GET',
     mode: 'cors',
     headers: {
@@ -33,7 +33,7 @@ function appointmentEdit() {
 
 window.onload = function () {
   const functions = {
-    appointmentEdit: appointmentEdit(),
+    appointmentEdit: dietsEdit(),
   };
   const div = document.querySelector('div.main');
   const view = div.getAttribute('data-view');

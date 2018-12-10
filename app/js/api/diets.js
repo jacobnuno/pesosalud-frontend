@@ -1,6 +1,6 @@
 import Cookies from '../cookies.js';
 
-class Appointment {
+class Diets {
   constructor() {
     this.apiUrl = 'https://pesoysalud.herokuapp.com';
 
@@ -13,9 +13,9 @@ class Appointment {
   }
 
   static getOne(form) {
-    const appointmentId = Cookies.getCookie('appointment-id');
+    const dietsId = Cookies.getCookie('diets-id');
     const token = Cookies.getCookie('session-token');
-    fetch(`https://pesoysalud.herokuapp.com/appointment/${appointmentId}`, {
+    fetch(`https://pesoysalud.herokuapp.com/diets/${dietsId}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -28,12 +28,11 @@ class Appointment {
       })
       .then((data) => {
         console.log('data: ', data);
-        form.querySelector('select[name="service"]').value = data.data[0].service ? data.data[0].service : '';
-        form.querySelector('input[name="date"]').value = data.data[0].date ? data.data[0].date : '';
-        form.querySelector('input[name="hour"]').value = data.data[0].hour ? data.data[0].hour : '';
+        form.querySelector('input[name="name"]').value = data.data[0].name ? data.data[0].name : '';
+        form.querySelector('input[name="description"]').value = data.data[0].description ? data.data[0].description : '';
       })
       .catch(err => console.log('err', err));
   }
 }
 
-export default Appointment;
+export default Diets;
