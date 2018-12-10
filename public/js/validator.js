@@ -6,7 +6,6 @@ class Validator {
       let rule = input.getAttribute('data-rule');
       if (rule != 'radio' && rule != 'image' && rule != 'password') {
         Validator.hasError(input);
-        console.log('lala: ', Validator[rule]);
         let error = Validator[rule](input);
         formError = (formError !=  true) ?  error : formError;
       }

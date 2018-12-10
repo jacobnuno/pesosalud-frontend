@@ -24,6 +24,7 @@ class Users {
         console.log('data: ', data);
         Cookies.setCookie('session-token', data.token, 168);
         Cookies.setCookie('user-id', data.id, 168);
+        Cookies.setCookie('user-role', data.UserType, 168);
         window.location.replace('../index.html');
       })
       .catch((err) => {
