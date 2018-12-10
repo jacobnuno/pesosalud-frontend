@@ -38,48 +38,52 @@
     </div>
     <div class="main">
       <h1 class="column is-8-desktop is-offset-2-desktop is-12-mobile title is-center">Crear expediente</h1>
-      <label for=""class="column is-2-desktop is-offset-5-desktop is-12-mobile is-center">Paciente:</label>
+      <label for="" class="column is-2-desktop is-offset-5-desktop is-12-mobile is-center">Paciente:</label>
       <label for="" class="column is-2-desktop is-offset-5-desktop is-12-mobile is-center">Cita:</label>
       <label for="" class="column is-2-desktop is-offset-5-desktop is-12-mobile is-center">Servicio:</label>
       <form class="column is-6-desktop is-offset-3-desktop is-10-mobile is-offset-1-mobile records" action="index.html" method="post">
-        <div class="is-multiline column is-12-desktop">
-          <div class="is-multiline column is-6-desktop">
-            <label for="weight" class="column is-11-desktop">Peso</label>
-            <input class="column is-11-desktop" type="text" name="weight" value="" data-rule="decimal">
+
+        <div class="is-multiline column is-12-desktop is-12-mobile">
+          <div class="is-multiline column is-6-desktop is-6-mobile">
+            <label for="weight" class="column is-11-desktop is-11-mobile">Peso</label>
+            <input class="column is-11-desktop is-11-mobile" type="text" name="weight" value="" data-rule="decimal">
           </div>
-          <div class="is-multiline column is-6-desktop">
-            <label for="bust" class="column is-11-desktop">Busto</label>
-            <input class="column is-11-desktop" type="text" name="bust" value="" data-rule="decimal">
-          </div>
-        </div>
-        <div class="is-multiline column is-12-desktop">
-          <div class="is-multiline column is-6-desktop">
-            <label for="waist" class="column is-11-desktop">Talle</label>
-            <input class="column is-11-desktop" type="text" name="waist" value="" data-rule="decimal">
-          </div>
-          <div class="is-multiline column is-6-desktop">
-            <label for="waistline" class="column is-11-desktop">Cintura</label>
-            <input class="column is-11-desktop" type="text" name="waistline" value="" data-rule="decimal">
+          <div class="is-multiline column is-6-desktop is-6-mobile">
+            <label for="bust" class="column is-11-desktop is-11-mobile">Busto</label>
+            <input class="column is-11-desktop is-11-mobile" type="text" name="bust" value="" data-rule="decimal">
           </div>
         </div>
-        <div class="is-multiline column is-12-desktop">
-          <div class="is-multiline column is-6-desktop">
-            <label for="hip" class="column is-11-desktop">Cadera</label>
-            <input class="column is-11-desktop" type="text" name="hip" value="" data-rule="decimal">
+
+        <div class="is-multiline column is-12-desktop is-12-mobile">
+          <div class="is-multiline column is-6-desktop is-6-mobile">
+            <label for="waist" class="column is-11-desktop is-11-mobile">Talle</label>
+            <input class="column is-11-desktop is-11-mobile" type="text" name="waist" value="" data-rule="decimal">
           </div>
-          <div class="is-multiline column is-6-desktop">
-            <label for="chest" class="column is-11-desktop">Torax</label>
-            <input class="column is-11-desktop" type="text" name="chest" value="" data-rule="decimal">
+          <div class="is-multiline column is-6-desktop is-6-mobile">
+            <label for="waistline" class="column is-11-desktop is-11-mobile">Cintura</label>
+            <input class="column is-11-desktop is-11-mobile" type="text" name="waistline" value="" data-rule="decimal">
           </div>
         </div>
-        <div class="is-multiline column is-12-desktop">
-          <div class="is-multiline column is-6-desktop">
-            <label for="abdomen" class="column is-11-desktop">Abdomen</label>
-            <input class="column is-11-desktop" type="text" name="abdomen" value="" data-rule="decimal"/>
+
+        <div class="is-multiline column is-12-desktop is-12-mobile">
+          <div class="is-multiline column is-6-desktop is-6-mobile is-6-mobile">
+            <label for="hip" class="column is-11-desktop is-11-mobile">Cadera</label>
+            <input class="column is-11-desktop is-11-mobile" type="text" name="hip" value="" data-rule="decimal">
           </div>
-          <div class="is-multiline column is-6-desktop">
-            <label for="diet" class="column is-11-desktop">Dieta</label>
-            <select class="column is-11-desktop" name="diet" required>
+          <div class="is-multiline column is-6-desktop is-6-mobile">
+            <label for="chest" class="column is-11-desktop is-11-mobile">Torax</label>
+            <input class="column is-11-desktop is-11-mobile" type="text" name="chest" value="" data-rule="decimal">
+          </div>
+        </div>
+
+        <div class="is-multiline column is-12-desktop is-12-mobile">
+          <div class="is-multiline column is-6-desktop is-6-mobile">
+            <label for="abdomen" class="column is-11-desktop is-11-mobile">Abdomen</label>
+            <input class="column is-11-desktop is-11-mobile" type="text" name="abdomen" value="" data-rule="decimal"/>
+          </div>
+          <div class="is-multiline column is-6-desktop is-6-mobile">
+            <label for="diet" class="column is-11-desktop is-11-mobile">Dieta</label>
+            <select class="column is-11-desktop is-11-mobile" name="diet" required>
               <option value="1">A1</option>
               <option value="2">A2</option>
               <option value="3">A3</option>
@@ -91,28 +95,30 @@
         </div>
         <button type="button" name="button" class="btn btn-blue is-center" data-type="submit">Registrar</button>
       </form>
+
       <form class="column is-6-desktop is-offset-3-desktop is-10-mobile is-offset-1-mobile records" action="index.html" method="post">
-        <div class="column is-12-desktop">
+        <div class="column is-12-desktop is-12-mobile">
           <div class="column is-12-desktop">
-            <label for="symptom" class="column is-11-desktop">Sintomas</label>
-            <textarea class="column is-11-desktop" type="text" name="symptom" value="" required></textarea>
+            <label for="symptom" class="column is-11-desktop is-11-mobile">Sintomas</label>
+            <textarea class="column is-11-desktop is-11-mobile" type="text" name="symptom" value="" required></textarea>
           </div>
           <div class="column is-12-desktop">
-            <label for="comments" class="column is-11-desktop">Comentarios</label>
-            <textarea class="column is-11-desktop" type="text" name="comments" value="" required></textarea>
+            <label for="comments" class="column is-11-desktop is-11-mobile">Comentarios</label>
+            <textarea class="column is-11-desktop is-11-mobile" type="text" name="comments" value="" required></textarea>
           </div>
         </div>
         <button type="button" name="name" class="btn btn-blue is-center" data-type="submit">Registrar</button>
       </form>
+
       <form class="column is-6-desktop is-offset-3-desktop is-10-mobile is-offset-1-mobile records" action="index.html" method="post">
-        <div class="is-multiline column is-12-desktop">
-          <div class="is-multiline column is-6-desktop">
-            <label for="i-high" class="column is-11-desktop">Abdomen alto INICIAL</label>
-            <input class="column is-11-desktop" type="text" name="i-high" value="" data-rule="decimal">
+        <div class="is-multiline column is-12-desktop is-12-mobile">
+          <div class="is-multiline column is-6-desktop is-6-mobile">
+            <label for="i-high" class="column is-11-desktop is-11-mobile">Abdomen alto INICIAL</label>
+            <input class="column is-11-desktop is-11-mobile" type="text" name="i-high" value="" data-rule="decimal">
           </div>
-          <div class="is-multiline column is-6-desktop">
-            <label for="f-high" class="column is-11-desktop">Abdomen alto FINAL</label>
-            <input class="column is-11-desktop" type="text" name="f-high" value="" data-rule="decimal">
+          <div class="is-multiline column is-6-desktop is-6-mobile">
+            <label for="f-high" class="column is-11-desktop is-11-mobile">Abdomen alto FINAL</label>
+            <input class="column is-11-desktop is-11-mobile" type="text" name="f-high" value="" data-rule="decimal">
           </div>
         </div>
         <div class="is-multiline column is-12-desktop">
