@@ -87,6 +87,10 @@ td {
   padding: 0 .4em;
 }
 
+form {
+  margin-bottom: 5em !important;
+}
+
 .table-responsive {
   display: block;
   overflow-x: auto;
@@ -268,7 +272,7 @@ td {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.3);
   z-index: 99999;
   opacity:0;
   -webkit-transition: opacity 400ms ease-in;
@@ -285,7 +289,8 @@ td {
   position: relative;
   margin: 10% auto;
   padding: 5px 20px 13px 20px;
-  border-radius: 10px;
+  border: 1px solid var(--green-color);
+  border-radius: 4px;
   background: #fff;
   background: -moz-linear-gradient(#fff, #999);
   background: -webkit-linear-gradient(#fff, #999);
