@@ -87,6 +87,10 @@ td {
   padding: 0 .4em;
 }
 
+form {
+  margin-bottom: 5em !important;
+}
+
 .table-responsive {
   display: block;
   overflow-x: auto;
