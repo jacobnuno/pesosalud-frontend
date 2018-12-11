@@ -41,49 +41,35 @@
         <h1 class="column is-6-desktop is-offset-3-desktop is-12-mobile title is-center">Ver Usuario</h1>
 
         <form class="column is-6-desktop is-offset-3-desktop is-10-mobile is-offset-1-mobile login" action="index.html" method="post">
+          <div class="column is-12-desktop is-center">
+            <label for="photo" class="column is-12-desktop">Imagen de perfil</label>
+            <img src="../../img/profile-icon.png" class="img" alt="Photo">
+          </div>
           <div class="column is-6-desktop is-multiline">
             <label for="name" class="column is-10-desktop">Nombre</label>
-            <input type="text" class="column is-8-desktop" name="name" value="" disabled>
+            <input type="text" class="column is-11-desktop" name="name" value="" disabled>
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="email" class="column is-10-desktop">E-mail</label>
-            <input class="column is-8-desktop" type="text" name="email" value="" placeholder="ejemplo@ejemplo.com" disabled>
+            <input class="column is-11-desktop" type="text" name="email" disabled>
           </div>
-          <div class="column is-12-desktop">
-            <div class="column is-6-desktop is-multiline">
-              <label for="female" class="column is-10-desktop">Femenino</label>
-              <input type="radio" class="column is-8-desktop" id="female" name="genre" value="f"  disabled>
-            </div>
-            <div class="column is-6-desktop is-multiline">
-              <label for="male" class="column is-10-desktop">Masculino</label>
-              <input type="radio" class="column is-8-desktop" id="male" name="genre" value="m" checked disabled>
-            </div>
+          <div class="column is-6-desktop is-multiline">
+            <label for="email" class="column is-10-desktop">Género</label>
+            <input class="column is-11-desktop" type="text" name="gender" disabled>
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="phone" class="column is-10-desktop">Teléfono</label>
-            <input type="text" class="column is-8-desktop" name="phone" value="" disabled>
+            <input type="text" class="column is-11-desktop" name="phone" value="" disabled>
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="height" class="column is-10-desktop">Peso</label>
-            <input type="text" class="column is-8-desktop" name="height" value="" disabled>
-          </div>
-          <div class="column is-6-desktop is-multiline">
-            <label for="birthDate" class="column is-10-desktop">Fecha de Nacimiento</label>
-            <input type="date" class="column is-8-desktop" name="birthDate" value="" disabled>
-          </div>
-          <div class="column is-6-desktop is-multiline">
-            <label for="registeredDate" class="column is-10-desktop">Fecha de Alta</label>
-            <input type="date" class="column is-8-desktop" name="registeredDate" value="" disabled>
+            <input type="text" class="column is-11-desktop" name="height" value="" disabled>
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="coments" class="column is-10-desktop">Comentarios</label>
-            <textarea name="coments" rows="2" cols="40" placeholder="Escribe algo..." disabled></textarea>
+            <textarea name="coments" rows="1" cols="42" disabled></textarea>
           </div>
-          <div class="column is-8-desktop is-multiline">
-            <label for="photo" class="column is-10-desktop" >Imagen de perfil</label>
-            <img src="../../img/profile-icon.png" class="img" alt="Photo">
-          </div>
-          <button type="button" name="button" class="btn btn-red">Cerrar</button>
+          <button type="button" name="button" class="btn btn-red" id="close">Cerrar</button>
         </form>
       </div>
       <footer>
@@ -92,6 +78,6 @@
           <a href="../views/cookies.html">Cookies</a>
         </div>
       </footer>
-      <script src="../../js/events.js"></script>
+      <script src="../../js/showUser.js" type="module"></script>
    </body>
 </html>

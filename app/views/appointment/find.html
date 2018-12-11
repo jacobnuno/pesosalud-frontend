@@ -7,32 +7,31 @@
     <link rel="icon" href="../../img/favicon.ico">
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/index.css"/>
-<<<<<<< HEAD
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/header.css"/>
     <link rel="stylesheet" href="../../../node_modules/font-awesome/css/font-awesome.css">
     <link rel="icon" href="../../img/favicon.ico">
-=======
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/header.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/login.css"/>
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
->>>>>>> dev
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Frank+Ruhl+Libre|Poppins|Quicksand" rel="stylesheet">
     </head>
   <body>
     <header>
-      <div class="column is-1-desktop is-6-mobile is-multiline logo">
-          <a href="../../index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
-      </div>
-      <button class="menuicon column is-1-mobile" type="button" id="toggleMenu"><i class="fa fa-bars"></i></button>
-      <div class="column is-offset-5-desktop is-6-desktop is-multiline drop-list">
-        <ul class="horizontal-list menu">
-          <li><a href="../../views/aboutUs.html">Nosotros</a></li>
-          <li><a href="../../views/services.html">Servicios</a></li>
-          <li><a href="../../views/appointment/add.html">¡Agenda tu cita!</a></li>
-          <li><a href="../../views/login.html">Iniciar Sesión</a></li>
-        </ul>
-      </div>
-    </header>
+        <div class="column is-1-desktop is-11-mobile is-multiline is-flex logo">
+          <a href="index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
+        </div>
+        <button class="menuicon column is-1-mobile" type="button" id="toggleMenu"><i class="fa fa-bars"></i></button>
+        <div class="column is-11-desktop is-multiline drop-list">
+          <ul class="horizontal-list menu">
+            <li><a href="views/aboutUs.html">Nosotros</a></li>
+            <li><a href="views/services.html">Servicios</a></li>
+            <li><a href="views/addAppointment.html">¡Agenda tu Cita!</a></li>
+            <li><a href="views/login.html" id="session">Iniciar Sesión</a></li>
+            <li class="hidden"><a href="views/admin/index.html" id="role">Panel Administrativo</a></li>
+            <li class="hidden"><button class="btn btn-orange" id="logout">Sign Out</button></li>
+          </ul>
+        </div>
+      </header>
     <div class="menures" id="menuResponsive">
       <ul>
         <li><a href="../../views/aboutUs.html">Nosotros</a></li>
@@ -41,32 +40,37 @@
         <li><a href="../../views/login.html">Iniciar Sesión</a></li>
       </ul>
     </div>
-    <div class="main" >
-      <h2 class="column is-2-desktop is-offset-5-desktop is-12-mobile title is-center">Busca tus citas</h2>
-      <form class="column is-2-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile appointment is-center" method="get">
-        <div class="column is-10-desktop is-multiline is-10-mobile">
-          <label for="date" class="column is-12-desktop">Busca por fecha</label>
-          <input id="txtDate" class="column is-12-desktop is-8-mobile is-offset-1-mobile" type="date" name="date" data-rule="date" required>
+    <div class="main">
+      <h2 class="column is-3-desktop is-offset-5-desktop is-12-mobile title is-center">Busca tus citas</h2>
+      <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile appointment is-center" method="post">
+        <div class="column is-10-desktop is-multiline is-12-mobile">
+          <label for="name" class="column is-12-desktop">Busca por nombre</label>
+          <input id="txtName" class="column is-12-desktop is-10-mobile is-offset-1-mobile" type="text" name="name" data-rule="word" required>
         </div>
-        <button type="button" data-type="submit" name="button" class="btn btn-blue" data-method="findAppointment">Buscar</button>
+        <button data-type="submit" name="button" class="btn btn-blue" data-method="appointmentFind" type="button">Buscar</button>
+      </form>
+    </div>
+    <div class="main" >
+      <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile appointment is-center" method="post">
+        <div class="column is-10-desktop is-multiline is-12-mobile">
+          <label for="date" class="column is-12-desktop">Busca por fecha</label>
+          <input id="txtDate" class="column is-12-desktop is-10-mobile is-offset-1-mobile" type="date" name="date" data-rule="date" required>
+        </div>
+        <button data-type="submit" name="button" class="btn btn-blue" data-method="appointmentFind">Buscar</button>
       </form>
       </div>
-      <div class="main">
-        <form class="column is-2-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile appointment is-center" method="get">
-          <div class="column is-10-desktop is-multiline is-10-mobile">
-            <label for="name" class="column is-12-desktop is-10-mobile">Busca por nombre</label>
-            <input id="txtName" class="column is-12-desktop is-8-mobile is-offset-1-mobile" type="text" name="name" placeholder="Juan" data-rule="word" required>
-          </div>
-          <button type="button" data-type="submit" name="button" class="btn btn-blue" data-method="findAppointment">Buscar</button>
-          </form>
-      </div>
+
       <footer>
         <div class="column is-12-desktop is-center">
           <span>Derechos Reservados para Peso y Salud</span>
           <a href="../views/cookies.html">Cookies</a>
         </div>
       </footer>
-      <script src="../../js/events.js"></script>
+
+    <script src="../../js/validatorOld.js"></script>
     <script src="../../js/validator.js"></script>
+    <script src="../../js/home.js" type="module">
+
+    </script>
   </body>
 </html>

@@ -31,6 +31,7 @@ function appointmentGet() {
         tr.appendChild(td);
         td = document.createElement('td');
         tr.appendChild(td);
+
         let a;
         let createAText;
         if(data.data[i]['status'] === 'Completed'){
