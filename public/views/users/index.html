@@ -4,23 +4,48 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Mi Perfil</title>
+      <link rel="icon" href="../../img/favicon.ico">
       <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
+      <link rel="stylesheet" type="text/css" media="screen" href="../../css/index.css"/>
+      <link rel="stylesheet" type="text/css" media="screen" href="../../css/header.css"/>
       <link rel="stylesheet" type="text/css" media="screen" href="../../css/login.css"/>
+      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Cinzel|Frank+Ruhl+Libre|Poppins|Quicksand" rel="stylesheet">
     </head>
     <body>
-      <!-- TODO: HEADER -->
-
+      <header>
+        <div class="column is-1-desktop is-6-mobile is-multiline logo">
+            <a href="../../index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
+        </div>
+        <button class="menuicon column is-1-mobile" type="button" id="toggleMenu"><i class="fa fa-bars"></i></button>
+        <div class="column is-offset-5-desktop is-6-desktop is-multiline drop-list">
+          <ul class="horizontal-list menu">
+            <li><a href="../../views/aboutUs.html">Nosotros</a></li>
+            <li><a href="../../views/services.html">Servicios</a></li>
+            <li><a href="../../views/appointment/add.html">¡Agenda tu cita!</a></li>
+            <li><a href="../../views/login.html">Iniciar Sesión</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="menures" id="menuResponsive">
+        <ul>
+          <li><a href="../../views/aboutUs.html">Nosotros</a></li>
+          <li><a href="../../views/services.html">Servicios</a></li>
+          <li><a href="../../views/appointment/add.html">¡Agenda tu Cita!</a></li> <!-- verificar esto!! -->
+          <li><a href="../../views/login.html">Iniciar Sesión</a></li>
+        </ul>
+      </div>
       <div class="main">
         <h1 class="column is-6-desktop is-offset-3-desktop is-12-mobile title is-center">Mi Perfil</h1>
 
         <form class="column is-6-desktop is-offset-3-desktop is-10-mobile is-offset-1-mobile login" action="index.html" method="post">
           <div class="column is-6-desktop is-multiline">
-            <label for="name" class="column is-10-desktop">Nombre</label>
+            <label for="name" class="column is-10-desktop">Nombre*</label>
             <input type="text" class="column is-8-desktop" name="name" value="" disabled>
           </div>
           <div class="column is-6-desktop is-multiline">
-            <label for="email" class="column is-10-desktop">E-mail</label>
+            <label for="email" class="column is-10-desktop">E-mail*</label>
             <input class="column is-8-desktop" type="text" name="email" value="" placeholder="ejemplo@ejemplo.com" disabled>
           </div>
           <div class="column is-12-desktop">
@@ -53,14 +78,19 @@
             <label for="coments" class="column is-10-desktop">Comentarios</label>
             <textarea name="coments" rows="2" cols="40" placeholder="Escribe algo..." disabled></textarea>
           </div>
-          <div class="column is-6-desktop is-multiline">
-            <label for="photo" class="column is-8-desktop" class="column is-10-desktop">Imagen de perfil</label>
+          <div class="column is-8-desktop is-multiline">
+            <label for="photo" class="column is-10-desktop">Imagen de perfil</label>
             <img src="../../img/profile-icon.png" class="img" alt="Photo">
           </div>
           <button type="button" name="button" class="btn btn-red">Cerrar</button>
         </form>
       </div>
-
-      <!-- TODO: FOOTER -->
+      <footer>
+        <div class="column is-12-desktop is-center">
+          <span>Derechos Reservados para Peso y Salud</span>
+          <a href="../views/cookies.html">Cookies</a>
+        </div>
+      </footer>
+      <script src="../../js/userProfile.js" type="module"></script>
    </body>
 </html>

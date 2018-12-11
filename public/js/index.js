@@ -13,4 +13,3 @@
 //     usersTpl.parent.appendChild(newUser);
 //   })
 // }
-"use strict";

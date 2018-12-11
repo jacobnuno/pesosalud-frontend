@@ -3,43 +3,42 @@
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Editar Usuario</title>
+      <title>Datos de Usuario</title>
       <link rel="icon" href="../../img/favicon.ico">
       <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
       <link rel="stylesheet" type="text/css" media="screen" href="../../css/index.css"/>
       <link rel="stylesheet" type="text/css" media="screen" href="../../css/header.css"/>
       <link rel="stylesheet" type="text/css" media="screen" href="../../css/login.css"/>
-      <link rel="stylesheet" href="../../../node_modules/font-awesome/css/font-awesome.css">
+      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Cinzel|Frank+Ruhl+Libre|Poppins|Quicksand" rel="stylesheet">
     </head>
     <body>
       <header>
-        <div class="column is-1-desktop is-11-mobile is-multiline is-flex logo">
-          <a href="../../index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
+        <div class="column is-1-desktop is-6-mobile is-multiline logo">
+            <a href="../../index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
         </div>
         <button class="menuicon column is-1-mobile" type="button" id="toggleMenu"><i class="fa fa-bars"></i></button>
-        <div class="column is-11-desktop is-multiline drop-list">
+        <div class="column is-offset-5-desktop is-6-desktop is-multiline drop-list">
           <ul class="horizontal-list menu">
             <li><a href="../../views/aboutUs.html">Nosotros</a></li>
             <li><a href="../../views/services.html">Servicios</a></li>
-            <li><a href="../../views/appointment/add.html">¡Agenda tu Cita!</a></li>
-            <li><a href="../../views/login.html" id="session">Iniciar Sesión</a></li>
-            <li class="hidden"><a href="../../views/admin/index.html" id="role">Panel Administrativo</a></li>
-            <li class="hidden"><button class="btn btn-orange" id="logout">Sign Out</button></li>
+            <li><a href="../../views/appointment/add.html">¡Agenda tu cita!</a></li>
+            <li><a href="../../views/login.html">Iniciar Sesión</a></li>
           </ul>
         </div>
       </header>
       <div class="menures" id="menuResponsive">
-         <ul class="horizontal-list menu">
-            <li><a href="../../views/aboutUs.html">Nosotros</a></li>
-            <li><a href="../../views/services.html">Servicios</a></li>
-            <li><a href="../../views/appointment/add.html">¡Agenda tu Cita!</a></li>
-            <li><a href="../../views/login.html" id="session">Iniciar Sesión</a></li>
-          </ul>
+        <ul>
+          <li><a href="../../views/aboutUs.html">Nosotros</a></li>
+          <li><a href="../../views/services.html">Servicios</a></li>
+          <li><a href="../../views/appointment/add.html">¡Agenda tu Cita!</a></li> <!-- verificar esto!! -->
+          <li><a href="../../views/login.html">Iniciar Sesión</a></li>
+        </ul>
       </div>
       <div class="main">
         <h1 class="column is-6-desktop is-offset-3-desktop is-12-mobile title is-center">Editar Usuario</h1>
+
         <form class="column is-6-desktop is-offset-3-desktop is-10-mobile is-offset-1-mobile login" action="index.html" method="post">
           <div class="column is-6-desktop is-multiline">
             <label for="name" class="column is-10-desktop">Nombre</label>
@@ -53,39 +52,36 @@
             <label for="password"  class="column is-10-desktop">Contraseña</label required>
             <input id="txtPass" class="column is-8-desktop" type="password" name="password" value="" data-rule="password" placeholder="Contraseña">
           </div>
-          <div class="column is-12-desktop">
-            <div class="column is-6-desktop is-multiline">
-              <label for="female" class="column is-10-desktop">Femenino</label>
-              <input type="radio" class="column is-8-desktop" id="female" name="genre" value="f" data-rule="radio">
-            </div>
-            <div class="column is-6-desktop is-multiline">
-              <label for="male" class="column is-10-desktop">Masculino</label>
-              <input type="radio" class="column is-8-desktop" id="male" name="genre" value="m" data-rule="radio">
-            </div>
+          <div class="column is-6-desktop is-multiline">
+            <label for="gender" class="column is-10-desktop">Gender</label>
+            <select class="column is-8-desktop" name="gender" id="txtGender" required>
+              <option value="M">Masculino</option>
+              <option value="F">Femenino</option>
+            </select>
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="phone" class="column is-10-desktop">Teléfono</label>
             <input id="txtPhone" type="text" class="column is-8-desktop" name="phone" value="" data-rule="number">
           </div>
           <div class="column is-6-desktop is-multiline">
-            <label for="height" class="column is-10-desktop">Peso</label>
-            <input id="txtPeso" type="text" class="column is-8-desktop" name="height" value="" data-rule="decimal">
+            <label for="weight" class="column is-10-desktop">Peso</label>
+            <input id="txtWeight" type="text" class="column is-8-desktop" name="weight" value="" data-rule="decimal">
+          </div>
+          <div class="column is-6-desktop is-multiline">
+            <label for="height" class="column is-10-desktop">Altura</label>
+            <input id="txtHeight" type="text" class="column is-8-desktop" name="height" value="" data-rule="decimal">
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="birthDate" class="column is-10-desktop">Fecha de Nacimiento</label>
-            <input type="date" class="column is-8-desktop" name="birthDate" value="" data-rule="date">
-          </div>
-          <div class="column is-6-desktop is-multiline">
-            <label for="registeredDate" class="column is-10-desktop">Fecha de Alta</label>
-            <input type="date" class="column is-8-desktop" name="registeredDate" value="" data-rule="date">
+            <input id="txtBirthdate" type="date" class="column is-8-desktop" name="birthDate" value="" data-rule="date">
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="coments" class="column is-10-desktop">Comentarios</label>
-            <textarea name="coments" rows="2" cols="40" placeholder="Escribe algo..."></textarea>
+            <textarea id="txtComments" name="coments" rows="2" cols="40" placeholder="Escribe algo..."></textarea>
           </div>
           <div class="column is-6-desktop is-multiline">
-            <label for="photo" class="column is-8-desktop" class="column is-10-desktop">Imagen de perfil</label>
-            <input type="file" class="column is-8-desktop" name="photo" data-rule="image" accept="image/jpeg, image/png">
+            <label for="photo" class="column is-10-desktop">Imagen de perfil</label>
+            <input type="file" class="column is-10-desktop" name="photo" data-rule="image" accept="image/jpeg, image/png">
           </div>
           <button type="button" name="button" class="btn btn-blue" data-type="submit" data-method="addUser">Guardar</button>
         </form>
@@ -93,11 +89,9 @@
       <footer>
         <div class="column is-12-desktop is-center">
           <span>Derechos Reservados para Peso y Salud</span>
-          <a href="../../views/cookies.html">Cookies</a>
+          <a href="../views/cookies.html">Cookies</a>
         </div>
       </footer>
-      <script src="../../js/events.js"></script>
-      <script src="../../js/validator.js"></script>
-      <script src="../../js/home.js" type="module"></script>
+      <script src="../../js/addUser.js" type="module"></script>
    </body>
 </html>

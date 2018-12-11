@@ -5,37 +5,68 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Editar Usuario</title>
       <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
+      <link rel="stylesheet" type="text/css" media="screen" href="../../css/index.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="../../css/header.css"/>
       <link rel="stylesheet" type="text/css" media="screen" href="../../css/login.css"/>
+      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Cinzel|Frank+Ruhl+Libre|Poppins|Quicksand" rel="stylesheet">
     </head>
     <body>
-      <!-- TODO: HEADER -->
-
-      <div class="main">
+      <header>
+        <div class="column is-1-desktop is-11-mobile is-multiline is-flex logo">
+          <a href="../../index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
+        </div>
+        <button class="menuicon column is-1-mobile" type="button" id="toggleMenu"><i class="fa fa-bars"></i></button>
+        <div class="column is-11-desktop is-multiline drop-list">
+          <ul class="horizontal-list menu">
+            <li><a href="../../views/aboutUs.html">Nosotros</a></li>
+            <li><a href="../../views/services.html">Servicios</a></li>
+            <li><a href="../../views/appointment/add.html">¡Agenda tu Cita!</a></li>
+            <li><a href="../../views/login.html">Iniciar Sesión</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="menures" id="menuResponsive">
+        <ul>
+          <li><a href="../../views/aboutUs.html">Nosotros</a></li>
+          <li><a href="../../views/services.html">Servicios</a></li>
+          <li><a href="../../views/appointment/add.html">¡Agenda tu Cita!</a></li>
+          <li><a href="../../views/login.html">Iniciar Sesión</a></li>
+        </ul>
+      </div>
+      <div class="main" data-type="userEdit">
         <h1 class="column is-6-desktop is-offset-3-desktop is-12-mobile title is-center">Editar Usuario</h1>
 
         <form class="column is-6-desktop is-offset-3-desktop is-10-mobile is-offset-1-mobile login" action="index.html" method="post">
 
           <div class="column is-6-desktop is-multiline">
             <label for="phone" class="column is-10-desktop">Teléfono</label>
-            <input type="text" class="column is-8-desktop" name="phone" value="">
+            <input type="text" class="column is-8-desktop" name="phone" value="" data-rule="number" required>
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="height" class="column is-10-desktop">Peso</label>
-            <input type="text" class="column is-8-desktop" name="height" value="">
+            <input type="text" class="column is-8-desktop" name="height" value="" data-rule="decimal" required>
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="coments" class="column is-10-desktop">Comentarios</label>
-            <textarea name="coments" rows="2" cols="40" placeholder="Escribe algo..."></textarea>
+            <textarea name="coments" class="column is-8-desktop" rows="1" cols="10" placeholder="Escribe algo..." required></textarea>
           </div>
           <div class="column is-6-desktop is-multiline">
             <label for="registeredDate" class="column is-10-desktop">Fecha de Alta</label>
-            <input type="date" class="column is-8-desktop" name="registeredDate" value="">
+            <input type="date" class="column is-8-desktop" name="registeredDate" value="" data-rule="date">
           </div>
-          <button type="button" name="button" class="btn btn-blue">Guardar</button>
+          <button type="button" data-type="submit" name="button" class="btn btn-blue">Guardar</button>
         </form>
       </div>
-
-      <!-- TODO: FOOTER -->
+      <footer>
+        <div class="column is-12-desktop is-center">
+          <span>Derechos Reservados para Peso y Salud</span>
+          <a href="../views/cookies.html">Cookies</a>
+        </div>
+      </footer>
+      <script src="../js/events.js"></script>
+      <script src="../../js/validator.js"></script>
+      <script src="../../js/user.js"></script>
    </body>
 </html>

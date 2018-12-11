@@ -1,12 +1,8 @@
-'use strict';
+const Slider = (function () {
+    const slides = document.querySelectorAll('.slider li');
+    let currentSlide = 0;
 
-var Slider = function () {
-    var slides = document.querySelectorAll('.slider li');
-    console.log('slides', slides);
-    console.log('length: ', slides.length);
-    var currentSlide = 0;
-
-    var next = function next() {
+    const next = function () {
         slides[currentSlide].classList.toggle('active');
         if (currentSlide < slides.length - 1) {
             currentSlide += 1;
@@ -16,7 +12,7 @@ var Slider = function () {
         slides[currentSlide].classList.toggle('active');
     };
 
-    var prev = function prev() {
+    const prev = function () {
         slides[currentSlide].classList.toggle('active');
         if (currentSlide > 0) {
             currentSlide -= 1;
@@ -27,7 +23,7 @@ var Slider = function () {
     };
 
     return {
-        next: next,
-        prev: prev
+        next,
+        prev,
     };
-}();
+}());

@@ -15,25 +15,28 @@
   </head>
    <body>
      <header>
-       <div class="column is-1-desktop is-6-mobile is-multiline logo">
-           <a href="../../index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
-       </div>
-       <button class="menuicon column is-1-mobile" type="button" id="toggleMenu"><i class="fa fa-bars"></i></button>
-       <div class="column is-offset-5-desktop is-6-desktop is-multiline drop-list">
-         <ul class="horizontal-list menu">
-           <li><a href="../../views/aboutUs.html">Nosotros</a></li>
-           <li><a href="../../views/services.html">Servicios</a></li>
-           <li><a href="../../views/appointment/add.html">¡Agenda tu cita!</a></li>
-           <li><a href="../../views/login.html">Iniciar Sesión</a></li>
-         </ul>
-       </div>
-     </header>
+         <div class="column is-1-desktop is-11-mobile is-multiline is-flex logo">
+           <a href="index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
+         </div>
+         <button class="menuicon column is-1-mobile" type="button" id="toggleMenu"><i class="fa fa-bars"></i></button>
+         <div class="column is-11-desktop is-multiline drop-list">
+           <ul class="horizontal-list menu">
+             <li><a href="views/aboutUs.html">Nosotros</a></li>
+             <li><a href="views/services.html">Servicios</a></li>
+             <li><a href="views/addAppointment.html">¡Agenda tu Cita!</a></li>
+             <li><a href="views/login.html" id="session">Iniciar Sesión</a></li>
+             <li class="hidden"><a href="views/admin/index.html" id="role">Panel Administrativo</a></li>
+             <li class="hidden"><button class="btn btn-orange" id="logout">Sign Out</button></li>
+           </ul>
+         </div>
+       </header>
      <div class="menures" id="menuResponsive">
        <ul>
          <li><a href="../../views/aboutUs.html">Nosotros</a></li>
          <li><a href="../../views/services.html">Servicios</a></li>
          <li><a href="../views/appointment/add.html">¡Agenda tu Cita!</a></li> <!-- verificar esto!! -->
-         <li><a href="../../views/login.html">Iniciar Sesión</a></li>
+         <li><a href="../../views/login.html" id="session">Iniciar Sesión</a></li>
+
        </ul>
      </div>
     <div class="main">
@@ -57,7 +60,7 @@
           <a href="../views/cookies.html">Cookies</a>
         </div>
       </footer>
-      <script src="../../js/events.js"></script>
     <script src="../../js/validator.js"></script>
-  </body>
+    <script src="../../js/home.js" type="module"></script>
+    </body>
 </html>
