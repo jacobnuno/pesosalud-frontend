@@ -15,25 +15,29 @@
     </head>
   <body>
     <header>
-      <div class="column is-1-desktop is-6-mobile is-multiline logo">
-          <a href="../../index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
-      </div>
-      <button class="menuicon column is-1-mobile" type="button" id="toggleMenu"><i class="fa fa-bars"></i></button>
-      <div class="column is-offset-5-desktop is-6-desktop is-multiline drop-list">
-        <ul class="horizontal-list menu">
-          <li><a href="../../views/aboutUs.html">Nosotros</a></li>
-          <li><a href="../../views/services.html">Servicios</a></li>
-          <li><a href="../../views/appointment/add.html">¡Agenda tu cita!</a></li>
-          <li><a href="../../views/login.html">Iniciar Sesión</a></li>
-        </ul>
-      </div>
-    </header>
+        <div class="column is-1-desktop is-11-mobile is-multiline is-flex logo">
+          <a href="index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
+        </div>
+        <button class="menuicon column is-1-mobile" type="button" id="toggleMenu"><i class="fa fa-bars"></i></button>
+        <div class="column is-11-desktop is-multiline drop-list">
+          <ul class="horizontal-list menu">
+            <li><a href="views/aboutUs.html">Nosotros</a></li>
+            <li><a href="views/services.html">Servicios</a></li>
+            <li><a href="views/addAppointment.html">¡Agenda tu Cita!</a></li>
+            <li><a href="views/login.html" id="session">Iniciar Sesión</a></li>
+            <li class="hidden"><a href="views/admin/index.html" id="role">Panel Administrativo</a></li>
+            <li class="hidden"><button class="btn btn-orange" id="logout">Sign Out</button></li>
+          </ul>
+        </div>
+      </header>
     <div class="menures" id="menuResponsive">
       <ul>
         <li><a href="../../views/aboutUs.html">Nosotros</a></li>
         <li><a href="../../views/services.html">Servicios</a></li>
         <li><a href="../../views/appointment/add.html">¡Agenda tu Cita!</a></li> <!-- verificar esto!! -->
-        <li><a href="../../views/login.html">Iniciar Sesión</a></li>
+        <li><a href="../../views/login.html"id="session">Iniciar Sesión</a></li>
+        <li class="hidden"><a href="views/admin/index.html" id="role">Panel Administrativo</a></li>
+        <li class="hidden"><button class="btn btn-orange" id="logout">Sign Out</button></li>
       </ul>
     </div>
 
@@ -47,13 +51,13 @@
           <label for="service" class="column is-12-desktop is-12-mobile">Servicio</label>
           <select class="column is-12-desktop is-10-mobile is-1-offset-desktop " id="txtService" name="service" required>
           <option value="">Selecciona una opcion</option>
-          <option value="1">Electroacupuntura</option>
+          <option value="1">Control de peso con acupuntura</option>
+          <option value="7">Electroacupuntura</option>
           <option value="2">Electrocelulipolisis</option>
           <option value="3">Consulta por enfermedad</option>
           <option value="4">Control de peso</option>
           <option value="5">Homeopatía</option>
           <option value="6">Mesoterapia</option>
-          <option value="7">Control de peso con acupuntura</option>
           <option value="8">Rejuvenecimiento facial con acupuntura</option>
           <option value="9">Lifting de glúteos</option>
           <option value="10">Lifting de senos</option>
@@ -73,11 +77,11 @@
         </div>
         </div>
 
-        <button data-type="submit" name="button" class="btn btn-blue" data-method="appointmentAdd" type="button" >Agregar</button>
+        <button name="button" id="btnAdd" class="btn btn-blue" data-method="appointmentAdd" type="button" >Agregar</button>
 
       </form>
       <div class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile login new-register is-center">
-        <a href="./list.html" class="btn-link"> Ver lista de dietas</a>
+        <a href="../../views/appointment/find.html" class="btn-link"> Busca tus citas</a>
       </div>
     </div>
     <footer>
@@ -87,5 +91,6 @@
       </div>
     </footer>
     <script src="../../js/addAppointment.js" type="module"></script>
+    <script src="../../js/home.js" type="module"></script>
   </body>
 </html>
