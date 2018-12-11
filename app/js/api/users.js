@@ -9,7 +9,6 @@ class Users {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // 'Content-Type': 'application/x-wwww-form-urlencoded',
       },
       body: JSON.stringify({
         email: email,
@@ -22,19 +21,33 @@ class Users {
       })
       .then((data) => {
         console.log('data: ', data);
-        Cookies.setCookie('session-token', data.token, 168);
-        Cookies.setCookie('user-id', data.id, 168);
-        window.location.replace('../../index.html');
+        if (data.token !== undefined) {
+          Cookies.setCookie('session-token', data.token, 168);
+          Cookies.setCookie('user-id', data.id, 168);
+          Cookies.setCookie('user-role', data.role, 168);
+          window.location.replace('../index.html');
+        }
+        const errorSpan = form.querySelector('span.has-error');
+        if (errorSpan) {
+          form.removeChild(errorSpan);
+        }
+        const newSpan = document.createElement('span');
+        newSpan.appendChild(document.createTextNode('Email or password are incorrect'));
+        newSpan.classList.add('has-error');
+        form.appendChild(newSpan);
       })
       .catch((err) => {
         console.log('err', err);
-        alert('Your credentials are incorrect');
       });
   }
 
   static getOne(form) {
     const userId = Cookies.getCookie('user-id');
     const token = Cookies.getCookie('session-token');
+    const gender = {
+      M: 'Masculino',
+      F: 'Femenino',
+    }
     fetch(`https://pesoysalud.herokuapp.com/users/${userId}`, {
       method: 'GET',
       headers: {
@@ -52,10 +65,77 @@ class Users {
         form.querySelector('input[name="email"]').value = data.data[0].email ? data.data[0].email : '';
         form.querySelector('input[name="phone"]').value = data.data[0].phone ? data.data[0].phone : '';
         form.querySelector('input[name="height"]').value = data.data[0].Height ? data.data[0].Height : '';
+        form.querySelector('input[name="gender"]').value = data.data[0].gender ? gender[data.data[0].gender] : '';
         form.querySelector('textarea[name="coments"]').value = data.data[0].Coments ? data.data[0].Coments : '';
       })
       .catch(err => console.log('err', err));
-  }
+    }
+
+    static showOne() {
+      const form = document.querySelector('form');
+      const token = Cookies.getCookie('session-token');
+      const url = window.location;
+      const userId = url.toString().substring(url.toString().lastIndexOf('=') + 1);
+      const gender = {
+        M: 'Masculino',
+        F: 'Femenino',
+      }
+      fetch(`https://pesoysalud.herokuapp.com/users/${userId}`, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      })
+        .then((response) => {
+          console.log('response: ', response);
+          return response.json();
+        })
+        .then((data) => {
+          console.log('data: ', data);
+          form.querySelector('input[name="name"]').value = data.data[0].name ? data.data[0].name : '';
+          form.querySelector('input[name="email"]').value = data.data[0].email ? data.data[0].email : '';
+          form.querySelector('input[name="phone"]').value = data.data[0].phone ? data.data[0].phone : '';
+          form.querySelector('input[name="height"]').value = data.data[0].Height ? data.data[0].Height : '';
+          form.querySelector('input[name="gender"]').value = data.data[0].gender ? gender[data.data[0].gender] : '';
+          form.querySelector('textarea[name="coments"]').value = data.data[0].Coments ? data.data[0].Coments : '';
+        })
+        .catch(err => console.log('err', err));
+      }
+
+  static create(form) {
+       let status;
+       fetch(`https://pesoysalud.herokuapp.com/users/`, {
+           method: 'POST',
+           mode: 'cors',
+           headers: {
+               'Content-Type': 'application/json',
+           },
+           body: JSON.stringify({
+               Email: form.querySelector('input[id="txtEmail"]').value,
+               Gender: form.querySelector('select[id="txtGender"]').value,
+               Name: form.querySelector('input[id="txtName"]').value,
+               Password: form.querySelector('input[id="txtPass"]').value,
+               Phone: form.querySelector('input[id="txtPhone"]').value,
+               Height: form.querySelector('input[id="txtHeight"]').value,
+               BirthDate: form.querySelector('input[id="txtBirthdate"]').value,
+               Comments: form.querySelector('textarea[id="txtComments"]').value,
+               UserType: '4',
+           }),
+       })
+       .then((response) => {
+           console.log('response =', response);
+           status = response.status;
+           return response.json();
+         })
+       .then(function(data) {
+           console.log('data = ', data);
+           alert(data.message);
+         })
+       .catch(function(err) {
+         console.log('err', err);
+       });
+   }
 
   // static async create(form) {
   //   data = await fetch(`${this.apiUrl}/${this.endpoint}`, {

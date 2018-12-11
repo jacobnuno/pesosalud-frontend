@@ -83,6 +83,10 @@ img {
   height: 17em;
 }
 
+div.droplist ul {
+  text-align: end;
+}
+
 @media screen and (max-width: 768px) {
   .contact-form {
     margin-left: 18% !important;

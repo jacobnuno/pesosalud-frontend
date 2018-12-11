@@ -6,7 +6,6 @@ class Validator {
       let rule = input.getAttribute('data-rule');
       if (rule != 'radio' && rule != 'image' && rule != 'password') {
         Validator.hasError(input);
-        console.log('lala: ', Validator[rule]);
         let error = Validator[rule](input);
         formError = (formError !=  true) ?  error : formError;
       }
@@ -25,7 +24,7 @@ class Validator {
       number: /^\d+$/,
       decimal: /^(\d+\.?\d{0,4}|\.\d{1,4})$/,
       date: /^[1-2][0-9]{3}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-2])$/,
-      hour: /^([01][0-9]|2[0-3]:[0-5][0-9])$/,
+      hour: /^([01][0-9]|2[0-3]):[0-5][0-9]$/,
     };
   }
 
@@ -104,56 +103,5 @@ class Validator {
     }
     return false;
   }
-
-// API USER
-function addUser(){
-  const today = new Date();
-
-  const body = {
-    Email: document.getElementById('txtEmail').value,
-    Gender: document.getElementById('txtGender').value,
-    Name: document.getElementById('txtName').value,
-    Password: document.getElementById('txtPass').value,
-    Phone: document.getElementById('txtPhone').value,
-    Weight: document.getElementById('txtWeight').value,
-    Height: document.getElementById('txtHeight').value,
-    Birthdate: document.getElementById('txtBirthdate').value,
-    Comments: document.getElementById('txtComments').value,
-    // registeredDate: dateFormat(new Date(), 'Y-m-d h:i:s'),
-    UserType: 4,
-  }
-
-  console.log(body);
-  fetch('https://pesoysalud.herokuapp.com/users/', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-          Email: document.getElementById('txtEmail').value,
-          Gender: document.getElementById('txtGender').value,
-          Name: document.getElementById('txtName').value,
-          Password: document.getElementById('txtPass').value,
-          Phone: document.getElementById('txtPhone').value,
-          Weight: document.getElementById('txtWeight').value,
-          Height: document.getElementById('txtHeight').value,
-          BirthDate: document.getElementById('txtBirthdate').value,
-          Comments: document.getElementById('txtComments').value,
-          registeredDate: `20180101`,
-          UserType: '4',
-      }),
-  })
-  .then(function(response) {
-      console.log('response =', response);
-    return response.json();
-})
-.then(function(data) {
-    console.log('data = ', data);
-})
-.catch(function(err) {
-    console.log('err', err);
-});
 }
-
-
 export default Validator;

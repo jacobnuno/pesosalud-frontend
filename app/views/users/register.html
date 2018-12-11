@@ -3,7 +3,7 @@
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Editar Usuario</title>
+      <title>Datos de Usuario</title>
       <link rel="icon" href="../../img/favicon.ico">
       <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
       <link rel="stylesheet" type="text/css" media="screen" href="../../css/index.css"/>
@@ -80,8 +80,8 @@
             <textarea id="txtComments" name="coments" rows="2" cols="40" placeholder="Escribe algo..."></textarea>
           </div>
           <div class="column is-6-desktop is-multiline">
-            <label for="photo" class="column is-8-desktop" class="column is-10-desktop">Imagen de perfil</label>
-            <input type="file" class="column is-8-desktop" name="photo" data-rule="image" accept="image/jpeg, image/png">
+            <label for="photo" class="column is-10-desktop">Imagen de perfil</label>
+            <input type="file" class="column is-10-desktop" name="photo" data-rule="image" accept="image/jpeg, image/png">
           </div>
           <button type="button" name="button" class="btn btn-blue" data-type="submit" data-method="addUser">Guardar</button>
         </form>
@@ -92,6 +92,6 @@
           <a href="../views/cookies.html">Cookies</a>
         </div>
       </footer>
-      <script src="../../js/validator.js"></script>
+      <script src="../../js/addUser.js" type="module"></script>
    </body>
 </html>

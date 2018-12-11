@@ -1,4 +1,5 @@
 import Users from 'api/users';
+import Appointment from 'api/appointment';
 
 const buttonSubmit = document.querySelector('button[data-type=submit]');
 

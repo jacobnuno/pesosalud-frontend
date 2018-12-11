@@ -9,31 +9,34 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/index.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/header.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/login.css"/>
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../../../node_modules/font-awesome/css/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Frank+Ruhl+Libre|Poppins|Quicksand" rel="stylesheet">
   </head>
    <body>
      <header>
-       <div class="column is-1-desktop is-6-mobile is-multiline logo">
-           <a href="../../index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
-       </div>
-       <button class="menuicon column is-1-mobile" type="button" id="toggleMenu"><i class="fa fa-bars"></i></button>
-       <div class="column is-offset-5-desktop is-6-desktop is-multiline drop-list">
-         <ul class="horizontal-list menu">
-           <li><a href="../../views/aboutUs.html">Nosotros</a></li>
-           <li><a href="../../views/services.html">Servicios</a></li>
-           <li><a href="../../views/appointment/add.html">¡Agenda tu cita!</a></li>
-           <li><a href="../../views/login.html">Iniciar Sesión</a></li>
-         </ul>
-       </div>
-     </header>
+         <div class="column is-1-desktop is-11-mobile is-multiline is-flex logo">
+           <a href="index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
+         </div>
+         <button class="menuicon column is-1-mobile" type="button" id="toggleMenu"><i class="fa fa-bars"></i></button>
+         <div class="column is-11-desktop is-multiline drop-list">
+           <ul class="horizontal-list menu">
+             <li><a href="views/aboutUs.html">Nosotros</a></li>
+             <li><a href="views/services.html">Servicios</a></li>
+             <li><a href="views/addAppointment.html">¡Agenda tu Cita!</a></li>
+             <li><a href="views/login.html" id="session">Iniciar Sesión</a></li>
+             <li class="hidden"><a href="views/admin/index.html" id="role">Panel Administrativo</a></li>
+             <li class="hidden"><button class="btn btn-orange" id="logout">Sign Out</button></li>
+           </ul>
+         </div>
+       </header>
      <div class="menures" id="menuResponsive">
        <ul>
          <li><a href="../../views/aboutUs.html">Nosotros</a></li>
          <li><a href="../../views/services.html">Servicios</a></li>
          <li><a href="../views/appointment/add.html">¡Agenda tu Cita!</a></li> <!-- verificar esto!! -->
-         <li><a href="../../views/login.html">Iniciar Sesión</a></li>
+         <li><a href="../../views/login.html" id="session">Iniciar Sesión</a></li>
+
        </ul>
      </div>
     <div class="main">
@@ -41,14 +44,16 @@
       <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile login is-center" method="post">
         <h2 class="column is-8-desktop is-offset-2-desktop is-12-mobile is-center">Editar cita</h2>
         <div class="column is-12-desktop is-12-mobile is-multiline is-center">
-          <label for="status" class="column is-12-desktop is-12-mobile">Estatus</label>
+          <label for="status" id="txtStatus" class="column is-12-desktop is-12-mobile">Estatus</label>
           <select id="txtStatus"  name="status" required>
           <option value="">Selecciona una opcion</option>
-          <option value="active">Activo</option>
-          <option value="inactive">Inactivo</option>
+          <option value="Scheduled">Scheduled</option>
+          <option value="Cancel">Cancel</option>
+          <option value="Rescheduled">Rescheduled</option>
           </select>
         </div>
-        <button data-submit="submit" name="button" class="btn btn-blue" data-method="appointmentEdit">Agregar</button>
+
+        <button id="btnEdit" type="button" name="button" class="btn btn-blue" data-method="appointmentEdit">Agregar</button>
       </form>
       </div>
       <footer>
@@ -57,7 +62,8 @@
           <a href="../views/cookies.html">Cookies</a>
         </div>
       </footer>
-      <script src="../../js/events.js"></script>
-    <script src="../../js/validator.js"></script>
-  </body>
+    <script src="../../js/editAppointment.js" type="module"></script>
+
+    <script src="../../js/home.js" type="module"></script>
+    </body>
 </html>

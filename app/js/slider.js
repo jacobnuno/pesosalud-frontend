@@ -1,7 +1,5 @@
 const Slider = (function () {
     const slides = document.querySelectorAll('.slider li');
-    console.log('slides', slides);
-    console.log('length: ', slides.length);
     let currentSlide = 0;
 
     const next = function () {
