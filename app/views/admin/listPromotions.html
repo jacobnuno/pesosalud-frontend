@@ -16,7 +16,7 @@
     <body>
       <header>
         <div class="column is-1-desktop is-11-mobile is-multiline is-flex logo">
-          <a href="../../index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
+          <a href="index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
         </div>
         <button class="menuicon column is-1-mobile" type="button" id="toggleMenu"><i class="fa fa-bars"></i></button>
         <div class="column is-11-desktop is-multiline drop-list">
@@ -24,17 +24,19 @@
             <li><a href="../../views/aboutUs.html">Nosotros</a></li>
             <li><a href="../../views/services.html">Servicios</a></li>
             <li><a href="../../views/appointment/add.html">¡Agenda tu Cita!</a></li>
-            <li><a href="../../views/login.html">Iniciar Sesión</a></li>
+            <li><a href="../../views/login.html" id="session">Iniciar Sesión</a></li>
+            <li class="hidden"><a href="../../views/admin/index.html" id="role">Panel Administrativo</a></li>
+            <li class="hidden"><button class="btn btn-orange" id="logout">Sign Out</button></li>
           </ul>
         </div>
       </header>
       <div class="menures" id="menuResponsive">
-        <ul>
-          <li><a href="../../views/aboutUs.html">Nosotros</a></li>
-          <li><a href="../../views/services.html">Servicios</a></li>
-          <li><a href="../../views/appointment/add.html">¡Agenda tu Cita!</a></li>
-          <li><a href="../../views/login.html">Iniciar Sesión</a></li>
-        </ul>
+         <ul class="horizontal-list menu">
+            <li><a href="../../views/aboutUs.html">Nosotros</a></li>
+            <li><a href="../../views/services.html">Servicios</a></li>
+            <li><a href="../../views/appointment/add.html">¡Agenda tu Cita!</a></li>
+            <li><a href="../../views/login.html" id="session">Iniciar Sesión</a></li>
+          </ul>
       </div>
       <div class="main">
         <h1 class="column is-5-desktop is-offset-5-desktop is-12-mobile title">Lista de Promociones</h1>
@@ -52,25 +54,14 @@
             </thead>
             <tbody>
               <tr>
-                <td>1</td>
-                <td>Homeopatia</td>
-                <td>15/05/2018</td>
-                <td>18/12/2018</td>
-                <td>5</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>
                   <a class="btn-action btn-orange" href="./editPromotions.html">Editar</a>
                   <a class="btn-action btn-green" href="#">Activar</a>
-                </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Control de Peso con Acupuntura</td>
-                <td>15/05/2018</td>
-                <td>15/05/2018</td>
-                <td>33</td>
-                <td>
-                  <a class="btn-action btn-orange" href="./editPromotions.html">Editar</a>
-                  <a class="btn-action btn-dark-gray" href="#">Desactivar</a>
                 </td>
               </tr>
             </tbody>
@@ -80,9 +71,12 @@
         <footer>
           <div class="column is-12-desktop is-center">
             <span>Derechos Reservados para Peso y Salud</span>
-            <a href="../views/cookies.html">Cookies</a>
+            <a href="views/cookies.html">Cookies</a>
           </div>
         </footer>
         <script src="../../js/events.js"></script>
+        <script src="../../js/slider.js"></script>
+        <script src="../../js/home.js" type="module"></script>
+        <script src="../../js/validator.js"></script>
    </body>
 </html>
