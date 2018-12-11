@@ -1,6 +1,6 @@
+import Validator from './validator.js';
 import Users from './api/users.js';
 
-const form = document.getElementsByTagName('form')[0];
 const closeBtn = document.getElementById('close');
 
 function goBack() {
@@ -8,7 +8,7 @@ function goBack() {
 }
 
 window.onload = function () {
-  Users.getOne(form);
+  Users.showOne();
 
   closeBtn.onclick = function () {
     goBack();
