@@ -1,21 +1,21 @@
 import Cookies from '../cookies.js';
 
 class Diets {
+  constructor() {
+    this.apiUrl = 'https://pesoysalud.herokuapp.com';
 
-  static create(form) {
-    data = await fetch(`${this.apiUrl}/${this.endpoint}`, {
-      method: 'post',
-      body: new FormData(form)
-    }).then(function(response){
+    // obtener la cookie
+    // document.cookie
+    // this.token = asdfasdf
 
-    })
-
-    document.cookie = 'credentials' + "=" + data.token + ";path=/;expires=" + d.toGMTString();
+    // setear el token
+    // this.headers = new Headers();
   }
+
   static getOne(form) {
-    const dietId = Cookies.getCookie('diet-id');
+    const dietsId = Cookies.getCookie('diets-id');
     const token = Cookies.getCookie('session-token');
-    fetch(`https://pesoysalud.herokuapp.com/appointment/${dietId}`, {
+    fetch(`https://pesoysalud.herokuapp.com/diets/${dietsId}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -30,7 +30,7 @@ class Diets {
         console.log('data: ', data);
         form.querySelector('input[name="name"]').value = data.data[0].name ? data.data[0].name : '';
         form.querySelector('input[name="description"]').value = data.data[0].description ? data.data[0].description : '';
-        })
+      })
       .catch(err => console.log('err', err));
   }
 }

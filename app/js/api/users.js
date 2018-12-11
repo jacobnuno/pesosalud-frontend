@@ -16,6 +16,7 @@ class Users {
   static async login() {
     return await fetch(`${apiUrl}/users/login`, {
       method: 'POST',
+      mode: 'CORS',
       headers: {
         'Content-Type': 'application/json',
         // 'Content-Type': 'application/x-wwww-form-urlencoded',
