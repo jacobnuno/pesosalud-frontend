@@ -6,7 +6,6 @@ class Validator {
       let rule = input.getAttribute('data-rule');
       if (rule != 'radio' && rule != 'image' && rule != 'password') {
         Validator.hasError(input);
-        console.log('lala: ', Validator[rule]);
         let error = Validator[rule](input);
         formError = (formError !=  true) ?  error : formError;
       }
@@ -25,7 +24,7 @@ class Validator {
       number: /^\d+$/,
       decimal: /^(\d+\.?\d{0,4}|\.\d{1,4})$/,
       date: /^[1-2][0-9]{3}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-2])$/,
-      hour: /^([01][0-9]|2[0-3]:[0-5][0-9])$/,
+      hour: /^([01][0-9]|2[0-3]):[0-5][0-9]$/,
     };
   }
 
