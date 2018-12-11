@@ -17,6 +17,11 @@ body {
   margin: 1em;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
 input, select {
   height: 2.2em;
 }
@@ -323,6 +328,10 @@ td {
 .img {
   width: 9em;
   height: 9em;
+}
+
+.hidden{
+  display: none !important;
 }
 
 /* mobile */

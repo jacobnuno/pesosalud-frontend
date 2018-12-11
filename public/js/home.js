@@ -1,5 +1,9 @@
 import Cookies from './cookies.js';
 
+function deleteCookie(name) {
+  document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:01 GMT;`;
+}
+
 window.onload = function () {
   const session = document.getElementById('session');
   const logOut = document.getElementById('logout');
@@ -17,6 +21,9 @@ window.onload = function () {
   }
 
   logOut.onclick = function () {
-    Users.logOut();
+    deleteCookie('session-token');
+    deleteCookie('user-id');
+    deleteCookie('user-role');
+    window.location.reload();
   };
 };

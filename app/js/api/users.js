@@ -22,9 +22,13 @@ class Users {
       })
       .then((data) => {
         console.log('data: ', data);
-        Cookies.setCookie('session-token', data.token, 168);
-        Cookies.setCookie('user-id', data.id, 168);
-        window.location.replace('../../index.html');
+        if (data.token !== undefined) {
+          Cookies.setCookie('session-token', data.token, 168);
+          Cookies.setCookie('user-id', data.id, 168);
+          Cookies.setCookie('user-role', data.role, 168);
+          window.location.replace('../index.html');
+        }
+        alert('Your credentials are incorrect');
       })
       .catch((err) => {
         console.log('err', err);
@@ -57,17 +61,44 @@ class Users {
       .catch(err => console.log('err', err));
   }
 
-  // static async create(form) {
-  //   data = await fetch(`${this.apiUrl}/${this.endpoint}`, {
-  //     method: 'post',
-  //     body: new FormData(form)
-  //   }).then(function(response){
-  //
-  //   })
-
-  //
-  //   document.cookie = 'credentials' + "=" + data.token + ";path=/;expires=" + d.toGMTString();
-  // }
+    static create(form) {
+        let status;
+        fetch(`https://pesoysalud.herokuapp.com/users/`, {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                Email: form.querySelector('input[id="txtEmail"]').value,
+                Gender: form.querySelector('select[id="txtGender"]').value,
+                Name: form.querySelector('input[id="txtName"]').value,
+                Password: form.querySelector('input[id="txtPass"]').value,
+                Phone: form.querySelector('input[id="txtPhone"]').value,
+                Height: form.querySelector('input[id="txtHeight"]').value,
+                BirthDate: form.querySelector('input[id="txtBirthdate"]').value,
+                Comments: form.querySelector('textarea[id="txtComments"]').value,
+                UserType: '4',
+            }),
+        })
+        .then((response) => {
+            console.log('response =', response);
+            status = response.status;
+            return response.json();
+          })
+        .then(function(data) {
+            console.log('data = ', data);
+            console.log('status = ', status);
+            if(status === 201){
+                console.log('Redirect');
+              window.location.replace('../../index.html');
+            }
+            alert(data.message);
+          })
+        .catch(function(err) {
+          console.log('err', err);
+        });
+    }
 
   // static getAll() {
   //   const userId = Cookies.getCookie('user-id');
