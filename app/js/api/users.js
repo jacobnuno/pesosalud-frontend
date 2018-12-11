@@ -1,25 +1,15 @@
 import Cookies from '../cookies.js';
 
 class Users {
-  constructor() {
-    // const this.apiUrl = 'ec2-13-58-51-216.us-east-2.compute.amazonaws.com:3000';
-    this.apiUrl = 'https://pesoysalud.herokuapp.com';
-
-    // obtener la cookie
-    // document.cookie
-    // this.token = asdfasdf
-
-    // setear el token
-    // this.headers = new Headers();
-  }
-
-  static async login() {
-    return await fetch(`${apiUrl}/users/login`, {
+  static login(form) {
+    Cookies.hasSession('session-token');
+    const email = form.querySelector('input[name="email"]').value;
+    const pass = form.querySelector('input[name="password"]').value;
+    fetch('https://pesoysalud.herokuapp.com/users/login', {
       method: 'POST',
       mode: 'CORS',
       headers: {
         'Content-Type': 'application/json',
-        // 'Content-Type': 'application/x-wwww-form-urlencoded',
       },
       body: JSON.stringify({
         email: email,
@@ -39,7 +29,6 @@ class Users {
           window.location.replace('../index.html');
         }
         const errorSpan = form.querySelector('span.has-error');
-        console.log(errorSpan)
         if (errorSpan) {
           form.removeChild(errorSpan);
         }
@@ -81,7 +70,7 @@ class Users {
         form.querySelector('textarea[name="coments"]').value = data.data[0].Coments ? data.data[0].Coments : '';
       })
       .catch(err => console.log('err', err));
-  }
+    }
 
   static create(form) {
        let status;
