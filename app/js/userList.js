@@ -22,6 +22,9 @@ function userGetAll() {
   })
     .then(function(response) {
       console.log('response: ', response);
+      if (Number(response.status) === 403) {
+        window.location = window.location + '#openModal';
+      }
       return response.json();
     })
     .then(function(data) {
