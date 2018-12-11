@@ -18,7 +18,7 @@ class Appointment {
                 userID: user,
                 date: form.querySelector('input[id="txtDate"]').value + ' ' + form.querySelector('input[id="txtHour"]').value,
                 placeID: '1',
-                status: 'scheduled',
+                status: 'Scheduled',
             }),
         })
         .then((response) => {
@@ -69,7 +69,7 @@ class Appointment {
           })
         .then(function(data) {
             console.log('data = ', data);
-            alert(data);
+            alert(data.data);
           })
         .catch(function(err) {
           console.log('err', err);
