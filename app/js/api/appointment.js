@@ -68,7 +68,7 @@ class Appointment {
           })
         .then(function(data) {
             console.log('data = ', data);
-            alert(data.message);
+            alert(data);
           })
         .catch(function(err) {
           console.log('err', err);
