@@ -30,7 +30,6 @@ function appointmentGet() {
         tr.appendChild(td);
         td = document.createElement('td');
         tr.appendChild(td);
-
         tableBody.appendChild(tr);
       }
     })

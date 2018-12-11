@@ -1,3 +1,5 @@
+import Cookies from './cookies.js';
+
 const roles = {
   1: 'admin',
   2: 'doctora',
@@ -10,9 +12,11 @@ const gender = {
 }
 
 function userGetAll() {
+    const token = Cookies.getCookie('session-token');
     fetch('https://pesoysalud.herokuapp.com/users/', {
     method: 'GET',
     headers: {
+      'Authorization': `Bearer ${token}`,
       'Content-Type': 'application/json',
     }
   })

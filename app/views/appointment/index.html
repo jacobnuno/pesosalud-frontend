@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Agregar cita</title>
+    <title>Cita</title>
     <link rel="icon" href="../../img/favicon.ico">
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/library.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../../css/index.css">
@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Frank+Ruhl+Libre|Poppins|Quicksand" rel="stylesheet">
     </head>
+  <body>
     <header>
         <div class="column is-1-desktop is-11-mobile is-multiline is-flex logo">
           <a href="index.html"><img src="../../img/logo.png" alt="Logo" class="logo"></a>
@@ -28,47 +29,52 @@
             <li class="hidden"><button class="btn btn-orange" id="logout">Sign Out</button></li>
           </ul>
         </div>
-      </header>
-    <div class="menures" id="menuResponsive">
+      </header><div class="menures" id="menuResponsive">
       <ul>
         <li><a href="../../views/aboutUs.html">Nosotros</a></li>
         <li><a href="../../views/services.html">Servicios</a></li>
-        <li><a href="../views/appointment/add.html">¡Agenda tu Cita!</a></li> <!-- verificar esto!! -->
+        <li><a href="../../views/appointment/add.html">¡Agenda tu Cita!</a></li> <!-- verificar esto!! -->
         <li><a href="../../views/login.html">Iniciar Sesión</a></li>
       </ul>
     </div>
-    <body>
-      <div class="main">
-        <h1 class="column is-3-desktop is-offset-5-desktop is-12-mobile title is-center">Dietas</h1>
 
-        <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile login is-center" method="post">
-          <h2 class="column is-8-desktop is-offset-2-desktop is-12-mobile is-center">Crear dieta</h2>
+    <div class="main">
 
-          <div class="column is-12-desktop is-12-mobile is-multiline is-center">
-            <label for="name" class="column is-12-desktop is-12-mobile">Nombre</label>
-            <input id="txtName" class="column is-10-desktop is-6-mobile is-multiline" type="text"  data-rule="word" required>
-          </div>
+      <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile login is-center" method="post">
+        <h2 class="column is-8-desktop is-offset-2-desktop is-12-mobile is-center">Cita</h2>
 
-          <div class="column is-12-desktop is-12-mobile is-multiline is-center">
-            <label for="description" class="column is-12-desktop is-12-mobile">Descripcion</label>
-            <input id="txtDescription" class="column is-10-desktop is-6-mobile is-multiline" type="text"  data-rule="word" required>
-          </div>
+        <div class="column is-10-desktop is-10-mobile is-multiline is-center is-1-offset-desktop">
+          <label for="service" class="column is-12-desktop is-12-mobile">Servicio</label>
+          <input type="text" name="service" value="" disabled>
 
-          <button data-type="submit" name="button" class="btn btn-blue" data-method="dietsAdd">Agregar</button>
-        </form>
-        <div class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile login new-register is-center">
-          <a href="../diets/list.html" class="btn-link"> Ver lista de dietas</a>
         </div>
+
+        <div class="column is-10-desktop is-flex is-offset-1-desktop">
+
+        <div class="column is-7-desktop is-7-mobile is-multiline">
+          <label for="date" class="column is-12-desktop is-12-mobile">Fecha</label>
+          <input class="column is-12-desktop is-12-mobile" id="txtDate" type="date" name="date" disabled>
+        </div>
+
+        <div class="column is-4-desktop is-4-mobile is-multiline is-offset-1-desktop">
+        <label for="hour" class="column is-12-desktop is-12-mobile">Hora</label>
+        <input id="txtHour" type="time" name="hour" value="" disabled>
+        </div>
+        </div>
+
+        <button data-type="submit" name="button" class="btn btn-red" data-method="appointmentAdd" >Cerrar</button>
+
+      </form>
       </div>
-      <footer>
-        <div class="column is-12-desktop is-center">
-          <span>Derechos Reservados para Peso y Salud</span>
-          <a href="views/cookies.html">Cookies</a>
-        </div>
-      </footer>
-      <script src="../../js/validator.js"></script>
-      <script src="../../js/validatorOld.js"></script>
-      <script src="../../js/home.js" type="module"></script>
+    <footer>
+      <div class="column is-12-desktop is-center">
+        <span>Derechos Reservados para Peso y Salud</span>
+        <a href="../views/cookies.html">Cookies</a>
+      </div>
+    </footer>
+    <script src="../../js/appointmentProfile.js" type="module"></script>
+    <script src="../../js/home.js" type="module">
 
-    </body>
+    </script>
+  </body>
 </html>

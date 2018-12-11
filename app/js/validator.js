@@ -103,6 +103,5 @@ class Validator {
     }
     return false;
   }
-}
 
 export default Validator;
