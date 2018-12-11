@@ -28,17 +28,28 @@ class Users {
           Cookies.setCookie('user-role', data.role, 168);
           window.location.replace('../index.html');
         }
-        alert('Your credentials are incorrect');
+        const errorSpan = form.querySelector('span.has-error');
+        console.log(errorSpan)
+        if (errorSpan) {
+          form.removeChild(errorSpan);
+        }
+        const newSpan = document.createElement('span');
+        newSpan.appendChild(document.createTextNode('Email or password are incorrect'));
+        newSpan.classList.add('has-error');
+        form.appendChild(newSpan);
       })
       .catch((err) => {
         console.log('err', err);
-        alert('Your credentials are incorrect');
       });
   }
 
   static getOne(form) {
     const userId = Cookies.getCookie('user-id');
     const token = Cookies.getCookie('session-token');
+    const gender = {
+      M: 'Masculino',
+      F: 'Femenino',
+    }
     fetch(`https://pesoysalud.herokuapp.com/users/${userId}`, {
       method: 'GET',
       headers: {
@@ -56,6 +67,7 @@ class Users {
         form.querySelector('input[name="email"]').value = data.data[0].email ? data.data[0].email : '';
         form.querySelector('input[name="phone"]').value = data.data[0].phone ? data.data[0].phone : '';
         form.querySelector('input[name="height"]').value = data.data[0].Height ? data.data[0].Height : '';
+        form.querySelector('input[name="gender"]').value = data.data[0].gender ? gender[data.data[0].gender] : '';
         form.querySelector('textarea[name="coments"]').value = data.data[0].Coments ? data.data[0].Coments : '';
       })
       .catch(err => console.log('err', err));

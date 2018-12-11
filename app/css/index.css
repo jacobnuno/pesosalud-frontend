@@ -1,1 +1,221 @@
-header{background-color:var(--green-color);height:5em;display:flex;line-height:5em}footer,header{width:100%;padding:0,10px;border-radius:4px}footer{background-color:var(--light-gray-color);height:3em;display:inline-block;color:#000}footer a{text-decoration:none;color:#000;margin-left:1.5em}footer a:hover{background:var(--gray-color)}.logo{height:4.2em;margin-left:1em}*{margin:0;padding:0;box-sizing:border-box}.quote p{text-align:right;font-style:italic;margin:0}.author-quote{font-weight:700}header div .is-multiline{height:100%}.menu li{margin:0 30px 10px 0}.menu a{color:#fff}p{margin:10px 0 10px 20px}.nutricion img{width:60%}.servicios img{width:80%}.servicios{padding:0 20px}.servicios>div{background-color:#e0ffd5;border-radius:1em;border:1px solid #488a00}.pierde-peso img{width:75%}.mision-back{background-image:url(../img/BackgroudMission.jpg);padding:10px 0;border-radius:4px}.mision{background-color:#fff;opacity:.7;border:1px solid #488a00;filter:alpha(opacity=60);border-radius:.8em}.mision h3{font-weight:700;color:#000}form{border:1px solid var(--light-gray-color);padding:.4em 0 .4em .5em;border-radius:4px}.maps,.pys-slider,img{border-radius:4px}.pys-slider{background-color:#e0ffd5}.slider{padding-bottom:3em!important}.slider h2{margin:2em 0 1.5em;font-size:2em}.slider img{height:17em}.menuicon,.menures{display:none}.menures ul{background-color:var(--light-gray-color);z-index:1}.menures li{list-style:none}.menures a{text-align:center;text-decoration:none;color:var(--green-color);display:block;padding:.5em;font-weight:700;font-size:16px}@media screen and (min-width:768px){.menures{display:none!important}}@media screen and (max-width:768px){footer,header{border-radius:4px}.contact-form{margin-left:18%!important}.drop-list{display:none}.menuicon{display:inline-block;text-align:right}.logo{text-align:center}.title1{text-align:justify}.what-is-nutrition{margin:0;text-align:justify}.pierde-peso h4,.pierde-peso p,.quote p{text-align:justify}.maps,.nutricion img,.pierde-peso img{border-radius:4px}.maps,.slider{max-width:100%}#prev{left:0!important}#next,#prev{z-index:1!important}#next{right:0!important}}
+header {
+  background-color: var(--green-color);
+  height: 5em;
+  display: flex;
+  line-height: 5em
+}
+
+footer,
+header {
+  width: 100%;
+  padding: 0, 10px;
+  border-radius: 4px
+}
+
+footer {
+  background-color: var(--light-gray-color);
+  height: 3em;
+  display: inline-block;
+  color: #000
+}
+
+footer a {
+  text-decoration: none;
+  color: #000;
+  margin-left: 1.5em
+}
+
+footer a:hover {
+  background: var(--gray-color)
+}
+
+.logo {
+  height: 4.2em;
+  margin-left: 1em
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+.quote p {
+  text-align: right;
+  font-style: italic;
+  margin: 0
+}
+
+.author-quote {
+  font-weight: 700
+}
+
+header div .is-multiline {
+  height: 100%
+}
+
+.menu li {
+  margin: 0 30px 10px 0
+}
+
+.menu a {
+  color: #fff
+}
+
+p {
+  margin: 10px 0 10px 20px
+}
+
+.nutricion img {
+  width: 60%
+}
+
+.servicios img {
+  width: 80%
+}
+
+.servicios {
+  padding: 0 20px
+}
+
+.servicios>div {
+  background-color: #e0ffd5;
+  border-radius: 1em;
+  border: 1px solid #488a00
+}
+
+.pierde-peso img {
+  width: 75%
+}
+
+.mision-back {
+  background-image: url(../img/BackgroudMission.jpg);
+  padding: 10px 0;
+  border-radius: 4px
+}
+
+.mision {
+  background-color: #fff;
+  opacity: .7;
+  border: 1px solid #488a00;
+  filter: alpha(opacity=60);
+  border-radius: .8em
+}
+
+.mision h3 {
+  font-weight: 700;
+  color: #000
+}
+
+form {
+  border: 1px solid var(--light-gray-color);
+  padding: .4em 0 .4em .5em;
+  border-radius: 4px
+}
+
+.maps,
+.pys-slider,
+img {
+  border-radius: 4px
+}
+
+.pys-slider {
+  background-color: #e0ffd5
+}
+
+.slider {
+  padding-bottom: 3em!important
+}
+
+.slider h2 {
+  margin: 2em 0 1.5em;
+  font-size: 2em
+}
+
+.slider img {
+  height: 17em
+}
+
+.menuicon,
+.menures {
+  display: none
+}
+
+.menures ul {
+  background-color: var(--light-gray-color);
+  z-index: 1
+}
+
+.menures li {
+  list-style: none
+}
+
+.menures a {
+  text-align: center;
+  text-decoration: none;
+  color: var(--green-color);
+  display: block;
+  padding: .5em;
+  font-weight: 700;
+  font-size: 16px
+}
+
+ul.menu {
+  text-align: end;
+}
+
+@media screen and (min-width:768px) {
+  .menures {
+    display: none!important
+  }
+}
+
+@media screen and (max-width:768px) {
+  footer,
+  header {
+    border-radius: 4px
+  }
+  .contact-form {
+    margin-left: 18%!important
+  }
+  .drop-list {
+    display: none
+  }
+  .menuicon {
+    display: inline-block;
+    text-align: right
+  }
+  .logo {
+    text-align: center
+  }
+  .title1 {
+    text-align: justify
+  }
+  .what-is-nutrition {
+    margin: 0;
+    text-align: justify
+  }
+  .pierde-peso h4,
+  .pierde-peso p,
+  .quote p {
+    text-align: justify
+  }
+  .maps,
+  .nutricion img,
+  .pierde-peso img {
+    border-radius: 4px
+  }
+  .maps,
+  .slider {
+    max-width: 100%
+  }
+  #prev {
+    left: 0!important
+  }
+  #next, #prev {
+    z-index: 1!important
+  }
+  #next {
+    right: 0!important
+  }
+}

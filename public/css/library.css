@@ -246,7 +246,7 @@ td {
   box-shadow: 0px 0px 5px 1px var(--red-color);
 }
 
-.has-error span {
+.has-error span, span .has-error {
   font-size: .7em;
   display: block;
 }
