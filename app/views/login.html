@@ -24,35 +24,34 @@
             <li><a href="../views/aboutUs.html">Nosotros</a></li>
             <li><a href="../views/services.html">Servicios</a></li>
             <li><a href="../views/appointment/add.html">¡Agenda tu Cita!</a></li>
-            <li><a href="../views/login.html">Iniciar Sesión</a></li>
+            <li><a href="../views/login.html" id="session">Iniciar Sesión</a></li>
+            <li class="hidden"><a href="../views/admin/index.html" id="role">Panel Administrativo</a></li>
+            <li class="hidden"><button class="btn btn-orange" id="logout">Sign Out</button></li>
           </ul>
         </div>
       </header>
       <div class="menures" id="menuResponsive">
-        <ul>
-          <li><a href="../views/aboutUs.html">Nosotros</a></li>
-          <li><a href="../views/services.html">Servicios</a></li>
-          <li><a href="../views/appointment/add.html">¡Agenda tu Cita!</a></li>
-          <li><a href="../views/login.html">Iniciar Sesión</a></li>
-        </ul>
+         <ul class="horizontal-list menu">
+            <li><a href="../views/aboutUs.html">Nosotros</a></li>
+            <li><a href="../views/services.html">Servicios</a></li>
+            <li><a href="../views/appointment/add.html">¡Agenda tu Cita!</a></li>
+            <li><a href="../views/login.html" id="session">Iniciar Sesión</a></li>
+          </ul>
       </div>
-      <div class="main">
-        <h1 class="column is-3-desktop is-offset-5-desktop is-12-mobile title is-center">Login en Peso y Salud</h1>
-        <form class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile login" action="index.html" method="post">
-          <div class="column is-12-desktop">
-            <label for="email" class="column is-10-desktop">E-mail</label>
-            <input id="email" class="column is-8-desktop" type="text" name="email" value="" placeholder="ejemplo@ejemplo.com" data-rule="email" required>
-          </div>
-          <div class="column is-12-desktop">
-          <label for="password" class="column is-4-desktop is-3-mobile is-multiline">Contraseña</label>
-          <a class="column is-8-desktop is-9-mobile is-multiline is-center btn-link" href="#">Olvidaste tu contraseña?</a>
-          <input id="password" class="column is-8-desktop" type="password" name="password" value="" placeholder="Contraseña" data-rule="password" required>
-          </div>
-          <button type="button" name="button" class="btn btn-blue" data-type="submit">Login</button>
+      <div class="main m-space">
+        <!-- <h1 class="column is-3-desktop is-offset-5-desktop is-12-mobile title is-center">Login en Peso y Salud</h1> -->
+        <h1 class="column is-6-desktop is-offset-3-desktop is-12-mobile title is-center ">Login en Peso y Salud</h1>
+        <form class="column is-6-desktop is-offset-3-desktop is-10-mobile is-offset-1-mobile login" action="index.html" method="post">
+          <label for="email" class="column is-4-desktop is-offset-2-desktop">E-mail</label>
+          <input class="column is-8-desktop is-offset-2-desktop " type="text" name="email" value="" placeholder="ejemplo@ejemplo.com">
+          <label for="password" class="column is-4-desktop is-offset-2-desktop is-3-mobile is-multiline ">Contraseña</label>
+          <input class="column  is-8-desktop is-offset-2-desktop " type="password" name="password" value="" placeholder="Contraseña">
+          <a class="column is-6-desktop is-offset-2-desktop is-9-mobile is-multiline btn-link " href="#">¿Olvidaste tu contraseña?</a>
+          <button type="button"  name="button" class="btn btn-blue is-multiline column is-6-desktop is-offset-3-desktop">Login</button>
         </form>
-        <div class="column is-3-desktop is-offset-5-desktop is-10-mobile is-offset-1-mobile login new-register is-center">
-          <span>Nuevo en Peso y Salud?</span>
-          <a href="./users/register.html" class="btn-link"> Regístrate</a>
+        <div class="column is-6-desktop is-offset-3-desktop is-10-mobile is-offset-1-mobile login new-register is-center">
+          <span>¿Nuevo en Peso y Salud?</span>
+          <a href="" class="btn-link"> Regístrate</a>
         </div>
       </div>
 

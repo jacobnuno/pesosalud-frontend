@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/index.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/header.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/services.css">
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Frank+Ruhl+Libre|Poppins|Quicksand" rel="stylesheet">
   </head>
@@ -24,17 +24,19 @@
           <li><a href="../views/aboutUs.html">Nosotros</a></li>
           <li><a href="../views/services.html">Servicios</a></li>
           <li><a href="../views/appointment/add.html">¡Agenda tu Cita!</a></li>
-          <li><a href="../views/login.html">Iniciar Sesión</a></li>
+          <li><a href="../views/login.html" id="session">Iniciar Sesión</a></li>
+          <li class="hidden"><a href="../views/admin/index.html" id="role">Panel Administrativo</a></li>
+          <li class="hidden"><button class="btn btn-orange" id="logout">Sign Out</button></li>
         </ul>
       </div>
     </header>
     <div class="menures" id="menuResponsive">
-      <ul>
-        <li><a href="../views/aboutUs.html">Nosotros</a></li>
-        <li><a href="../views/services.html">Servicios</a></li>
-        <li><a href="../views/appointment/add.html">¡Agenda tu Cita!</a></li>
-        <li><a href="../views/login.html">Iniciar Sesión</a></li>
-      </ul>
+       <ul class="horizontal-list menu">
+          <li><a href="../views/aboutUs.html">Nosotros</a></li>
+          <li><a href="../views/services.html">Servicios</a></li>
+          <li><a href="../views/appointment/add.html">¡Agenda tu Cita!</a></li>
+          <li><a href="../views/login.html" id="session">Iniciar Sesión</a></li>
+        </ul>
     </div>
     <section class="services">
         <h2 class="column is-12-desktop title is-center ">Control de Peso con Acupuntura</h2>
@@ -85,7 +87,8 @@
         <a href="../views/cookies.html">Cookies</a>
       </div>
     </footer>
-    <script src="../js/slider.js"></script>
+    <script src="../js/home.js" type="module"></script>
     <script src="../js/events.js"></script>
+    <script src="../js/validator.js"></script>
   </body>
 </html>
